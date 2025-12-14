@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>لوحة التحكم - Vue.js</title>
+    <title>@yield('title', 'لوحة التحكم')</title>
     
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -58,6 +58,10 @@
             width: 20px;
             margin-left: 10px;
         }
+        .sidebar-menu button {
+            width: 100%;
+            text-align: right;
+        }
         .main-content {
             margin-right: 250px;
             min-height: 100vh;
@@ -86,6 +90,7 @@
             }
         }
     </style>
+    @stack('styles')
 </head>
 <body>
     <!-- Sidebar -->
@@ -97,22 +102,22 @@
         </div>
         <ul class="sidebar-menu">
             <li>
-                <a href="{{ route('admin.dashboard') }}" class="active">
+                <a href="{{ route('admin.dashboard') }}" class="{{ request()->routeIs('admin.dashboard') ? 'active' : '' }}">
                     <i class="fas fa-home"></i> الرئيسية
                 </a>
             </li>
             <li>
-                <a href="{{ route('admin.visits.index') }}">
+                <a href="{{ route('admin.visits.index') }}" class="{{ request()->routeIs('admin.visits.*') ? 'active' : '' }}">
                     <i class="fas fa-eye"></i> الزيارات (تقليدي)
                 </a>
             </li>
             <li>
-                <a href="{{ route('admin.users.index') }}">
+                <a href="{{ route('admin.users.index') }}" class="{{ request()->routeIs('admin.users.*') ? 'active' : '' }}">
                     <i class="fas fa-users"></i> المستخدمين
                 </a>
             </li>
             <li>
-                <a href="{{ route('profile.edit') }}">
+                <a href="{{ route('profile.edit') }}" class="{{ request()->routeIs('profile.*') ? 'active' : '' }}">
                     <i class="fas fa-user"></i> الملف الشخصي
                 </a>
             </li>
@@ -124,7 +129,7 @@
             <li>
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf
-                    <button type="submit" class="btn btn-link text-white text-start w-100 p-0" style="padding: 1rem 1.5rem !important;">
+                    <button type="submit" class="btn btn-link text-white text-start w-100 p-0" style="padding: 1rem 1.5rem !important; border: none; background: none;">
                         <i class="fas fa-sign-out-alt"></i> تسجيل الخروج
                     </button>
                 </form>
@@ -163,38 +168,21 @@
             </div>
         </div>
 
-        <!-- Vue App Container -->
-        <div id="visits-dashboard-app"></div>
+        <!-- Content -->
+        <div class="container-fluid px-4">
+            @yield('content')
+        </div>
     </div>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     
-    <!-- Vue 3 -->
-    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-    
-    <!-- Axios -->
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    
-    <!-- Main App JS -->
-    <script src="{{ asset('js/visits-dashboard.js') }}"></script>
-    
     <script>
         function toggleSidebar() {
             document.querySelector('.sidebar').classList.toggle('show');
         }
-        
-        // Highlight active menu item
-        document.addEventListener('DOMContentLoaded', function() {
-            const currentPath = window.location.pathname;
-            const menuItems = document.querySelectorAll('.sidebar-menu a');
-            menuItems.forEach(item => {
-                item.classList.remove('active');
-                if (item.getAttribute('href') === currentPath) {
-                    item.classList.add('active');
-                }
-            });
-        });
     </script>
+    
+    @stack('scripts')
 </body>
 </html>

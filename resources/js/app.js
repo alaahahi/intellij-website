@@ -1,10 +1,7 @@
-import { createApp } from 'vue';
-import VisitsDashboard from './components/VisitsDashboard.vue';
+import './bootstrap';
 
-const app = createApp({
-    components: {
-        VisitsDashboard
-    }
-});
+import Alpine from 'alpinejs';
 
-app.mount('#visits-dashboard-app');
+window.Alpine = Alpine;
+
+Alpine.start();

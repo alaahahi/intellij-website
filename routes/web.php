@@ -41,5 +41,6 @@ Route::get('/blog', function () {
 // Routes for visits tracking (admin)
 Route::prefix('admin')->group(function () {
     Route::get('/visits', [\App\Http\Controllers\VisitController::class, 'index'])->name('admin.visits.index');
+    Route::get('/visits/dashboard', [\App\Http\Controllers\VisitController::class, 'dashboard'])->name('admin.visits.dashboard');
     Route::get('/visits/stats', [\App\Http\Controllers\VisitController::class, 'stats'])->name('admin.visits.stats');
 });

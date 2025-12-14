@@ -9,6 +9,14 @@ use Illuminate\Support\Facades\DB;
 class VisitController extends Controller
 {
     /**
+     * عرض لوحة التحكم Vue.js
+     */
+    public function dashboard()
+    {
+        return view('admin.visits.dashboard');
+    }
+
+    /**
      * عرض إحصائيات الزيارات
      */
     public function index(Request $request)
@@ -77,5 +85,32 @@ class VisitController extends Controller
         ];
 
         return response()->json($stats);
+    }
+
+    /**
+     * API endpoint للحصول على قائمة الزيارات
+     */
+    public function apiList(Request $request)
+    {
+        $query = Visit::query();
+
+        // فلترة حسب المصدر
+        if ($request->has('source') && $request->source) {
+            $query->where('source', $request->source);
+        }
+
+        // فلترة حسب التاريخ
+        if ($request->has('date_from') && $request->date_from) {
+            $query->whereDate('visited_at', '>=', $request->date_from);
+        }
+
+        if ($request->has('date_to') && $request->date_to) {
+            $query->whereDate('visited_at', '<=', $request->date_to);
+        }
+
+        $perPage = $request->get('per_page', 50);
+        $visits = $query->orderBy('visited_at', 'desc')->paginate($perPage);
+
+        return response()->json($visits);
     }
 }

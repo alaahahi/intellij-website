@@ -1,0 +1,11 @@
+// Variables
+$body-bg: #fff;
+$body-color: #333;
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+// Custom styles
+body {
+    font-family: 'Cairo', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}

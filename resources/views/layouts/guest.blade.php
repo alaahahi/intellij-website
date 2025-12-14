@@ -12,7 +12,15 @@
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
 
         <!-- Scripts -->
-        @if(file_exists(public_path('build/manifest.json')) && file_get_contents(public_path('build/manifest.json')) !== '{}')
+        @php
+            $manifestPath = public_path('build/manifest.json');
+            $hasVite = file_exists($manifestPath) && 
+                      filesize($manifestPath) > 2 && 
+                      json_decode(file_get_contents($manifestPath), true) !== null &&
+                      !empty(json_decode(file_get_contents($manifestPath), true));
+        @endphp
+        
+        @if($hasVite)
             @vite(['resources/css/app.css', 'resources/js/app.js'])
         @else
             <!-- Fallback: Use CDN for Tailwind and Alpine -->

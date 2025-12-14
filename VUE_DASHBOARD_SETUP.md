@@ -32,14 +32,14 @@
 ### الوصول للوحة التحكم
 
 ```
-http://localhost:8000/admin/visits/dashboard
+http://localhost:8000/admin
 ```
 
 ### Routes المتاحة
 
 1. **لوحة التحكم Vue.js:**
    ```
-   GET /admin/visits/dashboard
+   GET /admin
    ```
 
 2. **لوحة التحكم التقليدية (Blade):**
@@ -104,7 +104,7 @@ npm run watch
 
 ## 🔗 الروابط
 
-- **لوحة التحكم Vue:** `/admin/visits/dashboard`
+- **لوحة التحكم Vue:** `/admin`
 - **لوحة التحكم التقليدية:** `/admin/visits`
 - **API Stats:** `/api/visits/stats`
 - **API List:** `/api/visits/list?page=1&per_page=50`

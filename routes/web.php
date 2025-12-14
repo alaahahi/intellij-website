@@ -37,3 +37,9 @@ Route::get('/pricing', function () {
 Route::get('/blog', function () {
     return view('pages.blog');
 })->name('blog');
+
+// Routes for visits tracking (admin)
+Route::prefix('admin')->group(function () {
+    Route::get('/visits', [\App\Http\Controllers\VisitController::class, 'index'])->name('admin.visits.index');
+    Route::get('/visits/stats', [\App\Http\Controllers\VisitController::class, 'stats'])->name('admin.visits.stats');
+});

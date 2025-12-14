@@ -4,19 +4,21 @@
 
 ## المميزات
 
-- ✅ Laravel Framework
+- ✅ Laravel Framework 10.x
 - ✅ Blade Templates
 - ✅ Components موحدة (Header, Footer, Breadcrumb)
 - ✅ دعم كامل للغة العربية (RTL)
 - ✅ تصميم متجاوب
 - ✅ صفحات متعددة
+- ✅ Composer & Dependencies
+- ✅ Git Repository
 
-## التثبيت
+## التثبيت السريع
 
 ### المتطلبات
-- PHP >= 8.0
+- PHP >= 8.1
 - Composer
-- Node.js & NPM (اختياري)
+- MySQL أو SQLite (اختياري)
 
 ### خطوات التثبيت
 
@@ -47,22 +49,33 @@
    http://localhost:8000
    ```
 
+للتفاصيل الكاملة، راجع [INSTALLATION.md](INSTALLATION.md)
+
 ## الهيكل
 
 ```
+├── app/
+│   ├── Console/           # Artisan Commands
+│   ├── Exceptions/        # Exception Handlers
+│   ├── Http/             # Controllers, Middleware
+│   ├── Models/           # Eloquent Models
+│   └── Providers/        # Service Providers
+├── bootstrap/            # Bootstrap Files
+├── config/               # Configuration Files
+├── database/             # Migrations, Seeders
+├── public/               # Public Assets
+│   ├── css/             # CSS Files
+│   ├── js/              # JavaScript Files
+│   ├── img/             # Images
+│   └── lib/             # External Libraries
 ├── resources/
 │   └── views/
-│       ├── layouts/          # Layouts الرئيسية
-│       ├── components/        # Components مشتركة
-│       └── pages/            # صفحات الموقع
-├── routes/
-│   └── web.php              # Routes المشروع
-├── public/                   # الملفات العامة
-│   ├── css/                 # ملفات CSS
-│   ├── js/                  # ملفات JavaScript
-│   ├── img/                 # الصور
-│   └── lib/                 # المكتبات الخارجية
-└── app/                     # Application Code
+│       ├── layouts/      # Layouts الرئيسية
+│       ├── components/   # Components مشتركة
+│       └── pages/        # صفحات الموقع
+├── routes/               # Route Definitions
+├── storage/              # Storage Files
+└── tests/                # Tests
 ```
 
 ## الصفحات المتاحة
@@ -77,11 +90,42 @@
 - `/pricing` - الأسعار
 - `/blog` - المشاريع
 
-## Git
+## الأوامر المفيدة
 
-المشروع يحتوي على Git repository جاهز للاستخدام.
+### Artisan Commands
 
-### الأوامر الأساسية
+```bash
+# عرض معلومات Laravel
+php artisan about
+
+# مسح Cache
+php artisan cache:clear
+php artisan config:clear
+php artisan view:clear
+
+# تحسين الأداء
+php artisan config:cache
+php artisan route:cache
+php artisan view:cache
+
+# عرض Routes
+php artisan route:list
+```
+
+### Composer Commands
+
+```bash
+# تثبيت Dependencies
+composer install
+
+# تحديث Dependencies
+composer update
+
+# تحديث Autoloader
+composer dump-autoload
+```
+
+### Git Commands
 
 ```bash
 # عرض حالة الملفات
@@ -93,11 +137,8 @@ git add .
 # عمل commit
 git commit -m "رسالة الـ commit"
 
-# ربط المشروع بـ remote repository
-git remote add origin <repository-url>
-
 # رفع التغييرات
-git push -u origin master
+git push origin master
 ```
 
 ## التطوير
@@ -131,3 +172,8 @@ git push -u origin master
 للدعم والمساعدة، يرجى التواصل عبر:
 - البريد الإلكتروني: alaa.hahe@gmail.com
 - الهاتف: 00964 - 7511077812
+
+## الإصدار
+
+- Laravel: 10.50.0
+- PHP: >= 8.1

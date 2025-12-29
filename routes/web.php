@@ -5,6 +5,7 @@ use App\Http\Controllers\VisitController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ContactController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Artisan;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,6 +22,12 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('pages.index');
 })->name('home');
+
+// Clear Cache Route (يمكن حذفها في الإنتاج)
+Route::get('/clear-cache', function () {
+    Artisan::call('optimize:clear');
+    return redirect()->back()->with('success', 'تم مسح الكاش بنجاح!');
+})->name('clear-cache');
 
 Route::get('/about', function () {
     return view('pages.about');

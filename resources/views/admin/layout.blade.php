@@ -149,6 +149,11 @@
                 </a>
             </li>
             <li>
+                <a href="{{ route('admin.cache.index') }}" class="{{ request()->routeIs('admin.cache.*') ? 'active' : '' }}">
+                    <i class="fas fa-broom"></i> مسح الكاش
+                </a>
+            </li>
+            <li>
                 <a href="{{ route('profile.edit') }}" class="{{ request()->routeIs('profile.*') ? 'active' : '' }}">
                     <i class="fas fa-user"></i> الملف الشخصي
                 </a>

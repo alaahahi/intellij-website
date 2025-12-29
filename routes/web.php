@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\VisitController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\CacheController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Artisan;
 
@@ -102,4 +103,9 @@ Route::prefix('admin')->middleware(['auth', 'verified'])->group(function () {
     Route::get('/contact-requests/{contactRequest}', [ContactController::class, 'show'])->name('admin.contact-requests.show');
     Route::patch('/contact-requests/{contactRequest}/status', [ContactController::class, 'updateStatus'])->name('admin.contact-requests.update-status');
     Route::delete('/contact-requests/{contactRequest}', [ContactController::class, 'destroy'])->name('admin.contact-requests.destroy');
+    
+    // Cache Management
+    Route::get('/cache', [CacheController::class, 'index'])->name('admin.cache.index');
+    Route::post('/cache/clear', [CacheController::class, 'clear'])->name('admin.cache.clear');
+    Route::get('/cache/info', [CacheController::class, 'info'])->name('admin.cache.info');
 });

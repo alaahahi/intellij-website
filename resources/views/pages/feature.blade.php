@@ -56,4 +56,6 @@
         </div>
     </div>
     <!-- Feature End -->
+
+    @include('components.footer')
 @endsection

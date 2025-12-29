@@ -11,7 +11,7 @@
             <div class="row g-5">
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="RotateMoveLeft">
-                        <img src="{{ asset('img/about-1.png') }}" class="img-fluid w-100" alt="">
+                        <img src="{{ asset('img/account/2.png') }}" class="img-fluid w-100" alt="" loading="lazy">
                     </div>
                 </div>
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
@@ -36,47 +36,33 @@
                 </p>
             </div>
             <div class="row g-4 justify-content-center">
+                <!-- نظام عقود بيع السيارات -->
                 <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="service-item text-center rounded p-4">
-                        <div class="service-icon d-inline-block bg-light rounded p-4 mb-4"><i class="fas fa-globe fa-5x text-secondary"></i></div>
-                        <div class="service-content">
-                            <h4 class="mb-4">تطوير المواقع الإلكترونية</h4>
-                            <p class="mb-4">نطور مواقع ويب احترافية متجاوبة مع جميع الأجهزة باستخدام أحدث التقنيات
-                            </p>
-                            <a href="{{ route('service') }}" class="btn btn-light rounded-pill text-primary py-2 px-4">المزيد</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="service-item text-center rounded p-4">
-                        <div class="service-icon d-inline-block bg-light rounded p-4 mb-4"><i class="fas fa-mobile-alt fa-5x text-secondary"></i></div>
-                        <div class="service-content">
-                            <h4 class="mb-4">تطوير التطبيقات</h4>
-                            <p class="mb-4">تطوير تطبيقات موبايل وتطبيقات سطح المكتب بواجهات سهلة الاستخدام
-                            </p>
-                            <a href="{{ route('service') }}" class="btn btn-light rounded-pill text-primary py-2 px-4">المزيد</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.5s">
                     <div class="service-item text-center rounded p-4">
                         <div class="service-icon d-inline-block bg-light rounded p-4 mb-4"><i class="fas fa-file-contract fa-5x text-secondary"></i></div>
                         <div class="service-content">
-                            <h4 class="mb-4">نظام العقود الإلكترونية</h4>
-                            <p class="mb-4">نظام متخصص لإدارة العقود الإلكترونية للمعارض السيارات
+                            <h4 class="mb-4">نظام عقود بيع السيارات</h4>
+                            <p class="mb-4">نظام شامل لإدارة عقود بيع السيارات للمعارض
                             </p>
                             <a href="{{ route('contracts-system') }}" class="btn btn-light rounded-pill text-primary py-2 px-4">المزيد</a>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.7s">
-                    <div class="service-item text-center rounded p-4">
-                        <div class="service-icon d-inline-block bg-light rounded p-4 mb-4"><i class="fas fa-cogs fa-5x text-secondary"></i></div>
+                
+                <!-- برنامج المحاسب الذكي -->
+                <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="service-item text-center rounded p-4 position-relative" style="background: linear-gradient(135deg, rgba(102, 16, 242, 0.1) 0%, rgba(247, 71, 128, 0.1) 100%); border: 2px solid var(--bs-primary); transform: scale(1.05); box-shadow: 0 10px 30px rgba(102, 16, 242, 0.2);">
+                        <span class="badge bg-primary position-absolute top-0 start-0 m-2 px-3 py-2" style="font-size: 0.75rem;">
+                            <i class="fas fa-star me-1"></i> مميز
+                        </span>
+                        <div class="service-icon d-inline-block bg-primary rounded p-4 mb-4" style="box-shadow: 0 5px 15px rgba(102, 16, 242, 0.3);">
+                            <i class="fas fa-calculator fa-5x text-white"></i>
+                        </div>
                         <div class="service-content">
-                            <h4 class="mb-4">أنظمة إدارة متخصصة</h4>
-                            <p class="mb-4">أنظمة إدارة متخصصة مصممة خصيصاً لتلبية احتياجات عملك
+                            <h4 class="mb-4 text-primary fw-bold">برنامج المحاسب الذكي</h4>
+                            <p class="mb-4">نظام متكامل للمحاسبة وإدارة المستودعات والمشتريات
                             </p>
-                            <a href="{{ route('service') }}" class="btn btn-light rounded-pill text-primary py-2 px-4">المزيد</a>
+                            <a href="{{ route('accounting-system') }}" class="btn btn-primary rounded-pill text-white py-2 px-4">المزيد</a>
                         </div>
                     </div>
                 </div>
@@ -144,7 +130,7 @@
             <div class="row g-5 pt-5" style="margin-top: 6rem;">
                 <div class="col-lg-6 wow fadeInLeft" data-wow-delay="0.1s">
                     <div class="feature-img RotateMoveLeft h-100" style="object-fit: cover;">
-                        <img src="{{ asset('img/features-1.png') }}" class="img-fluid w-100 h-100" alt="">
+                        <img src="{{ asset('img/account/3.png') }}" class="img-fluid w-100 h-100" alt="" loading="lazy">
                     </div>
                 </div>
                 <div class="col-lg-6 wow fadeInRight" data-wow-delay="0.1s">
@@ -233,7 +219,7 @@
                 </div>
                 <div class="col-lg-6 wow fadeInRight" data-wow-delay="0.3s">
                     <div class="FAQ-img RotateMoveRight rounded">
-                        <img src="{{ asset('img/about-1.png') }}" class="img-fluid w-100" alt="">
+                        <img src="{{ asset('img/account/4.png') }}" class="img-fluid w-100" alt="" loading="lazy">
                     </div>
                 </div>
             </div>
@@ -246,81 +232,92 @@
         <div class="container py-5">
             <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 900px;">
                 <h4 class="text-primary">الأسعار</h4>
-                <h1 class="display-5 mb-4">باقات مناسبة لجميع الاحتياجات</h1>
-                <p class="mb-0">نقدم باقات أسعار مرنة تناسب مختلف احتياجاتك. يمكنك أيضاً الحصول على عرض سعر مخصص لمشروعك الخاص.
+                <h1 class="display-5 mb-4">باقات تصميم المواقع الإلكترونية</h1>
+                <p class="mb-0">اختر الباقة المناسبة لموقعك. جميع الباقات تشمل دومين مجاني وسنة استضافة مجانية.
                 </p>
             </div>
             <div class="row g-5 justify-content-center">
+                <!-- Package 1: $100 -->
                 <div class="col-md-6 col-lg-6 col-xl-4 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="price-item bg-light rounded text-center">
-                        <div class="text-center text-dark border-bottom d-flex flex-column justify-content-center p-4" style="width: 100%; height: 160px;">
-                            <p class="fs-2 fw-bold text-uppercase mb-0">BASIC</p>
-                            <div class="d-flex justify-content-center">
-                                <strong class="align-self-start">$</strong>
-                                <p class="mb-0"><span class="display-5">00</span>/mo</p>
-                            </div>                        
+                    <div class="price-item bg-light rounded text-center h-100">
+                        <div class="text-center text-dark border-bottom d-flex flex-column justify-content-center p-4" style="width: 100%; height: 180px;">
+                            <p class="fs-2 fw-bold mb-2">الباقة الأساسية</p>
+                            <div class="d-flex justify-content-center align-items-baseline">
+                                <strong class="fs-4">$</strong>
+                                <span class="display-4 fw-bold">100</span>
+                            </div>
+                            <p class="text-muted mb-0 mt-2">للموقع الواحد</p>
                         </div>
                         <div class="text-start p-5">
-                            <p><i class="fas fa-check text-success me-1"></i> Limited Acess Library</p>
-                            <p><i class="fas fa-check text-success me-1"></i> Customer Support</p>
-                            <p><i class="fas fa-check text-success me-1"></i> Pre-built Email Templates</p>
-                            <p><i class="fas fa-check text-success me-1"></i> Reporting & Analytics</p>
-                            <p><i class="fas fa-check text-success me-1"></i> Forms & Landing Pages</p>
-                            <p><i class="fas fa-check text-success me-1"></i> A/B Testing</p>
-                            <p><i class="fas fa-check text-success me-1"></i> Email Scheduling</p>
-                            <p><i class="fas fa-check text-success me-1"></i> Automated Customer Journeys</p>
-                            <p><i class="fas fa-times text-danger me-1"></i> Creative Assistant</p>
-                            <p class="mb-4"><i class="fas fa-times text-danger me-1"></i> Role-based Access</p>
-                            <button class="btn btn-light rounded-pill py-2 px-5" type="button">Get Started</button>
+                            <p class="mb-3"><i class="fas fa-check text-success me-2"></i> تصميم موقع احترافي متجاوب</p>
+                            <p class="mb-3"><i class="fas fa-check text-success me-2"></i> حتى 5 صفحات</p>
+                            <p class="mb-3"><i class="fas fa-check text-success me-2"></i> تصميم متجاوب لجميع الأجهزة</p>
+                            <p class="mb-3"><i class="fas fa-check text-success me-2"></i> دومين مجاني لمدة سنة</p>
+                            <p class="mb-3"><i class="fas fa-check text-success me-2"></i> استضافة مجانية لمدة سنة</p>
+                            <p class="mb-3"><i class="fas fa-check text-success me-2"></i> شهادة SSL مجانية</p>
+                            <p class="mb-3"><i class="fas fa-check text-success me-2"></i> دعم فني لمدة شهر</p>
+                            <p class="mb-4"><i class="fas fa-check text-success me-2"></i> تسليم خلال 7-10 أيام</p>
+                            <a href="{{ route('contact') }}" class="btn btn-primary rounded-pill py-2 px-5 w-100">اطلب الآن</a>
                         </div>
                     </div>
                 </div>
+
+                <!-- Package 2: $400 -->
                 <div class="col-md-6 col-lg-6 col-xl-4 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="price-item bg-light rounded text-center">
-                        <div class="pice-item-offer">Popular</div>
-                        <div class="text-center text-primary border-bottom d-flex flex-column justify-content-center p-4" style="width: 100%; height: 160px;">
-                            <p class="fs-2 fw-bold text-uppercase mb-0">Standard</p>
-                            <div class="d-flex justify-content-center">
-                                <strong class="align-self-start">$</strong>
-                                <p class="mb-0"><span class="display-5">23</span>/mo</p>
-                            </div>                        
+                    <div class="price-item bg-light rounded text-center h-100 position-relative" style="border: 2px solid var(--bs-primary); transform: scale(1.05); box-shadow: 0 10px 30px rgba(102, 16, 242, 0.2);">
+                        <span class="badge bg-primary position-absolute top-0 start-0 m-3 px-3 py-2" style="font-size: 0.75rem;">
+                            <i class="fas fa-star me-1"></i> الأكثر طلباً
+                        </span>
+                        <div class="text-center text-primary border-bottom d-flex flex-column justify-content-center p-4" style="width: 100%; height: 180px;">
+                            <p class="fs-2 fw-bold mb-2">الباقة المتقدمة</p>
+                            <div class="d-flex justify-content-center align-items-baseline">
+                                <strong class="fs-4">$</strong>
+                                <span class="display-4 fw-bold">400</span>
+                            </div>
+                            <p class="text-muted mb-0 mt-2">للموقع الواحد</p>
                         </div>
                         <div class="text-start p-5">
-                            <p><i class="fas fa-check text-success me-1"></i> Limited Acess Library</p>
-                            <p><i class="fas fa-check text-success me-1"></i> Customer Support</p>
-                            <p><i class="fas fa-check text-success me-1"></i> Pre-built Email Templates</p>
-                            <p><i class="fas fa-check text-success me-1"></i> Reporting & Analytics</p>
-                            <p><i class="fas fa-check text-success me-1"></i> Forms & Landing Pages</p>
-                            <p><i class="fas fa-check text-success me-1"></i> A/B Testing</p>
-                            <p><i class="fas fa-check text-success me-1"></i> Email Scheduling</p>
-                            <p><i class="fas fa-check text-success me-1"></i> Automated Customer Journeys</p>
-                            <p><i class="fas fa-times text-danger me-1"></i> Creative Assistant</p>
-                            <p class="mb-4"><i class="fas fa-times text-danger me-1"></i> Role-based Access</p>
-                            <button class="btn btn-light rounded-pill py-2 px-5" type="button">Get Started</button>
+                            <p class="mb-3"><i class="fas fa-check text-success me-2"></i> تصميم موقع احترافي متقدم</p>
+                            <p class="mb-3"><i class="fas fa-check text-success me-2"></i> حتى 15 صفحة</p>
+                            <p class="mb-3"><i class="fas fa-check text-success me-2"></i> تصميم متجاوب لجميع الأجهزة</p>
+                            <p class="mb-3"><i class="fas fa-check text-success me-2"></i> نظام إدارة المحتوى (CMS)</p>
+                            <p class="mb-3"><i class="fas fa-check text-success me-2"></i> دومين مجاني لمدة سنة</p>
+                            <p class="mb-3"><i class="fas fa-check text-success me-2"></i> استضافة مجانية لمدة سنة</p>
+                            <p class="mb-3"><i class="fas fa-check text-success me-2"></i> شهادة SSL مجانية</p>
+                            <p class="mb-3"><i class="fas fa-check text-success me-2"></i> نماذج اتصال متقدمة</p>
+                            <p class="mb-3"><i class="fas fa-check text-success me-2"></i> تكامل مع وسائل التواصل الاجتماعي</p>
+                            <p class="mb-3"><i class="fas fa-check text-success me-2"></i> دعم فني لمدة 3 أشهر</p>
+                            <p class="mb-4"><i class="fas fa-check text-success me-2"></i> تسليم خلال 14-20 يوم</p>
+                            <a href="{{ route('contact') }}" class="btn btn-primary rounded-pill py-2 px-5 w-100">اطلب الآن</a>
                         </div>
                     </div>
                 </div>
+
+                <!-- Package 3: $600 -->
                 <div class="col-md-6 col-lg-6 col-xl-4 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="price-item bg-light rounded text-center">
-                        <div class="text-center text-secondary border-bottom d-flex flex-column justify-content-center p-4" style="width: 100%; height: 160px;">
-                            <p class="fs-2 fw-bold text-uppercase mb-0">Premium</p>
-                            <div class="d-flex justify-content-center">
-                                <strong class="align-self-start">$</strong>
-                                <p class="mb-0"><span class="display-5">49</span>/mo</p>
-                            </div>                        
+                    <div class="price-item bg-light rounded text-center h-100">
+                        <div class="text-center text-dark border-bottom d-flex flex-column justify-content-center p-4" style="width: 100%; height: 180px;">
+                            <p class="fs-2 fw-bold mb-2">الباقة المميزة</p>
+                            <div class="d-flex justify-content-center align-items-baseline">
+                                <strong class="fs-4">$</strong>
+                                <span class="display-4 fw-bold">600</span>
+                            </div>
+                            <p class="text-muted mb-0 mt-2">للموقع الواحد</p>
                         </div>
                         <div class="text-start p-5">
-                            <p><i class="fas fa-check text-success me-1"></i> Limited Acess Library</p>
-                            <p><i class="fas fa-check text-success me-1"></i> Customer Support</p>
-                            <p><i class="fas fa-check text-success me-1"></i> Pre-built Email Templates</p>
-                            <p><i class="fas fa-check text-success me-1"></i> Reporting & Analytics</p>
-                            <p><i class="fas fa-check text-success me-1"></i> Forms & Landing Pages</p>
-                            <p><i class="fas fa-check text-success me-1"></i> A/B Testing</p>
-                            <p><i class="fas fa-check text-success me-1"></i> Email Scheduling</p>
-                            <p><i class="fas fa-check text-success me-1"></i> Automated Customer Journeys</p>
-                            <p><i class="fas fa-times text-danger me-1"></i> Creative Assistant</p>
-                            <p class="mb-4"><i class="fas fa-times text-danger me-1"></i> Role-based Access</p>
-                            <button class="btn btn-light rounded-pill py-2 px-5" type="button">Get Started</button>
+                            <p class="mb-3"><i class="fas fa-check text-success me-2"></i> تصميم موقع احترافي متكامل</p>
+                            <p class="mb-3"><i class="fas fa-check text-success me-2"></i> صفحات غير محدودة</p>
+                            <p class="mb-3"><i class="fas fa-check text-success me-2"></i> تصميم متجاوب لجميع الأجهزة</p>
+                            <p class="mb-3"><i class="fas fa-check text-success me-2"></i> نظام إدارة محتوى متقدم</p>
+                             <p class="mb-3"><i class="fas fa-check text-success me-2"></i> دومين مجاني لمدة سنة</p>
+                            <p class="mb-3"><i class="fas fa-check text-success me-2"></i> استضافة مجانية لمدة سنة</p>
+                            <p class="mb-3"><i class="fas fa-check text-success me-2"></i> شهادة SSL مجانية</p>
+                            <p class="mb-3"><i class="fas fa-check text-success me-2"></i> لوحة تحكم متقدمة</p>
+                            <p class="mb-3"><i class="fas fa-check text-success me-2"></i> تكامل مع أنظمة الدفع</p>
+                            <p class="mb-3"><i class="fas fa-check text-success me-2"></i> SEO محسّن</p>
+                            <p class="mb-3"><i class="fas fa-check text-success me-2"></i> دعم فني لمدة 6 أشهر</p>
+                            <p class="mb-4"><i class="fas fa-check text-success me-2"></i> تسليم خلال 25-30 يوم</p>
+                            <a href="{{ route('contact') }}" class="btn btn-primary rounded-pill py-2 px-5 w-100">اطلب الآن</a>
                         </div>
                     </div>
                 </div>
@@ -339,76 +336,82 @@
                 </p>
             </div>
             <div class="row g-4 justify-content-center">
+                <!-- نظام عقود بيع السيارات -->
                 <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="blog-item">
                         <div class="blog-img">
-                            <img src="{{ asset('img/blog-1.png') }}" class="img-fluid w-100" alt="">
+                            <img src="{{ asset('img/contracts-system/1.png') }}" class="img-fluid w-100" alt="نظام عقود بيع السيارات" loading="lazy">
                             <div class="blog-info">
-                                <span><i class="fa fa-clock"></i> Dec 01.2024</span>
+                                <span><i class="fa fa-clock"></i> 2024</span>
                                 <div class="d-flex">
-                                    <span class="me-3"> 3 <i class="fa fa-heart"></i></span>
-                                    <a href="#" class="text-white">0 <i class="fa fa-comment"></i></a>
+                                    <span class="me-3"><i class="fa fa-heart"></i> مشروع</span>
                                 </div>
                             </div>
                         </div>
                         <div class="blog-content text-dark border p-4 ">
-                            <h5 class="mb-4">نظام العقود الإلكترونية</h5>
-                            <p class="mb-4">نظام متخصص لإدارة العقود الإلكترونية للمعارض السيارات.</p>
+                            <h5 class="mb-4">نظام عقود بيع السيارات</h5>
+                            <p class="mb-4">نظام شامل لإدارة عقود بيع السيارات للمعارض</p>
                             <a class="btn btn-light rounded-pill py-2 px-4" href="{{ route('contracts-system') }}">المزيد</a>
                         </div>
                     </div>
                 </div>
+                
+                <!-- برنامج المحاسب الذكي -->
                 <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.3s">
                     <div class="blog-item">
                         <div class="blog-img">
-                            <img src="{{ asset('img/blog-2.png') }}" class="img-fluid w-100" alt="">
+                            <img src="{{ asset('img/account/1.png') }}" class="img-fluid w-100" alt="برنامج المحاسب الذكي" loading="lazy">
                             <div class="blog-info">
                                 <span><i class="fa fa-clock"></i> 2024</span>
                                 <div class="d-flex">
-                                    <span class="me-3"> مشروع <i class="fa fa-heart"></i></span>
+                                    <span class="me-3"><i class="fa fa-heart"></i> مشروع</span>
                                 </div>
                             </div>
                         </div>
                         <div class="blog-content text-dark border p-4 ">
-                            <h5 class="mb-4">موقع إلكتروني احترافي</h5>
-                            <p class="mb-4">تطوير مواقع إلكترونية متجاوبة وحديثة.</p>
-                            <a class="btn btn-light rounded-pill py-2 px-4" href="{{ route('service') }}">المزيد</a>
+                            <h5 class="mb-4">برنامج المحاسب الذكي</h5>
+                            <p class="mb-4">نظام متكامل للمحاسبة وإدارة المستودعات والمشتريات</p>
+                            <a class="btn btn-light rounded-pill py-2 px-4" href="{{ route('accounting-system') }}">المزيد</a>
                         </div>
                     </div>
                 </div>
+                
+                <!-- نظام عقود بيع السيارات - صورة أخرى -->
                 <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.5s">
                     <div class="blog-item">
                         <div class="blog-img">
-                            <img src="{{ asset('img/blog-3.png') }}" class="img-fluid w-100" alt="">
+                            <img src="{{ asset('img/contracts-system/2.png') }}" class="img-fluid w-100" alt="نظام عقود بيع السيارات" loading="lazy">
                             <div class="blog-info">
                                 <span><i class="fa fa-clock"></i> 2024</span>
                                 <div class="d-flex">
-                                    <span class="me-3"> مشروع <i class="fa fa-heart"></i></span>
+                                    <span class="me-3"><i class="fa fa-heart"></i> مشروع</span>
                                 </div>
                             </div>
                         </div>
                         <div class="blog-content text-dark border p-4 ">
-                            <h5 class="mb-4">تطبيق موبايل</h5>
-                            <p class="mb-4">تطوير تطبيقات موبايل عالية الجودة.</p>
-                            <a class="btn btn-light rounded-pill py-2 px-4" href="{{ route('service') }}">المزيد</a>
+                            <h5 class="mb-4">إدارة العقود</h5>
+                            <p class="mb-4">واجهة شاملة لإدارة جميع أنواع العقود مع إمكانية البحث والفلترة</p>
+                            <a class="btn btn-light rounded-pill py-2 px-4" href="{{ route('contracts-system') }}">المزيد</a>
                         </div>
                     </div>
                 </div>
+                
+                <!-- برنامج المحاسب الذكي - صورة أخرى -->
                 <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.7s">
                     <div class="blog-item">
                         <div class="blog-img">
-                            <img src="{{ asset('img/blog-4.png') }}" class="img-fluid w-100" alt="">
+                            <img src="{{ asset('img/account/2.png') }}" class="img-fluid w-100" alt="برنامج المحاسب الذكي" loading="lazy">
                             <div class="blog-info">
                                 <span><i class="fa fa-clock"></i> 2024</span>
                                 <div class="d-flex">
-                                    <span class="me-3"> مشروع <i class="fa fa-heart"></i></span>
+                                    <span class="me-3"><i class="fa fa-heart"></i> مشروع</span>
                                 </div>
                             </div>
                         </div>
                         <div class="blog-content text-dark border p-4 ">
-                            <h5 class="mb-4">نظام إدارة متخصص</h5>
-                            <p class="mb-4">أنظمة إدارة مخصصة حسب احتياجاتك.</p>
-                            <a class="btn btn-light rounded-pill py-2 px-4" href="{{ route('service') }}">المزيد</a>
+                            <h5 class="mb-4">لوحة التحكم</h5>
+                            <p class="mb-4">لوحة تحكم شاملة تعرض جميع البيانات والإحصائيات</p>
+                            <a class="btn btn-light rounded-pill py-2 px-4" href="{{ route('accounting-system') }}">المزيد</a>
                         </div>
                     </div>
                 </div>
@@ -417,90 +420,55 @@
     </div>
     <!-- Blog End -->
 
-    <!-- Testimonial Start -->
-    <div class="container-fluid testimonial py-5">
+    <!-- Clients Start -->
+    <div class="container-fluid py-5 bg-light">
         <div class="container py-5">
             <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 900px;">
-                <h4 class="text-primary">آراء العملاء</h4>
-                <h1 class="display-5 mb-4">ماذا يقول عملاؤنا عنا</h1>
-                <p class="mb-0">نفخر بثقة عملائنا ورضاهم عن خدماتنا. استمع إلى تجارب عملائنا المميزة معنا.
+                <h4 class="text-primary">زبائننا</h4>
+                <h1 class="display-5 mb-4">عملاؤنا المميزون</h1>
+                <p class="mb-0">نفخر بثقة عملائنا وشراكاتنا الناجحة مع الشركات والمؤسسات الرائدة في مختلف المجالات.
                 </p>
             </div>
-            <div class="testimonial-carousel owl-carousel wow zoomInDown" data-wow-delay="0.2s">
-                <div class="testimonial-item" data-dot="<img class='img-fluid' src='{{ asset('img/testimonial-img-1.jpg') }}' alt=''>">
-                    <div class="testimonial-inner text-center p-5">
-                        <div class="d-flex align-items-center justify-content-center mb-4">
-                            <div class="testimonial-inner-img border border-primary border-3 me-4" style="width: 100px; height: 100px; border-radius: 50%;">
-                                <img src="{{ asset('img/testimonial-img-1.jpg') }}" class="img-fluid rounded-circle" alt="">
-                            </div>
-                            <div>
-                                <h5 class="mb-2">أحمد محمد</h5>
-                                <p class="mb-0">مدير معرض سيارات</p>
-                            </div>
-                        </div>
-                        <p class="fs-7">نظام العقود الإلكترونية سهل عملية البيع بشكل كبير. واجهة سهلة الاستخدام ودعم فني ممتاز. أنصح به بشدة.
-                        </p>
-                        <div class="text-center">
-                            <div class="d-flex justify-content-center">
-                                <i class="fas fa-star text-primary"></i>
-                                <i class="fas fa-star text-primary"></i>
-                                <i class="fas fa-star text-primary"></i>
-                                <i class="fas fa-star text-primary"></i>
-                                <i class="fas fa-star text-primary"></i>
-                            </div>
-                        </div>
+            <div class="row g-4 justify-content-center align-items-center">
+                <!-- شركة سلام جلال ايوب اربيل -->
+                <div class="col-md-6 col-lg-3 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="client-item text-center p-4 bg-white rounded shadow-sm h-100 d-flex flex-column align-items-center justify-content-center" style="min-height: 200px; transition: all 0.3s ease;">
+                        <img src="{{ asset('img/clients/salam.jpg') }}" class="img-fluid mb-3" alt="شركة سلام جلال ايوب اربيل" style="max-height: 120px; object-fit: contain;" loading="lazy">
+                        <h5 class="mb-2">شركة سلام جلال ايوب</h5>
+                        <p class="text-muted mb-0 small">اربيل</p>
                     </div>
                 </div>
-                <div class="testimonial-item" data-dot="<img class='img-fluid' src='{{ asset('img/testimonial-img-2.jpg') }}' alt=''>">
-                    <div class="testimonial-inner text-center p-5">
-                        <div class="d-flex align-items-center justify-content-center mb-4">
-                            <div class="testimonial-inner-img border border-primary border-3 me-4" style="width: 100px; height: 100px; border-radius: 50%;">
-                                <img src="{{ asset('img/testimonial-img-2.jpg') }}" class="img-fluid rounded-circle" alt="">
-                            </div>
-                            <div>
-                                <h5 class="mb-2">فاطمة علي</h5>
-                                <p class="mb-0">صاحبة شركة</p>
-                            </div>
-                        </div>
-                        <p class="fs-7">فريق محترف ومتعاون. قاموا بتطوير موقعنا الإلكتروني بشكل ممتاز وفي الوقت المحدد. خدمة عملاء متميزة.
-                        </p>
-                        <div class="text-center">
-                            <div class="d-flex justify-content-center">
-                                <i class="fas fa-star text-primary"></i>
-                                <i class="fas fa-star text-primary"></i>
-                                <i class="fas fa-star text-primary"></i>
-                                <i class="fas fa-star text-primary"></i>
-                                <i class="fas fa-star text-primary"></i>
-                            </div>
-                        </div>
+                
+                <!-- معرض المعتز كركوك -->
+                <div class="col-md-6 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="client-item text-center p-4 bg-white rounded shadow-sm h-100 d-flex flex-column align-items-center justify-content-center" style="min-height: 200px; transition: all 0.3s ease;">
+                        <img src="{{ asset('img/clients/almotiz.jpg') }}" class="img-fluid mb-3" alt="معرض المعتز كركوك" style="max-height: 120px; object-fit: contain;" loading="lazy">
+                        <h5 class="mb-2">معرض المعتز</h5>
+                        <p class="text-muted mb-0 small">كركوك</p>
                     </div>
                 </div>
-                <div class="testimonial-item" data-dot="<img class='img-fluid' src='{{ asset('img/testimonial-img-3.jpg') }}' alt=''>">
-                    <div class="testimonial-inner text-center p-5">
-                        <div class="d-flex align-items-center justify-content-center mb-4">
-                            <div class="testimonial-inner-img border border-primary border-3 me-4" style="width: 100px; height: 100px; border-radius: 50%;">
-                                <img src="{{ asset('img/testimonial-img-3.jpg') }}" class="img-fluid rounded-circle" alt="">
-                            </div>
-                            <div>
-                                <h5 class="mb-2">خالد حسن</h5>
-                                <p class="mb-0">رائد أعمال</p>
-                            </div>
-                        </div>
-                        <p class="fs-7">حلول تقنية متطورة وأسعار منافسة. استفدت من خدماتهم كثيراً وأخطط للتعاون معهم في مشاريع مستقبلية.
-                        </p>
-                        <div class="text-center">
-                            <div class="d-flex justify-content-center">
-                                <i class="fas fa-star text-primary"></i>
-                                <i class="fas fa-star text-primary"></i>
-                                <i class="fas fa-star text-primary"></i>
-                                <i class="fas fa-star text-primary"></i>
-                                <i class="fas fa-star text-primary"></i>
-                            </div>
-                        </div>
+                
+                <!-- شركة نور بصرة اربيل -->
+                <div class="col-md-6 col-lg-3 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="client-item text-center p-4 bg-white rounded shadow-sm h-100 d-flex flex-column align-items-center justify-content-center" style="min-height: 200px; transition: all 0.3s ease;">
+                        <img src="{{ asset('img/clients/nojom.jpg') }}" class="img-fluid mb-3" alt="شركة نور بصرة اربيل" style="max-height: 120px; object-fit: contain;" loading="lazy">
+                        <h5 class="mb-2">شركة نور بصرة</h5>
+                        <p class="text-muted mb-0 small">اربيل</p>
+                    </div>
+                </div>
+                
+                <!-- شركة الهدف المباشر بغداد -->
+                <div class="col-md-6 col-lg-3 wow fadeInUp" data-wow-delay="0.7s">
+                    <div class="client-item text-center p-4 bg-white rounded shadow-sm h-100 d-flex flex-column align-items-center justify-content-center" style="min-height: 200px; transition: all 0.3s ease;">
+                        <img src="{{ asset('img/clients/logo.jpg') }}" class="img-fluid mb-3" alt="شركة الهدف المباشر بغداد" style="max-height: 120px; object-fit: contain;" loading="lazy">
+                        <h5 class="mb-2">شركة الهدف المباشر</h5>
+                        <p class="text-muted mb-0 small">بغداد</p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- Testimonial End -->
+    <!-- Clients End -->
+
+    @include('components.footer')
 @endsection

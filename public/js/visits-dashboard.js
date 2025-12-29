@@ -402,3 +402,4 @@ createApp({
     },
     template: '<VisitsDashboard />'
 }).mount('#visits-dashboard-app');
+

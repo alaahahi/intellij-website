@@ -16,10 +16,11 @@
                 <a href="{{ route('home') }}" class="nav-item nav-link {{ $currentRoute == 'home' ? 'active' : '' }}">الرئيسية</a>
                 <a href="{{ route('about') }}" class="nav-item nav-link {{ $currentRoute == 'about' ? 'active' : '' }}">من نحن</a>
                 <a href="{{ route('service') }}" class="nav-item nav-link {{ $currentRoute == 'service' ? 'active' : '' }}">خدماتنا</a>
+                <a href="{{ route('pricing') }}" class="nav-item nav-link {{ $currentRoute == 'pricing' ? 'active' : '' }}">الأسعار</a>
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">المشاريع</a>
                     <div class="dropdown-menu m-0">
-                        <a href="{{ route('contracts-system') }}" class="dropdown-item">نظام العقود الإلكترونية</a>
+                        <a href="{{ route('contracts-system') }}" class="dropdown-item">نظام عقود بيع السيارات</a>
                         <a href="{{ route('feature') }}" class="dropdown-item">المميزات</a>
                         <a href="{{ route('testimonial') }}" class="dropdown-item">آراء العملاء</a>
                     </div>
@@ -33,7 +34,7 @@
         <!-- Hero Header Start -->
         <div class="hero-header overflow-hidden px-5">
             <div class="rotate-img">
-                <img src="{{ asset('img/sty-1.png') }}" class="img-fluid w-100" alt="">
+                <img src="{{ asset('img/sty-1.png') }}" class="img-fluid w-100" alt="" loading="lazy">
                 <div class="rotate-sty-2"></div>
             </div>
             <div class="row gy-5 align-items-center">
@@ -43,7 +44,7 @@
                     <a href="{{ route('contact') }}" class="btn btn-primary rounded-pill py-3 px-5 wow fadeInUp" data-wow-delay="0.7s">ابدأ الآن</a>
                 </div>
                 <div class="col-lg-6 wow fadeInLeft" data-wow-delay="0.2s">
-                    <img src="{{ asset('img/hero-img-1.png') }}" class="img-fluid w-100 h-100" alt="حلول تقنية">
+                    <img src="{{ asset('img/account/1.png') }}" class="img-fluid w-100 h-100" alt="حلول تقنية" loading="lazy">
                 </div>
             </div>
         </div>

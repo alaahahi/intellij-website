@@ -28,7 +28,7 @@
                     <a href="{{ route('service') }}"> جميع الخدمات</a>
                     <a href="{{ route('service') }}"> تطوير المواقع</a>
                     <a href="{{ route('service') }}"> تطوير التطبيقات</a>
-                    <a href="{{ route('contracts-system') }}"> نظام العقود الإلكترونية</a>
+                    <a href="{{ route('contracts-system') }}"> نظام عقود بيع السيارات</a>
                     <a href="{{ route('service') }}"> أنظمة الإدارة</a>
                 </div>
             </div>
@@ -37,8 +37,8 @@
                     <h4 class="mb-4 text-dark">معلومات الاتصال</h4>
                     <a href=""><i class="fa fa-map-marker-alt me-2"></i> العراق - أربيل</a>
                     <a href="mailto:alaa.hahe@gmail.com"><i class="fas fa-envelope me-2"></i> alaa.hahe@gmail.com</a>
-                    <a href="tel:+9647511077812"><i class="fas fa-phone me-2"></i> 00964 - 7511077812</a>
-                    <a href="tel:+9647511077812" class="mb-3"><i class="fas fa-print me-2"></i> 00964 - 7511077812</a>
+                    <a href="tel:+9647511077812"><i class="fas fa-phone me-2"></i> 009647511077812</a>
+                    <a href="tel:+9647511077812" class="mb-3"><i class="fas fa-print me-2"></i> 009647511077812</a>
                     <div class="d-flex align-items-center">
                         <i class="fas fa-share fa-2x text-secondary me-2"></i>
                         <a class="btn-square btn btn-primary rounded-circle mx-1" href=""><i class="fab fa-facebook-f"></i></a>

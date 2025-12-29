@@ -106,3 +106,4 @@ php artisan optimize:clear
 - تأكد من أن مجلد `storage` و `bootstrap/cache` قابل للكتابة
 - في بيئة الإنتاج، قم بتعيين `APP_DEBUG=false` في ملف `.env`
 - استخدم `php artisan config:cache` في الإنتاج لتحسين الأداء
+

@@ -16,11 +16,11 @@
                 </p>
             </div>
             <div class="testimonial-carousel owl-carousel wow zoomInDown" data-wow-delay="0.2s">
-                <div class="testimonial-item" data-dot="<img class='img-fluid' src='{{ asset('img/testimonial-img-1.jpg') }}' alt=''>">
+                <div class="testimonial-item" data-dot="<img class='img-fluid' src='{{ asset('img/testimonial-img-1.jpg') }}' alt='' loading='lazy'>">
                     <div class="testimonial-inner text-center p-5">
                         <div class="d-flex align-items-center justify-content-center mb-4">
                             <div class="testimonial-inner-img border border-primary border-3 me-4" style="width: 100px; height: 100px; border-radius: 50%;">
-                                <img src="{{ asset('img/testimonial-img-1.jpg') }}" class="img-fluid rounded-circle" alt="">
+                                <img src="{{ asset('img/testimonial-img-1.jpg') }}" class="img-fluid rounded-circle" alt="" loading="lazy">
                             </div>
                             <div>
                                 <h5 class="mb-2">أحمد محمد</h5>
@@ -44,4 +44,6 @@
         </div>
     </div>
     <!-- Testimonial End -->
+
+    @include('components.footer')
 @endsection

@@ -26,3 +26,4 @@ npm run dev
 - في بيئة الإنتاج، يجب بناء assets باستخدام `npm run build`
 - في بيئة التطوير، يمكن استخدام `npm run dev` لـ hot reload
 - الحل الحالي يستخدم CDN كـ fallback ويعمل بدون مشاكل
+

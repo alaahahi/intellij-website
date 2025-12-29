@@ -89,6 +89,27 @@
                 margin-right: 0;
             }
         }
+        
+        /* Pagination RTL Fix */
+        .pagination {
+            direction: rtl;
+        }
+        .pagination .page-link {
+            text-align: center;
+            min-width: 40px;
+        }
+        .pagination .page-item:first-child .page-link {
+            border-top-left-radius: 0;
+            border-top-right-radius: 0.375rem;
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0.375rem;
+        }
+        .pagination .page-item:last-child .page-link {
+            border-top-right-radius: 0;
+            border-top-left-radius: 0.375rem;
+            border-bottom-right-radius: 0;
+            border-bottom-left-radius: 0.375rem;
+        }
     </style>
     @stack('styles')
 </head>
@@ -117,6 +138,17 @@
                 </a>
             </li>
             <li>
+                <a href="{{ route('admin.contact-requests.index') }}" class="{{ request()->routeIs('admin.contact-requests.*') ? 'active' : '' }}">
+                    <i class="fas fa-envelope"></i> طلبات الاتصال
+                    @php
+                        $newRequestsCount = \App\Models\ContactRequest::where('status', 'new')->count();
+                    @endphp
+                    @if($newRequestsCount > 0)
+                        <span class="badge bg-danger ms-2">{{ $newRequestsCount }}</span>
+                    @endif
+                </a>
+            </li>
+            <li>
                 <a href="{{ route('profile.edit') }}" class="{{ request()->routeIs('profile.*') ? 'active' : '' }}">
                     <i class="fas fa-user"></i> الملف الشخصي
                 </a>
@@ -142,10 +174,21 @@
         <!-- Top Navbar -->
         <div class="top-navbar">
             <div class="d-flex justify-content-between align-items-center">
-                <div>
+                <div class="d-flex align-items-center gap-3">
                     <button class="btn btn-outline-primary d-md-none" onclick="toggleSidebar()">
                         <i class="fas fa-bars"></i>
                     </button>
+                    <a href="{{ route('admin.contact-requests.index') }}" class="btn btn-outline-primary position-relative">
+                        <i class="fas fa-envelope"></i> طلبات الاتصال
+                        @php
+                            $newRequestsCount = \App\Models\ContactRequest::where('status', 'new')->count();
+                        @endphp
+                        @if($newRequestsCount > 0)
+                            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                {{ $newRequestsCount }}
+                            </span>
+                        @endif
+                    </a>
                 </div>
                 <div class="user-menu">
                     <span class="text-muted">{{ Auth::user()->name }}</span>
@@ -186,3 +229,4 @@
     @stack('scripts')
 </body>
 </html>
+

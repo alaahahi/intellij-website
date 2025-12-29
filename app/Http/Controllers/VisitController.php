@@ -60,7 +60,19 @@ class VisitController extends Controller
             ->limit(10)
             ->get();
 
-        return view('admin.visits.index', compact('visits', 'stats', 'sources', 'pages'));
+        // إحصائيات طلبات الاتصال
+        $contactStats = [
+            'total' => \App\Models\ContactRequest::count(),
+            'new' => \App\Models\ContactRequest::where('status', 'new')->count(),
+            'read' => \App\Models\ContactRequest::where('status', 'read')->count(),
+            'replied' => \App\Models\ContactRequest::where('status', 'replied')->count(),
+            'archived' => \App\Models\ContactRequest::where('status', 'archived')->count(),
+            'today' => \App\Models\ContactRequest::whereDate('created_at', today())->count(),
+            'this_week' => \App\Models\ContactRequest::whereBetween('created_at', [now()->startOfWeek(), now()->endOfWeek()])->count(),
+            'this_month' => \App\Models\ContactRequest::whereMonth('created_at', now()->month)->count(),
+        ];
+
+        return view('admin.visits.index', compact('visits', 'stats', 'sources', 'pages', 'contactStats'));
     }
 
     /**
@@ -114,3 +126,4 @@ class VisitController extends Controller
         return response()->json($visits);
     }
 }
+

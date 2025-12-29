@@ -46,6 +46,98 @@
             </div>
         </div>
 
+        <!-- إحصائيات طلبات الاتصال -->
+        <div class="row g-4 mb-5">
+            <div class="col-12">
+                <h3 class="mb-4">
+                    <i class="fas fa-envelope text-primary"></i> إحصائيات طلبات الاتصال
+                    <a href="{{ route('admin.contact-requests.index') }}" class="btn btn-sm btn-outline-primary float-end">
+                        <i class="fas fa-eye"></i> عرض جميع الطلبات
+                    </a>
+                </h3>
+            </div>
+            <div class="col-md-3">
+                <div class="card bg-dark text-white">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            <i class="fas fa-inbox"></i> إجمالي الطلبات
+                        </h5>
+                        <h2 class="mb-0">{{ number_format($contactStats['total']) }}</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card bg-danger text-white">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            <i class="fas fa-exclamation-circle"></i> طلبات جديدة
+                        </h5>
+                        <h2 class="mb-0">{{ number_format($contactStats['new']) }}</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card bg-info text-white">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            <i class="fas fa-eye"></i> مقروء
+                        </h5>
+                        <h2 class="mb-0">{{ number_format($contactStats['read']) }}</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card bg-success text-white">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            <i class="fas fa-check-circle"></i> تم الرد
+                        </h5>
+                        <h2 class="mb-0">{{ number_format($contactStats['replied']) }}</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card bg-secondary text-white">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            <i class="fas fa-archive"></i> مؤرشف
+                        </h5>
+                        <h2 class="mb-0">{{ number_format($contactStats['archived']) }}</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card bg-primary text-white">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            <i class="fas fa-calendar-day"></i> طلبات اليوم
+                        </h5>
+                        <h2 class="mb-0">{{ number_format($contactStats['today']) }}</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card bg-info text-white">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            <i class="fas fa-calendar-week"></i> هذا الأسبوع
+                        </h5>
+                        <h2 class="mb-0">{{ number_format($contactStats['this_week']) }}</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card bg-warning text-white">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            <i class="fas fa-calendar-alt"></i> هذا الشهر
+                        </h5>
+                        <h2 class="mb-0">{{ number_format($contactStats['this_month']) }}</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <!-- إحصائيات حسب المصدر -->
         <div class="row g-4 mb-5">
             <div class="col-md-6">
@@ -207,3 +299,4 @@
     </div>
 </div>
 @endsection
+

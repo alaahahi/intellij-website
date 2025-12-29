@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\VisitController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\ContactController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -33,9 +34,15 @@ Route::get('/contact', function () {
     return view('pages.contact');
 })->name('contact');
 
+Route::post('/contact', [App\Http\Controllers\ContactController::class, 'store'])->name('contact.store');
+
 Route::get('/contracts-system', function () {
     return view('pages.contracts-system');
 })->name('contracts-system');
+
+Route::get('/accounting-system', function () {
+    return view('pages.accounting-system');
+})->name('accounting-system');
 
 Route::get('/feature', function () {
     return view('pages.feature');
@@ -82,4 +89,10 @@ Route::prefix('admin')->middleware(['auth', 'verified'])->group(function () {
         'update' => 'admin.users.update',
         'destroy' => 'admin.users.destroy',
     ]);
+    
+    // Contact Requests Management
+    Route::get('/contact-requests', [ContactController::class, 'index'])->name('admin.contact-requests.index');
+    Route::get('/contact-requests/{contactRequest}', [ContactController::class, 'show'])->name('admin.contact-requests.show');
+    Route::patch('/contact-requests/{contactRequest}/status', [ContactController::class, 'updateStatus'])->name('admin.contact-requests.update-status');
+    Route::delete('/contact-requests/{contactRequest}', [ContactController::class, 'destroy'])->name('admin.contact-requests.destroy');
 });

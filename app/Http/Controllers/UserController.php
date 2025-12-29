@@ -108,3 +108,4 @@ class UserController extends Controller
             ->with('success', 'تم حذف المستخدم بنجاح');
     }
 }
+

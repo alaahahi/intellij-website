@@ -12,7 +12,7 @@
             <div class="row g-5">
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="RotateMoveLeft">
-                        <img src="{{ asset('img/about-1.png') }}" class="img-fluid w-100" alt="">
+                        <img src="{{ asset('img/about-1.png') }}" class="img-fluid w-100" alt="" loading="lazy">
                     </div>
                 </div>
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
@@ -28,4 +28,6 @@
         </div>
     </div>
     <!-- About End -->
+
+    @include('components.footer')
 @endsection

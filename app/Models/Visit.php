@@ -173,3 +173,4 @@ class Visit extends Model
         return 'other';
     }
 }
+

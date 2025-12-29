@@ -177,3 +177,4 @@ git push origin master
 
 - Laravel: 10.50.0
 - PHP: >= 8.1
+

@@ -12,3 +12,4 @@ Route::prefix('visits')->group(function () {
     Route::get('/list', [\App\Http\Controllers\VisitController::class, 'apiList'])->name('api.visits.list');
     Route::get('/stats', [\App\Http\Controllers\VisitController::class, 'stats'])->name('api.visits.stats');
 });
+

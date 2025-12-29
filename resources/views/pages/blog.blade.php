@@ -19,7 +19,7 @@
                 <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="blog-item">
                         <div class="blog-img">
-                            <img src="{{ asset('img/blog-1.png') }}" class="img-fluid w-100" alt="">
+                            <img src="{{ asset('img/blog-1.png') }}" class="img-fluid w-100" alt="" loading="lazy">
                         </div>
                         <div class="blog-content text-dark border p-4">
                             <h5 class="mb-4">نظام العقود الإلكترونية</h5>
@@ -32,4 +32,6 @@
         </div>
     </div>
     <!-- Blog End -->
+
+    @include('components.footer')
 @endsection

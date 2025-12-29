@@ -20,6 +20,10 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         \Illuminate\Pagination\Paginator::defaultView('vendor.pagination.bootstrap-5');
+        
+        // إصلاح مسار الـ assets عند نقل index.php خارج public
+        // هذا يضمن أن asset() helper يعمل بشكل صحيح
+        \Illuminate\Support\Facades\URL::forceRootUrl(config('app.url'));
     }
 }
 

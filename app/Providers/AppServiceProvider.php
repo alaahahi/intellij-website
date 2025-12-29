@@ -24,22 +24,15 @@ class AppServiceProvider extends ServiceProvider
         // إصلاح مسار الـ assets عند نقل index.php خارج public
         // هذا يضمن أن asset() helper يعمل بشكل صحيح
         $appUrl = config('app.url');
+        \Illuminate\Support\Facades\URL::forceRootUrl($appUrl);
         
-        // إذا كان index.php في الجذر وليس في public، أضف /public للمسار
+        // إذا كان index.php في الجذر وليس في public، أضف /public للمسار في asset helper
         if (file_exists(base_path('index.php')) && !file_exists(public_path('index.php'))) {
-            // تعديل asset helper ليعيد /public/... بدلاً من /...
-            \Illuminate\Support\Facades\URL::forceRootUrl($appUrl);
-            
-            // Override asset helper
-            if (!function_exists('asset')) {
-                function asset($path)
-                {
-                    $path = ltrim($path, '/');
-                    return config('app.url') . '/public/' . $path;
-                }
-            }
-        } else {
-            \Illuminate\Support\Facades\URL::forceRootUrl($appUrl);
+            // استخدام Macro لتعديل asset helper
+            \Illuminate\Support\Facades\URL::macro('asset', function ($path) use ($appUrl) {
+                $path = ltrim($path, '/');
+                return $appUrl . '/public/' . $path;
+            });
         }
     }
 }

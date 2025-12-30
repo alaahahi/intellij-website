@@ -17,11 +17,37 @@
   "mainEntity": {
     "@type": "Organization",
     "name": "التطبيق الذكي",
+    "alternateName": "IntelliJ App",
     "url": "{{ url('/') }}",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "اربيل",
+      "addressLocality": "اربيل",
+      "postalCode": "40001",
+      "addressRegion": "اربيل",
+      "addressCountry": "IQ"
+    },
+    "telephone": "+9647511077812",
     "contactPoint": {
       "@type": "ContactPoint",
+      "telephone": "+9647511077812",
       "contactType": "customer service",
-      "availableLanguage": "Arabic"
+      "areaServed": "IQ",
+      "availableLanguage": ["Arabic", "ar"]
+    },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+        "Sunday"
+      ],
+      "opens": "00:00",
+      "closes": "23:59"
     }
   }
 }
@@ -111,7 +137,7 @@
                         <div class="bg-light d-flex align-items-center justify-content-center mb-3" style="width: 90px; height: 90px; border-radius: 50px;"><i class="fa fa-home fa-2x text-primary"></i></div>
                         <div class="ms-4">
                             <h4>العنوان</h4>
-                            <p class="mb-0">العراق - أربيل</p>
+                            <p class="mb-0">العراق - أربيل، 40001</p>
                         </div>
                     </div>
                     <div class="d-flex align-items-center mb-4">
@@ -120,7 +146,7 @@
                             <h4>الجوال</h4>
                             <p class="mb-0">
                                 <a href="tel:+9647511077812" class="text-decoration-none" style="color: inherit;">
-                                    009647511077812
+                                    +964 751 107 7812
                                 </a>
                             </p>
                         </div>

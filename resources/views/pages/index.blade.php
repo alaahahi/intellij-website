@@ -17,9 +17,14 @@
   "description": "شركة تقنية متخصصة في تطوير الحلول البرمجية والأنظمة الإلكترونية للمعارض والشركات",
   "address": {
     "@type": "PostalAddress",
-    "addressCountry": "IQ",
-    "addressLocality": ["اربيل", "بغداد"]
+    "streetAddress": "اربيل",
+    "addressLocality": "اربيل",
+    "postalCode": "40001",
+    "addressRegion": "اربيل",
+    "addressCountry": "IQ"
   },
+  "telephone": "+9647511077812",
+  "email": "info@intellij-app.com",
   "sameAs": [
     "@yield('facebook_url', '#')",
     "@yield('twitter_url', '#')",
@@ -27,8 +32,24 @@
   ],
   "contactPoint": {
     "@type": "ContactPoint",
+    "telephone": "+9647511077812",
     "contactType": "customer service",
-    "availableLanguage": "Arabic"
+    "areaServed": "IQ",
+    "availableLanguage": ["Arabic", "ar"]
+  },
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+      "Sunday"
+    ],
+    "opens": "00:00",
+    "closes": "23:59"
   }
 }
 </script>

@@ -6,6 +6,7 @@
     @include('components.header', ['headerClass' => 'p-0', 'navbarClass' => 'navbar-light bg-transparent px-4 px-lg-5 py-3 py-lg-0'])
     @include('components.breadcrumb', ['title' => 'المشاريع'])
 
+    <main id="main-content" role="main">
     <!-- Blog Start -->
     <div class="container-fluid blog py-5">
         <div class="container py-5">
@@ -32,6 +33,7 @@
         </div>
     </div>
     <!-- Blog End -->
+    </main>
 
     @include('components.footer')
 @endsection

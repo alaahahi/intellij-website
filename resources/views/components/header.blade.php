@@ -3,8 +3,8 @@
 @endphp
 
 <!-- Navbar & Hero Start -->
-<div class="container-fluid {{ $headerClass ?? 'p-0' }}">
-    <nav class="navbar navbar-expand-lg {{ $navbarClass ?? 'navbar-light bg-transparent px-4 px-lg-5 py-3 py-lg-0' }}">
+<header class="container-fluid {{ $headerClass ?? 'p-0' }}">
+    <nav class="navbar navbar-expand-lg {{ $navbarClass ?? 'navbar-light bg-transparent px-4 px-lg-5 py-3 py-lg-0' }}" role="navigation" aria-label="القائمة الرئيسية">
         <a href="{{ route('home') }}" class="navbar-brand p-0 d-flex align-items-center">
             <img src="{{ asset('img/logo.png') }}" alt="التطبيق الذكي" width="150" height="55" style="height: 55px; width: auto; max-width: 150px;" class="me-2">
         </a>
@@ -50,5 +50,5 @@
         </div>
         <!-- Hero Header End -->
     @endif
-</div>
+</header>
 <!-- Navbar & Hero End -->

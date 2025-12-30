@@ -6,6 +6,7 @@
     @include('components.header', ['headerClass' => 'p-0', 'navbarClass' => 'navbar-light bg-transparent px-4 px-lg-5 py-3 py-lg-0'])
     @include('components.breadcrumb', ['title' => 'آراء العملاء'])
 
+    <main id="main-content" role="main">
     <!-- Testimonial Start -->
     <div class="container-fluid testimonial py-5">
         <div class="container py-5">
@@ -44,6 +45,7 @@
         </div>
     </div>
     <!-- Testimonial End -->
+    </main>
 
     @include('components.footer')
 @endsection

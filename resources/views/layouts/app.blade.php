@@ -171,6 +171,9 @@
 </head>
 
 <body>
+    <!-- Skip to main content link for accessibility -->
+    <a href="#main-content" class="visually-hidden-focusable position-absolute top-0 start-0 bg-primary text-white p-2 text-decoration-none" style="z-index: 9999; transform: translateY(-100%); transition: transform 0.3s;" onfocus="this.style.transform='translateY(0)';" onblur="this.style.transform='translateY(-100%)';">انتقل إلى المحتوى الرئيسي</a>
+    
     <!-- Spinner Start -->
     <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
         <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">

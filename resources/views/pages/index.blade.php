@@ -68,7 +68,8 @@
 @section('content')
     @include('components.header', ['showHero' => true, 'headerClass' => 'header position-relative overflow-hidden p-0', 'navbarClass' => 'fixed-top navbar-light px-4 px-lg-5 py-3 py-lg-0'])
 
-    <!-- About Start -->
+    <main id="main-content" role="main">
+        <!-- About Start -->
     <div class="container-fluid overflow-hidden py-5" style="margin-top: 6rem;">
         <div class="container py-5">
             <div class="row g-5">
@@ -192,8 +193,8 @@
             </div>
             <div class="row g-5 pt-5" style="margin-top: 6rem;">
                 <div class="col-lg-6 wow fadeInLeft" data-wow-delay="0.1s">
-                    <div class="feature-img RotateMoveLeft h-100" style="object-fit: cover;">
-                        <img src="{{ asset('img/account/3.png') }}" class="img-fluid w-100 h-100" alt="إحصائيات برامج محاسبة وأنظمة إدارة - IntelliJ App" loading="lazy">
+                    <div class="feature-img RotateMoveLeft" style="min-height: 400px; aspect-ratio: 16/9; position: relative;">
+                        <img src="{{ asset('img/account/3.png') }}" class="img-fluid w-100" alt="إحصائيات برامج محاسبة وأنظمة إدارة - IntelliJ App" loading="lazy" style="object-fit: contain; display: block; height: 100%;">
                     </div>
                 </div>
                 <div class="col-lg-6 wow fadeInRight" data-wow-delay="0.1s">
@@ -532,6 +533,7 @@
         </div>
     </div>
     <!-- Clients End -->
+    </main>
 
     @include('components.footer')
 @endsection

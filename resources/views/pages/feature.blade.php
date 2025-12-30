@@ -6,6 +6,7 @@
     @include('components.header', ['headerClass' => 'p-0', 'navbarClass' => 'navbar-light bg-transparent px-4 px-lg-5 py-3 py-lg-0'])
     @include('components.breadcrumb', ['title' => 'المميزات'])
 
+    <main id="main-content" role="main">
     <!-- Feature Start -->
     <div class="container-fluid feature overflow-hidden py-5">
         <div class="container py-5">
@@ -56,6 +57,7 @@
         </div>
     </div>
     <!-- Feature End -->
+    </main>
 
     @include('components.footer')
 @endsection

@@ -6,6 +6,7 @@
     @include('components.header', ['headerClass' => 'p-0', 'navbarClass' => 'navbar-light bg-transparent px-4 px-lg-5 py-3 py-lg-0'])
     @include('components.breadcrumb', ['title' => 'الأسعار'])
 
+    <main id="main-content" role="main">
     <!-- Pricing Start -->
     <div class="container-fluid price py-5">
         <div class="container py-5">
@@ -123,6 +124,7 @@
         </div>
     </div>
     <!-- Pricing End -->
+    </main>
 
     @include('components.footer')
 @endsection

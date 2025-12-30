@@ -58,6 +58,8 @@
     @include('components.header', ['headerClass' => 'p-0', 'navbarClass' => 'navbar-light bg-transparent px-4 px-lg-5 py-3 py-lg-0'])
     @include('components.breadcrumb', ['title' => 'اتصل بنا'])
 
+    <main id="main-content" role="main">
+
     <!-- Contact Start -->
     <div class="container-fluid contact py-5">
         <div class="container py-5">
@@ -167,6 +169,7 @@
         </div>
     </div>
     <!-- Contact End -->
+    </main>
 
     @include('components.footer')
 

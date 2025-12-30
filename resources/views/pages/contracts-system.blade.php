@@ -34,6 +34,7 @@
     @include('components.header', ['headerClass' => 'p-0', 'navbarClass' => 'navbar-light bg-transparent px-4 px-lg-5 py-3 py-lg-0'])
     @include('components.breadcrumb', ['title' => 'نظام عقود بيع السيارات'])
 
+    <main id="main-content" role="main">
     <!-- Contracts System Start -->
     <div class="container-fluid py-5">
         <div class="container py-5">
@@ -438,6 +439,7 @@
         </div>
     </div>
     <!-- Contracts System End -->
+    </main>
 
     @include('components.footer')
 

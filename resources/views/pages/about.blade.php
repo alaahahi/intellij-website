@@ -27,6 +27,7 @@
     @include('components.header', ['headerClass' => 'p-0', 'navbarClass' => 'navbar-light bg-transparent px-4 px-lg-5 py-3 py-lg-0'])
     @include('components.breadcrumb', ['title' => 'من نحن'])
 
+    <main id="main-content" role="main">
     <!-- About Start -->
     <div class="container-fluid overflow-hidden py-5 mt-5">
         <div class="container py-5">
@@ -49,6 +50,7 @@
         </div>
     </div>
     <!-- About End -->
+    </main>
 
     @include('components.footer')
 @endsection

@@ -47,29 +47,29 @@
     <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}">
     <link rel="apple-touch-icon" href="{{ asset('img/logo.png') }}">
 
-    <!-- Google Web Fonts - Arabic Support -->
+    <!-- Preconnect to CDNs for faster loading -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://use.fontawesome.com">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link rel="preconnect" href="https://code.jquery.com">
     
     <!-- Preload Critical Images -->
     <link rel="preload" as="image" href="{{ asset('img/logo.png') }}">
     <link rel="preload" as="image" href="{{ asset('img/account/1.png') }}"> 
 
+    <!-- Google Web Fonts - Arabic Support with font-display swap -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+
     <!-- Icon Font Stylesheet -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
-    <!-- Libraries Stylesheet -->
-    <link href="{{ asset('lib/animate/animate.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('lib/owlcarousel/assets/owl.carousel.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('lib/lightbox/css/lightbox.min.css') }}" rel="stylesheet">
-
-    <!-- Customized Bootstrap Stylesheet -->
+    <!-- Critical CSS - Load immediately -->
     <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
-
-    <!-- Template Stylesheet -->
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+    
+    <!-- Non-critical CSS - Will be loaded asynchronously via JavaScript -->
     
     <!-- RTL Support & CLS Optimization -->
     <style>
@@ -105,6 +105,17 @@
         
         @font-face {
             font-family: 'Tajawal';
+            font-display: swap;
+        }
+        
+        /* FontAwesome font-display optimization */
+        @font-face {
+            font-family: 'Font Awesome 5 Free';
+            font-display: swap;
+        }
+        
+        @font-face {
+            font-family: 'Font Awesome 5 Brands';
             font-display: swap;
         }
         
@@ -152,18 +163,36 @@
     <!-- Back to Top -->
     <a href="#top" class="btn btn-primary btn-lg-square back-to-top" aria-label="العودة للأعلى"><i class="fa fa-arrow-up"></i></a>   
 
-    <!-- JavaScript Libraries -->
+    <!-- JavaScript Libraries - Load with defer for non-blocking -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="{{ asset('lib/wow/wow.min.js') }}"></script>
-    <script src="{{ asset('lib/easing/easing.min.js') }}"></script>
-    <script src="{{ asset('lib/waypoints/waypoints.min.js') }}"></script>
-    <script src="{{ asset('lib/counterup/counterup.min.js') }}"></script>
-    <script src="{{ asset('lib/owlcarousel/owl.carousel.min.js') }}"></script>
-    <script src="{{ asset('lib/lightbox/js/lightbox.min.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" defer></script>
+    <script src="{{ asset('lib/wow/wow.min.js') }}" defer></script>
+    <script src="{{ asset('lib/easing/easing.min.js') }}" defer></script>
+    <script src="{{ asset('lib/waypoints/waypoints.min.js') }}" defer></script>
+    <script src="{{ asset('lib/counterup/counterup.min.js') }}" defer></script>
+    <script src="{{ asset('lib/owlcarousel/owl.carousel.min.js') }}" defer></script>
+    <script src="{{ asset('lib/lightbox/js/lightbox.min.js') }}" defer></script>
 
     <!-- Template Javascript -->
-    <script src="{{ asset('js/main.js') }}"></script>
+    <script src="{{ asset('js/main.js') }}" defer></script>
+    
+    <!-- Load non-critical CSS asynchronously -->
+    <script>
+        // Load CSS asynchronously
+        function loadCSS(href) {
+            var link = document.createElement('link');
+            link.rel = 'stylesheet';
+            link.href = href;
+            document.head.appendChild(link);
+        }
+        
+        // Load non-critical CSS after page load
+        window.addEventListener('load', function() {
+            loadCSS('{{ asset("lib/animate/animate.min.css") }}');
+            loadCSS('{{ asset("lib/owlcarousel/assets/owl.carousel.min.css") }}');
+            loadCSS('{{ asset("lib/lightbox/css/lightbox.min.css") }}');
+        });
+    </script>
     @stack('scripts')
 </body>
 </html>

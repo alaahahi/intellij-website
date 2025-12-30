@@ -1,10 +1,6 @@
 @php
-    $pageTitle = @yield('title', 'التطبيق الذكي - حلول تقنية متطورة');
-    $pageDescription = @yield('description', 'شركة تقنية متخصصة في تطوير الحلول البرمجية والأنظمة الإلكترونية للمعارض والشركات');
-    $ogTitle = @yield('og_title', $pageTitle);
-    $ogDescription = @yield('og_description', $pageDescription);
-    $twitterTitle = @yield('twitter_title', $pageTitle);
-    $twitterDescription = @yield('twitter_description', $pageDescription);
+    $defaultTitle = 'التطبيق الذكي - حلول تقنية متطورة';
+    $defaultDescription = 'شركة تقنية متخصصة في تطوير الحلول البرمجية والأنظمة الإلكترونية للمعارض والشركات';
 @endphp
 
 <!DOCTYPE html>
@@ -14,9 +10,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- Primary Meta Tags -->
-    <title>{{ $pageTitle }}</title>
-    <meta name="title" content="{{ $pageTitle }}">
-    <meta name="description" content="{{ $pageDescription }}">
+    <title>@yield('title', $defaultTitle)</title>
+    <meta name="title" content="@yield('title', $defaultTitle)">
+    <meta name="description" content="@yield('description', $defaultDescription)">
     <meta name="keywords" content="@yield('keywords', 'حلول تقنية, برمجيات, تطوير المواقع, أنظمة إلكترونية, برمجة, تطوير تطبيقات, أنظمة محاسبة, عقود إلكترونية, محاسبة, محاسبة شركات, معارض السيارات, اربيل, بغداد')">
     <meta name="author" content="التطبيق الذكي">
     <meta name="robots" content="@yield('robots', 'index, follow')">
@@ -29,8 +25,8 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="@yield('og_type', 'website')">
     <meta property="og:url" content="@yield('og_url', url()->current())">
-    <meta property="og:title" content="{{ $ogTitle }}">
-    <meta property="og:description" content="{{ $ogDescription }}">
+    <meta property="og:title" content="@hasSection('og_title') @yield('og_title') @else @yield('title', $defaultTitle) @endif">
+    <meta property="og:description" content="@hasSection('og_description') @yield('og_description') @else @yield('description', $defaultDescription) @endif">
     <meta property="og:image" content="@yield('og_image', asset('img/logo.png'))">
     <meta property="og:locale" content="ar_AR">
     <meta property="og:site_name" content="التطبيق الذكي">
@@ -38,8 +34,8 @@
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="@yield('twitter_url', url()->current())">
-    <meta name="twitter:title" content="{{ $twitterTitle }}">
-    <meta name="twitter:description" content="{{ $twitterDescription }}">
+    <meta name="twitter:title" content="@hasSection('twitter_title') @yield('twitter_title') @else @yield('title', $defaultTitle) @endif">
+    <meta name="twitter:description" content="@hasSection('twitter_description') @yield('twitter_description') @else @yield('description', $defaultDescription) @endif">
     <meta name="twitter:image" content="@yield('twitter_image', asset('img/logo.png'))">
     
     <!-- Additional SEO Meta Tags -->

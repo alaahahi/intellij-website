@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
-@section('title', 'نظام عقود بيع السيارات - التطبيق الذكي')
+@section('title', 'نظام عقود بيع السيارات - إدارة معارض السيارات | IntelliJ App')
 
-@section('description', 'نظام شامل ومتكامل لإدارة عقود بيع السيارات للمعارض. يوفر حلولاً احترافية لإدارة جميع عمليات البيع مع توقيع إلكتروني آمن ومزامنة تلقائية')
+@section('description', 'نظام شامل لإدارة عقود بيع السيارات للمعارض مع توقيع إلكتروني آمن. متوفر لمعارض السيارات في اربيل وبغداد - IntelliJ App')
 
 @section('keywords', 'نظام عقود, عقود بيع سيارات, معارض سيارات, معارض السيارات, إدارة عقود, توقيع إلكتروني, نظام معارض, اربيل, بغداد')
 
@@ -43,6 +43,37 @@
                 <h1 class="display-5 mb-4">نظام عقود بيع السيارات</h1>
                 <p class="mb-0">نظام شامل ومتكامل لإدارة عقود بيع السيارات للمعارض. يوفر حلولاً احترافية لإدارة جميع عمليات البيع مع توقيع إلكتروني آمن ومزامنة تلقائية. متوفر لمعارض السيارات في اربيل وبغداد.
                 </p>
+            </div>
+
+            <!-- What Makes It Special -->
+            <div class="row g-5 mb-5">
+                <div class="col-12">
+                    <div class="bg-light rounded p-5">
+                        <h2 class="text-primary mb-4">ما الذي يميز نظام عقود بيع السيارات؟</h2>
+                        <div class="row g-4">
+                            <div class="col-md-6">
+                                <h3 class="h5 mb-3"><i class="fas fa-check-circle text-primary me-2"></i>توقيع إلكتروني آمن</h3>
+                                <p>نظام توقيع إلكتروني مشفر وآمن يضمن صحة العقود وعدم التلاعب بها. يمكن للعملاء التوقيع مباشرة من هواتفهم أو أجهزتهم.</p>
+                            </div>
+                            <div class="col-md-6">
+                                <h3 class="h5 mb-3"><i class="fas fa-check-circle text-primary me-2"></i>جلب معلومات السيارات تلقائياً</h3>
+                                <p>ميزة فريدة تجلب معلومات السيارات تلقائياً من الإنترنت باستخدام رقم اللوحة أو VIN، مما يوفر الوقت ويقلل الأخطاء في إدخال البيانات.</p>
+                            </div>
+                            <div class="col-md-6">
+                                <h3 class="h5 mb-3"><i class="fas fa-check-circle text-primary me-2"></i>QR Code للتحقق</h3>
+                                <p>كل عقد يحتوي على QR Code فريد يمكن للعملاء مسحه للتحقق من صحة العقد ومعلومات السيارة مباشرة من هواتفهم.</p>
+                            </div>
+                            <div class="col-md-6">
+                                <h3 class="h5 mb-3"><i class="fas fa-check-circle text-primary me-2"></i>إدارة شاملة للمعارض</h3>
+                                <p>مصمم خصيصاً لمعارض السيارات في اربيل وبغداد. يدير جميع عمليات البيع، تتبع حالة العقود، وتقارير مبيعات مفصلة.</p>
+                            </div>
+                        </div>
+                        <div class="mt-4">
+                            <a href="{{ route('service') }}" class="btn btn-outline-primary me-2">استكشف جميع خدماتنا</a>
+                            <a href="{{ route('contact') }}" class="btn btn-primary">تواصل معنا للحصول على عرض سعر</a>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <!-- Main Features Section -->

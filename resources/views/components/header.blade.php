@@ -39,12 +39,12 @@
             </div>
             <div class="row gy-5 align-items-center">
                 <div class="col-lg-6 wow fadeInRight" data-wow-delay="0.1s">
-                    <h1 class="display-4 text-dark mb-4 wow fadeInUp" data-wow-delay="0.3s">حلول تقنية متطورة لمستقبل أفضل</h1>
+                    <h1 class="display-4 text-dark mb-4 wow fadeInUp" data-wow-delay="0.3s">حلول تقنية متطورة لبرامج المحاسبة وأنظمة المعارض</h1>
                     <p class="fs-4 mb-4 wow fadeInUp" data-wow-delay="0.5s">نقدم حلول برمجية مبتكرة وأنظمة إلكترونية متطورة لتلبية احتياجات الشركات والمؤسسات. نساعدك في تحويل أفكارك إلى واقع رقمي.</p>
                     <a href="{{ route('contact') }}" class="btn btn-primary rounded-pill py-3 px-5 wow fadeInUp" data-wow-delay="0.7s">ابدأ الآن</a>
                 </div>
                 <div class="col-lg-6 wow fadeInLeft" data-wow-delay="0.2s" style="min-height: 400px; aspect-ratio: 16/9;">
-                    <img src="{{ asset('img/account/1.png') }}" class="img-fluid w-100 h-100" alt="حلول تقنية" loading="eager" width="600" height="400" style="object-fit: contain; display: block;">
+                    <img src="{{ asset('img/account/1.png') }}" class="img-fluid w-100 h-100" alt="برنامج محاسب ذكي مع مخزن - حلول تقنية متطورة" loading="eager" width="600" height="400" style="object-fit: contain; display: block;">
                 </div>
             </div>
         </div>

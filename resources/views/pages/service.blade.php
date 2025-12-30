@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
-@section('title', 'خدماتنا - التطبيق الذكي')
+@section('title', 'خدماتنا - برامج محاسبة وأنظمة إدارة | IntelliJ App')
 
-@section('description', 'نقدم مجموعة شاملة من الخدمات التقنية والبرمجية التي تغطي جميع احتياجاتك التقنية. من تطوير المواقع والتطبيقات إلى الأنظمة الإلكترونية المتخصصة')
+@section('description', 'اكتشف خدماتنا الشاملة: برنامج المحاسب الذكي ونظام عقود بيع السيارات. حلول برمجية متكاملة للشركات في اربيل وبغداد')
 
 @section('keywords', 'خدمات تقنية, تطوير المواقع, تطوير التطبيقات, أنظمة إلكترونية, برمجيات, حلول تقنية, محاسبة, محاسبة شركات, معارض السيارات, اربيل, بغداد')
 
@@ -56,7 +56,7 @@
         <div class="container py-5">
             <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 900px;">
                 <h4 class="mb-1 text-primary">خدماتنا</h4>
-                <h1 class="display-5 mb-4">ماذا يمكننا أن نقدم لك</h1>
+                <h2 class="display-5 mb-4">ماذا يمكننا أن نقدم لك</h2>
                 <p class="mb-0">نقدم مجموعة شاملة من الخدمات التقنية والبرمجية التي تغطي جميع احتياجاتك التقنية.
                 </p>
             </div>
@@ -66,9 +66,9 @@
                     <div class="service-item text-center rounded p-4">
                         <div class="service-icon d-inline-block bg-light rounded p-4 mb-4"><i class="fas fa-file-contract fa-5x text-secondary"></i></div>
                         <div class="service-content">
-                            <h4 class="mb-4">نظام عقود بيع السيارات</h4>
-                            <p class="mb-4">نظام شامل لإدارة عقود بيع السيارات للمعارض</p>
-                            <a href="{{ route('contracts-system') }}" class="btn btn-light rounded-pill text-primary py-2 px-4">المزيد</a>
+                            <h3 class="mb-4">نظام عقود بيع السيارات</h3>
+                            <p class="mb-4">نظام شامل لإدارة عقود بيع السيارات للمعارض. يتضمن توقيع إلكتروني آمن، إدارة كاملة للعقود، وتقارير مفصلة. مثالي لمعارض السيارات في اربيل وبغداد.</p>
+                            <a href="{{ route('contracts-system') }}" class="btn btn-light rounded-pill text-primary py-2 px-4">للمزيد عن نظام عقود بيع السيارات اضغط هنا</a>
                         </div>
                     </div>
                 </div>
@@ -83,9 +83,9 @@
                             <i class="fas fa-calculator fa-5x text-white"></i>
                         </div>
                         <div class="service-content">
-                            <h4 class="mb-4 text-primary fw-bold">برنامج المحاسب الذكي</h4>
-                            <p class="mb-4">نظام متكامل للمحاسبة وإدارة المستودعات والمشتريات</p>
-                            <a href="{{ route('accounting-system') }}" class="btn btn-primary rounded-pill text-white py-2 px-4">المزيد</a>
+                            <h3 class="mb-4 text-primary fw-bold">برنامج المحاسب الذكي</h3>
+                            <p class="mb-4">نظام متكامل للمحاسبة وإدارة المستودعات والمشتريات. ما يميزه: إدارة مالية شاملة، تقارير مفصلة، وإدارة مخزون ذكية. مناسب لشركات المحاسبة في اربيل وبغداد.</p>
+                            <a href="{{ route('accounting-system') }}" class="btn btn-primary rounded-pill text-white py-2 px-4">للمزيد عن برنامج المحاسب الذكي اضغط هنا</a>
                         </div>
                     </div>
                 </div>

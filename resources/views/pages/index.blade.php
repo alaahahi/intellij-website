@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
-@section('title', 'التطبيق الذكي - حلول تقنية متطورة')
+@section('title', 'IntelliJ App – برامج محاسبة وأنظمة إدارة معارض السيارات | حلول برمجية متكاملة')
 
-@section('description', 'شركة تقنية متخصصة في تطوير الحلول البرمجية والأنظمة الإلكترونية للمعارض والشركات. نقدم برنامج المحاسب الذكي ونظام عقود بيع السيارات')
+@section('description', 'IntelliJ App تقدم حلول برمجية متطورة تشمل برنامج محاسبة ذكي ونظام إدارة معارض السيارات للشركات والمؤسسات. حلول موثوقة ومخصصة.')
 
 @section('keywords', 'حلول تقنية, برمجيات, تطوير المواقع, أنظمة إلكترونية, برنامج محاسبة, نظام عقود, معارض سيارات, معارض السيارات, محاسبة, محاسبة شركات, تطوير تطبيقات, اربيل, بغداد')
 
@@ -10,11 +10,12 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "التطبيق الذكي",
+  "@type": "ProfessionalService",
+  "name": "IntelliJ App",
+  "alternateName": "التطبيق الذكي",
   "url": "{{ url('/') }}",
   "logo": "{{ asset('img/logo.png') }}",
-  "description": "شركة تقنية متخصصة في تطوير الحلول البرمجية والأنظمة الإلكترونية للمعارض والشركات",
+  "description": "IntelliJ App تقدم حلول برمجية متطورة تشمل برنامج محاسبة ذكي ونظام إدارة معارض السيارات للشركات والمؤسسات. حلول موثوقة ومخصصة.",
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "اربيل",
@@ -77,12 +78,12 @@
             <div class="row g-5">
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="RotateMoveLeft" style="min-height: 400px; aspect-ratio: 1/1; position: relative;">
-                        <img src="{{ asset('img/account/2.png') }}" class="img-fluid w-100" alt="شركة تقنية متخصصة في تطوير الحلول البرمجية" loading="lazy" width="500" height="500" style="object-fit: contain; display: block;">
+                        <img src="{{ asset('img/account/2.png') }}" class="img-fluid w-100" alt="برنامج محاسب ذكي مع مخزن - حلول تقنية متطورة" loading="lazy" width="500" height="500" style="object-fit: contain; display: block;">
                     </div>
                 </div>
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
                     <h4 class="mb-1 text-primary">من نحن</h4>
-                    <h1 class="display-5 mb-4">شركة تقنية متخصصة في تطوير الحلول البرمجية</h1>
+                    <h2 class="display-5 mb-4">شركة تقنية متخصصة في تطوير الحلول البرمجية</h2>
                     <p class="mb-4">نحن فريق من المطورين المحترفين متخصصون في تطوير الحلول البرمجية والأنظمة الإلكترونية المبتكرة. نقدم خدمات شاملة من التصميم إلى التطوير والبرمجة والصيانة، مع التركيز على الجودة والابتكار ورضا العملاء. نخدم عملاءنا في اربيل وبغداد وجميع أنحاء العراق.
                     </p>
                     <a href="{{ route('about') }}" class="btn btn-primary rounded-pill py-3 px-5">المزيد عنا</a>
@@ -97,7 +98,7 @@
         <div class="container py-5">
             <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 900px;">
                 <h4 class="mb-1 text-primary">خدماتنا</h4>
-                <h1 class="display-5 mb-4">ماذا يمكننا أن نقدم لك</h1>
+                <h2 class="display-5 mb-4">ماذا يمكننا أن نقدم لك</h2>
                 <p class="mb-0">نقدم مجموعة شاملة من الخدمات التقنية والبرمجية التي تغطي جميع احتياجاتك التقنية. من تطوير المواقع والتطبيقات إلى الأنظمة الإلكترونية المتخصصة، نحن هنا لتحويل رؤيتك إلى واقع.
                 </p>
             </div>
@@ -107,10 +108,10 @@
                     <div class="service-item text-center rounded p-4">
                         <div class="service-icon d-inline-block bg-light rounded p-4 mb-4"><i class="fas fa-file-contract fa-5x text-secondary"></i></div>
                         <div class="service-content">
-                            <h4 class="mb-4">نظام عقود بيع السيارات</h4>
-                            <p class="mb-4">نظام شامل لإدارة عقود بيع السيارات للمعارض
+                            <h3 class="mb-4">نظام عقود بيع السيارات</h3>
+                            <p class="mb-4">نظام شامل لإدارة عقود بيع السيارات للمعارض مع توقيع إلكتروني آمن وجلب معلومات السيارات تلقائياً من الإنترنت.
                             </p>
-                            <a href="{{ route('contracts-system') }}" class="btn btn-light rounded-pill text-primary py-2 px-4">المزيد</a>
+                            <a href="{{ route('contracts-system') }}" class="btn btn-light rounded-pill text-primary py-2 px-4">للمزيد عن نظام عقود بيع السيارات اضغط هنا</a>
                         </div>
                     </div>
                 </div>
@@ -125,10 +126,10 @@
                             <i class="fas fa-calculator fa-5x text-white"></i>
                         </div>
                         <div class="service-content">
-                            <h4 class="mb-4 text-primary fw-bold">برنامج المحاسب الذكي</h4>
-                            <p class="mb-4">نظام متكامل للمحاسبة وإدارة المستودعات والمشتريات
+                            <h3 class="mb-4 text-primary fw-bold">برنامج المحاسب الذكي</h3>
+                            <p class="mb-4">نظام متكامل للمحاسبة وإدارة المستودعات والمشتريات. ما يميزه: إدارة مالية شاملة، تقارير مفصلة، وإدارة مخزون ذكية.
                             </p>
-                            <a href="{{ route('accounting-system') }}" class="btn btn-primary rounded-pill text-white py-2 px-4">المزيد</a>
+                            <a href="{{ route('accounting-system') }}" class="btn btn-primary rounded-pill text-white py-2 px-4">للمزيد عن برنامج المحاسب الذكي اضغط هنا</a>
                         </div>
                     </div>
                 </div>
@@ -196,7 +197,7 @@
             <div class="row g-5 pt-5" style="margin-top: 6rem;">
                 <div class="col-lg-6 wow fadeInLeft" data-wow-delay="0.1s">
                     <div class="feature-img RotateMoveLeft h-100" style="object-fit: cover;">
-                        <img src="{{ asset('img/account/3.png') }}" class="img-fluid w-100 h-100" alt="إحصائيات وإنجازات شركة التطبيق الذكي" loading="lazy">
+                        <img src="{{ asset('img/account/3.png') }}" class="img-fluid w-100 h-100" alt="إحصائيات برامج محاسبة وأنظمة إدارة - IntelliJ App" loading="lazy">
                     </div>
                 </div>
                 <div class="col-lg-6 wow fadeInRight" data-wow-delay="0.1s">
@@ -285,7 +286,7 @@
                 </div>
                 <div class="col-lg-6 wow fadeInRight" data-wow-delay="0.3s">
                     <div class="FAQ-img RotateMoveRight rounded">
-                        <img src="{{ asset('img/account/4.png') }}" class="img-fluid w-100" alt="الأسئلة الشائعة عن خدمات التطبيق الذكي" loading="lazy">
+                        <img src="{{ asset('img/account/4.png') }}" class="img-fluid w-100" alt="أسئلة شائعة عن برامج المحاسبة وأنظمة المعارض" loading="lazy">
                     </div>
                 </div>
             </div>
@@ -397,7 +398,7 @@
         <div class="container py-5">
             <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 900px;">
                 <h4 class="text-primary">المشاريع</h4>
-                <h1 class="display-5 mb-4">مشاريعنا المتميزة</h1>
+                <h2 class="display-5 mb-4">مشاريعنا المتميزة</h2>
                 <p class="mb-0">استعرض بعضاً من المشاريع الناجحة التي قمنا بتطويرها لعملائنا. كل مشروع يمثل تحدياً جديداً وفرصة لتقديم قيمة حقيقية.
                 </p>
             </div>
@@ -406,7 +407,7 @@
                 <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="blog-item">
                         <div class="blog-img">
-                            <img src="{{ asset('img/contracts-system/1.png') }}" class="img-fluid w-100" alt="نظام عقود بيع السيارات" loading="lazy">
+                            <img src="{{ asset('img/contracts-system/1.png') }}" class="img-fluid w-100" alt="نظام عقود بيع السيارات لمعارض السيارات" loading="lazy">
                             <div class="blog-info">
                                 <span><i class="fa fa-clock"></i> 2024</span>
                                 <div class="d-flex">
@@ -416,7 +417,7 @@
                         </div>
                         <div class="blog-content text-dark border p-4 ">
                             <h5 class="mb-4">نظام عقود بيع السيارات</h5>
-                            <p class="mb-4">نظام شامل لإدارة عقود بيع السيارات للمعارض</p>
+                            <p class="mb-4">نظام شامل لإدارة عقود بيع السيارات للمعارض مع توقيع إلكتروني آمن. <a href="{{ route('contracts-system') }}" class="text-primary text-decoration-none">للمزيد عن نظام عقود بيع السيارات اضغط هنا</a></p>
                             <a class="btn btn-light rounded-pill py-2 px-4" href="{{ route('contracts-system') }}">المزيد</a>
                         </div>
                     </div>
@@ -426,7 +427,7 @@
                 <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.3s">
                     <div class="blog-item">
                         <div class="blog-img">
-                            <img src="{{ asset('img/account/1.png') }}" class="img-fluid w-100" alt="برنامج المحاسب الذكي" loading="lazy">
+                            <img src="{{ asset('img/account/1.png') }}" class="img-fluid w-100" alt="برنامج محاسب ذكي مع مخزن - نظام محاسبة متكامل" loading="lazy">
                             <div class="blog-info">
                                 <span><i class="fa fa-clock"></i> 2024</span>
                                 <div class="d-flex">
@@ -436,7 +437,7 @@
                         </div>
                         <div class="blog-content text-dark border p-4 ">
                             <h5 class="mb-4">برنامج المحاسب الذكي</h5>
-                            <p class="mb-4">نظام متكامل للمحاسبة وإدارة المستودعات والمشتريات</p>
+                            <p class="mb-4">نظام متكامل للمحاسبة وإدارة المستودعات والمشتريات. <a href="{{ route('accounting-system') }}" class="text-primary">للمزيد عن برنامج المحاسب الذكي اضغط هنا</a></p>
                             <a class="btn btn-light rounded-pill py-2 px-4" href="{{ route('accounting-system') }}">المزيد</a>
                         </div>
                     </div>
@@ -446,7 +447,7 @@
                 <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.5s">
                     <div class="blog-item">
                         <div class="blog-img">
-                            <img src="{{ asset('img/contracts-system/2.png') }}" class="img-fluid w-100" alt="نظام عقود بيع السيارات" loading="lazy">
+                            <img src="{{ asset('img/contracts-system/2.png') }}" class="img-fluid w-100" alt="إدارة عقود بيع السيارات للمعارض" loading="lazy">
                             <div class="blog-info">
                                 <span><i class="fa fa-clock"></i> 2024</span>
                                 <div class="d-flex">
@@ -466,7 +467,7 @@
                 <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.7s">
                     <div class="blog-item">
                         <div class="blog-img">
-                            <img src="{{ asset('img/account/2.png') }}" class="img-fluid w-100" alt="برنامج المحاسب الذكي" loading="lazy">
+                            <img src="{{ asset('img/account/2.png') }}" class="img-fluid w-100" alt="لوحة تحكم برنامج محاسبة مع تقارير مالية" loading="lazy">
                             <div class="blog-info">
                                 <span><i class="fa fa-clock"></i> 2024</span>
                                 <div class="d-flex">

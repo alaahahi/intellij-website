@@ -106,8 +106,25 @@ Sitemap: {$sitemapUrl}
             ],
         ];
 
-        return response()->view('sitemap', ['routes' => $routes])
-            ->header('Content-Type', 'text/xml');
+        $xml = '<?xml version="1.0" encoding="UTF-8"?>' . "\n";
+        $xml .= '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"';
+        $xml .= ' xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"';
+        $xml .= ' xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9';
+        $xml .= ' http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">' . "\n";
+        
+        foreach ($routes as $route) {
+            $xml .= '    <url>' . "\n";
+            $xml .= '        <loc>' . htmlspecialchars($route['loc'], ENT_XML1, 'UTF-8') . '</loc>' . "\n";
+            $xml .= '        <lastmod>' . htmlspecialchars($route['lastmod'], ENT_XML1, 'UTF-8') . '</lastmod>' . "\n";
+            $xml .= '        <changefreq>' . htmlspecialchars($route['changefreq'], ENT_XML1, 'UTF-8') . '</changefreq>' . "\n";
+            $xml .= '        <priority>' . htmlspecialchars($route['priority'], ENT_XML1, 'UTF-8') . '</priority>' . "\n";
+            $xml .= '    </url>' . "\n";
+        }
+        
+        $xml .= '</urlset>';
+        
+        return response($xml, 200)
+            ->header('Content-Type', 'text/xml; charset=UTF-8');
     }
 }
 

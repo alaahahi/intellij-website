@@ -15,7 +15,7 @@
     <div class="container-fluid py-5">
         <div class="container py-5">
             <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 900px;">
-                <h4 class="mb-1 text-primary">خريطة الموقع</h4>
+                <h2 class="mb-1 text-primary h5">خريطة الموقع</h2>
                 <h1 class="display-5 mb-4">تصفح جميع صفحات الموقع</h1>
                 <p class="mb-0">استخدم هذه الصفحة للوصول السريع إلى جميع صفحات موقعنا. يمكنك أيضاً استخدام XML Sitemap للمحركات البحث.
                 </p>

@@ -79,7 +79,7 @@
                     </div>
                 </div>
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <h4 class="mb-1 text-primary">من نحن</h4>
+                    <h2 class="mb-1 text-primary h5">من نحن</h2>
                     <h2 class="display-5 mb-4">شركة تقنية متخصصة في تطوير الحلول البرمجية</h2>
                     <p class="mb-4">نحن فريق من المطورين المحترفين متخصصون في تطوير الحلول البرمجية والأنظمة الإلكترونية المبتكرة. نقدم خدمات شاملة من التصميم إلى التطوير والبرمجة والصيانة، مع التركيز على الجودة والابتكار ورضا العملاء. نخدم عملاءنا في اربيل وبغداد وجميع أنحاء العراق.
                     </p>
@@ -94,7 +94,7 @@
     <div class="container-fluid service py-5">
         <div class="container py-5">
             <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 900px;">
-                <h4 class="mb-1 text-primary">خدماتنا</h4>
+                <h2 class="mb-1 text-primary h5">خدماتنا</h2>
                 <h2 class="display-5 mb-4">ماذا يمكننا أن نقدم لك</h2>
                 <p class="mb-0">نقدم مجموعة شاملة من الخدمات التقنية والبرمجية التي تغطي جميع احتياجاتك التقنية. من تطوير المواقع والتطبيقات إلى الأنظمة الإلكترونية المتخصصة، نحن هنا لتحويل رؤيتك إلى واقع.
                 </p>
@@ -139,7 +139,7 @@
     <div class="container-fluid feature overflow-hidden py-5">
         <div class="container py-5">
             <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 900px;">
-                <h4 class="text-primary">المميزات</h4>
+                <h2 class="text-primary h5">المميزات</h2>
                 <h1 class="display-5 mb-4">مميزات مهمة لحلولنا التقنية</h1>
                 <p class="mb-0">نقدم حلولاً تقنية متطورة تتميز بالجودة العالية والأداء المتميز والأمان القوي. نضمن لك تجربة مستخدم استثنائية مع دعم فني مستمر.
                 </p>
@@ -198,7 +198,7 @@
                     </div>
                 </div>
                 <div class="col-lg-6 wow fadeInRight" data-wow-delay="0.1s">
-                    <h4 class="text-primary">الإحصائيات</h4>
+                    <h2 class="text-primary h5">الإحصائيات</h2>
                     <h1 class="display-5 mb-4">إنجازاتنا تتحدث عنا</h1>
                     <p class="mb-4">نفخر بثقة عملائنا وإنجازاتنا في مجال التطوير البرمجي. نسعى دائماً لتقديم أفضل الحلول التقنية التي تساهم في نجاح أعمال عملائنا.
                     </p>
@@ -295,7 +295,7 @@
     <div class="container-fluid price py-5">
         <div class="container py-5">
             <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 900px;">
-                <h4 class="text-primary">الأسعار</h4>
+                <h2 class="text-primary h5">الأسعار</h2>
                 <h1 class="display-5 mb-4">باقات تصميم المواقع الإلكترونية</h1>
                 <p class="mb-0">اختر الباقة المناسبة لموقعك. جميع الباقات تشمل دومين مجاني وسنة استضافة مجانية.
                 </p>
@@ -394,7 +394,7 @@
     <div class="container-fluid blog py-5">
         <div class="container py-5">
             <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 900px;">
-                <h4 class="text-primary">المشاريع</h4>
+                <h2 class="text-primary h5">المشاريع</h2>
                 <h2 class="display-5 mb-4">مشاريعنا المتميزة</h2>
                 <p class="mb-0">استعرض بعضاً من المشاريع الناجحة التي قمنا بتطويرها لعملائنا. كل مشروع يمثل تحدياً جديداً وفرصة لتقديم قيمة حقيقية.
                 </p>
@@ -488,7 +488,7 @@
     <div class="container-fluid py-5 bg-light">
         <div class="container py-5">
             <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 900px;">
-                <h4 class="text-primary">زبائننا</h4>
+                <h2 class="text-primary h5">زبائننا</h2>
                 <h1 class="display-5 mb-4">عملاؤنا المميزون</h1>
                 <p class="mb-0">نفخر بثقة عملائنا وشراكاتنا الناجحة مع الشركات والمؤسسات الرائدة في مختلف المجالات.
                 </p>

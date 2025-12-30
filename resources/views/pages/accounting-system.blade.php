@@ -40,7 +40,7 @@
         <div class="container py-5">
             <!-- Header Section -->
             <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 900px;">
-                <h4 class="mb-1 text-primary">برنامج المحاسب الذكي</h4>
+                <h2 class="mb-1 text-primary h5">برنامج المحاسب الذكي</h2>
                 <h1 class="display-5 mb-4">نظام متكامل للمحاسبة وإدارة المستودعات والمشتريات</h1>
                 <p class="mb-0">نظام شامل ومتكامل لإدارة جميع العمليات المالية والمحاسبية، إدارة المستودعات والمخزون، وإدارة المشتريات والمبيعات. يوفر حلولاً احترافية لتحسين إدارة أعمالك. مناسب لشركات المحاسبة ومكاتب المحاسبة في اربيل وبغداد.
                 </p>

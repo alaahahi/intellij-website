@@ -57,7 +57,7 @@
     <div class="container-fluid service py-5">
         <div class="container py-5">
             <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 900px;">
-                <h4 class="mb-1 text-primary">خدماتنا</h4>
+                <h2 class="mb-1 text-primary h5">خدماتنا</h2>
                 <h2 class="display-5 mb-4">ماذا يمكننا أن نقدم لك</h2>
                 <p class="mb-0">نقدم مجموعة شاملة من الخدمات التقنية والبرمجية التي تغطي جميع احتياجاتك التقنية.
                 </p>

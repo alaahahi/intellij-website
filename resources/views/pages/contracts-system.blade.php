@@ -40,7 +40,7 @@
         <div class="container py-5">
             <!-- Header Section -->
             <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 900px;">
-                <h4 class="mb-1 text-primary">نظام عقود بيع السيارات</h4>
+                <h2 class="mb-1 text-primary h5">نظام عقود بيع السيارات</h2>
                 <h1 class="display-5 mb-4">نظام عقود بيع السيارات</h1>
                 <p class="mb-0">نظام شامل ومتكامل لإدارة عقود بيع السيارات للمعارض. يوفر حلولاً احترافية لإدارة جميع عمليات البيع مع توقيع إلكتروني آمن ومزامنة تلقائية. متوفر لمعارض السيارات في اربيل وبغداد.
                 </p>

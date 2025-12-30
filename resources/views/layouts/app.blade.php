@@ -131,6 +131,27 @@
         .service-item {
             min-height: 300px;
         }
+        
+        /* Disable animations in hero-header section */
+        .hero-header *,
+        .hero-header::before,
+        .hero-header::after {
+            animation: none !important;
+        }
+        
+        .hero-header .rotate-img,
+        .hero-header .rotate-img *,
+        .hero-header .rotate-img img,
+        .hero-header .rotate-sty-2 {
+            animation: none !important;
+        }
+        
+        /* Disable WOW.js animations in hero-header */
+        .hero-header .wow {
+            animation: none !important;
+            visibility: visible !important;
+            opacity: 1 !important;
+        }
     </style>
     
     <!-- Structured Data (JSON-LD) -->

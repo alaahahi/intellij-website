@@ -127,12 +127,12 @@
     
     <!-- Google Analytics 4 -->
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JS98BQW6M5"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BLHFYJKFQV"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-        gtag('config', 'G-JS98BQW6M5');
+        gtag('config', 'G-BLHFYJKFQV');
     </script>
     
     @stack('styles')

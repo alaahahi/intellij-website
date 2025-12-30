@@ -2,6 +2,51 @@
 
 @section('title', 'التطبيق الذكي - حلول تقنية متطورة')
 
+@section('description', 'شركة تقنية متخصصة في تطوير الحلول البرمجية والأنظمة الإلكترونية للمعارض والشركات. نقدم برنامج المحاسب الذكي ونظام عقود بيع السيارات')
+
+@section('keywords', 'حلول تقنية, برمجيات, تطوير المواقع, أنظمة إلكترونية, برنامج محاسبة, نظام عقود, معارض سيارات, معارض السيارات, محاسبة, محاسبة شركات, تطوير تطبيقات, اربيل, بغداد')
+
+@section('structured_data')
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "التطبيق الذكي",
+  "url": "{{ url('/') }}",
+  "logo": "{{ asset('img/logo.png') }}",
+  "description": "شركة تقنية متخصصة في تطوير الحلول البرمجية والأنظمة الإلكترونية للمعارض والشركات",
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "IQ",
+    "addressLocality": ["اربيل", "بغداد"]
+  },
+  "sameAs": [
+    "@yield('facebook_url', '#')",
+    "@yield('twitter_url', '#')",
+    "@yield('linkedin_url', '#')"
+  ],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "customer service",
+    "availableLanguage": "Arabic"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "التطبيق الذكي",
+  "url": "{{ url('/') }}",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "{{ url('/') }}?search={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+@endsection
+
 @section('content')
     @include('components.header', ['showHero' => true, 'headerClass' => 'header position-relative overflow-hidden p-0', 'navbarClass' => 'fixed-top navbar-light px-4 px-lg-5 py-3 py-lg-0'])
 
@@ -10,14 +55,14 @@
         <div class="container py-5">
             <div class="row g-5">
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="RotateMoveLeft">
-                        <img src="{{ asset('img/account/2.png') }}" class="img-fluid w-100" alt="" loading="lazy">
+                    <div class="RotateMoveLeft" style="min-height: 400px; aspect-ratio: 1/1; position: relative;">
+                        <img src="{{ asset('img/account/2.png') }}" class="img-fluid w-100" alt="شركة تقنية متخصصة في تطوير الحلول البرمجية" loading="lazy" width="500" height="500" style="object-fit: contain; display: block;">
                     </div>
                 </div>
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
                     <h4 class="mb-1 text-primary">من نحن</h4>
                     <h1 class="display-5 mb-4">شركة تقنية متخصصة في تطوير الحلول البرمجية</h1>
-                    <p class="mb-4">نحن فريق من المطورين المحترفين متخصصون في تطوير الحلول البرمجية والأنظمة الإلكترونية المبتكرة. نقدم خدمات شاملة من التصميم إلى التطوير والبرمجة والصيانة، مع التركيز على الجودة والابتكار ورضا العملاء.
+                    <p class="mb-4">نحن فريق من المطورين المحترفين متخصصون في تطوير الحلول البرمجية والأنظمة الإلكترونية المبتكرة. نقدم خدمات شاملة من التصميم إلى التطوير والبرمجة والصيانة، مع التركيز على الجودة والابتكار ورضا العملاء. نخدم عملاءنا في اربيل وبغداد وجميع أنحاء العراق.
                     </p>
                     <a href="{{ route('about') }}" class="btn btn-primary rounded-pill py-3 px-5">المزيد عنا</a>
                 </div>
@@ -130,7 +175,7 @@
             <div class="row g-5 pt-5" style="margin-top: 6rem;">
                 <div class="col-lg-6 wow fadeInLeft" data-wow-delay="0.1s">
                     <div class="feature-img RotateMoveLeft h-100" style="object-fit: cover;">
-                        <img src="{{ asset('img/account/3.png') }}" class="img-fluid w-100 h-100" alt="" loading="lazy">
+                        <img src="{{ asset('img/account/3.png') }}" class="img-fluid w-100 h-100" alt="إحصائيات وإنجازات شركة التطبيق الذكي" loading="lazy">
                     </div>
                 </div>
                 <div class="col-lg-6 wow fadeInRight" data-wow-delay="0.1s">
@@ -219,7 +264,7 @@
                 </div>
                 <div class="col-lg-6 wow fadeInRight" data-wow-delay="0.3s">
                     <div class="FAQ-img RotateMoveRight rounded">
-                        <img src="{{ asset('img/account/4.png') }}" class="img-fluid w-100" alt="" loading="lazy">
+                        <img src="{{ asset('img/account/4.png') }}" class="img-fluid w-100" alt="الأسئلة الشائعة عن خدمات التطبيق الذكي" loading="lazy">
                     </div>
                 </div>
             </div>

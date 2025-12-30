@@ -2,6 +2,34 @@
 
 @section('title', 'نظام عقود بيع السيارات - التطبيق الذكي')
 
+@section('description', 'نظام شامل ومتكامل لإدارة عقود بيع السيارات للمعارض. يوفر حلولاً احترافية لإدارة جميع عمليات البيع مع توقيع إلكتروني آمن ومزامنة تلقائية')
+
+@section('keywords', 'نظام عقود, عقود بيع سيارات, معارض سيارات, معارض السيارات, إدارة عقود, توقيع إلكتروني, نظام معارض, اربيل, بغداد')
+
+@section('structured_data')
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "نظام عقود بيع السيارات",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Web",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.8",
+    "ratingCount": "120"
+  },
+  "description": "نظام شامل ومتكامل لإدارة عقود بيع السيارات للمعارض. يوفر حلولاً احترافية لإدارة جميع عمليات البيع مع توقيع إلكتروني آمن ومزامنة تلقائية. متوفر لمعارض السيارات في اربيل وبغداد",
+  "keywords": "معارض السيارات, معارض سيارات, نظام عقود, اربيل, بغداد"
+}
+</script>
+@endsection
+
 @section('content')
     @include('components.header', ['headerClass' => 'p-0', 'navbarClass' => 'navbar-light bg-transparent px-4 px-lg-5 py-3 py-lg-0'])
     @include('components.breadcrumb', ['title' => 'نظام عقود بيع السيارات'])
@@ -13,7 +41,7 @@
             <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 900px;">
                 <h4 class="mb-1 text-primary">نظام عقود بيع السيارات</h4>
                 <h1 class="display-5 mb-4">نظام عقود بيع السيارات</h1>
-                <p class="mb-0">نظام شامل ومتكامل لإدارة عقود بيع السيارات للمعارض. يوفر حلولاً احترافية لإدارة جميع عمليات البيع مع توقيع إلكتروني آمن ومزامنة تلقائية.
+                <p class="mb-0">نظام شامل ومتكامل لإدارة عقود بيع السيارات للمعارض. يوفر حلولاً احترافية لإدارة جميع عمليات البيع مع توقيع إلكتروني آمن ومزامنة تلقائية. متوفر لمعارض السيارات في اربيل وبغداد.
                 </p>
             </div>
 

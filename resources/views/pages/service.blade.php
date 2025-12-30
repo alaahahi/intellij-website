@@ -2,6 +2,51 @@
 
 @section('title', 'خدماتنا - التطبيق الذكي')
 
+@section('description', 'نقدم مجموعة شاملة من الخدمات التقنية والبرمجية التي تغطي جميع احتياجاتك التقنية. من تطوير المواقع والتطبيقات إلى الأنظمة الإلكترونية المتخصصة')
+
+@section('keywords', 'خدمات تقنية, تطوير المواقع, تطوير التطبيقات, أنظمة إلكترونية, برمجيات, حلول تقنية, محاسبة, محاسبة شركات, معارض السيارات, اربيل, بغداد')
+
+@section('structured_data')
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "خدمات تقنية وبرمجية",
+  "provider": {
+    "@type": "Organization",
+    "name": "التطبيق الذكي",
+    "url": "{{ url('/') }}"
+  },
+  "areaServed": {
+    "@type": "Country",
+    "name": "العراق"
+  },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "خدمات التطبيق الذكي",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "نظام عقود بيع السيارات",
+          "description": "نظام شامل لإدارة عقود بيع السيارات للمعارض"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "برنامج المحاسب الذكي",
+          "description": "نظام متكامل للمحاسبة وإدارة المستودعات والمشتريات"
+        }
+      }
+    ]
+  }
+}
+</script>
+@endsection
+
 @section('content')
     @include('components.header', ['headerClass' => 'p-0', 'navbarClass' => 'navbar-light bg-transparent px-4 px-lg-5 py-3 py-lg-0'])
     @include('components.breadcrumb', ['title' => 'خدماتنا'])

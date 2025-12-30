@@ -2,6 +2,32 @@
 
 @section('title', 'اتصل بنا - التطبيق الذكي')
 
+@section('description', 'تواصل معنا للحصول على استشارة مجانية أو طلب عرض سعر لمشروعك. فريقنا سيكون سعيداً للإجابة على جميع استفساراتك')
+
+@section('keywords', 'اتصل بنا, تواصل, استشارة, عرض سعر, دعم فني, خدمة العملاء, اربيل, بغداد')
+
+@section('structured_data')
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  "name": "اتصل بنا - التطبيق الذكي",
+  "description": "تواصل معنا للحصول على استشارة مجانية أو طلب عرض سعر لمشروعك",
+  "url": "{{ url('/contact') }}",
+  "mainEntity": {
+    "@type": "Organization",
+    "name": "التطبيق الذكي",
+    "url": "{{ url('/') }}",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "customer service",
+      "availableLanguage": "Arabic"
+    }
+  }
+}
+</script>
+@endsection
+
 @section('content')
     @include('components.header', ['headerClass' => 'p-0', 'navbarClass' => 'navbar-light bg-transparent px-4 px-lg-5 py-3 py-lg-0'])
     @include('components.breadcrumb', ['title' => 'اتصل بنا'])

@@ -2,6 +2,27 @@
 
 @section('title', 'من نحن - التطبيق الذكي')
 
+@section('description', 'تعرف على شركة التطبيق الذكي - فريق من المطورين المحترفين متخصصون في تطوير الحلول البرمجية والأنظمة الإلكترونية المبتكرة')
+
+@section('keywords', 'من نحن, شركة تقنية, مطورين, برمجيات, أنظمة إلكترونية, تطوير حلول, اربيل, بغداد')
+
+@section('structured_data')
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  "name": "من نحن - التطبيق الذكي",
+  "description": "تعرف على شركة التطبيق الذكي - فريق من المطورين المحترفين متخصصون في تطوير الحلول البرمجية والأنظمة الإلكترونية المبتكرة",
+  "url": "{{ url('/about') }}",
+  "mainEntity": {
+    "@type": "Organization",
+    "name": "التطبيق الذكي",
+    "description": "شركة تقنية متخصصة في تطوير الحلول البرمجية والأنظمة الإلكترونية"
+  }
+}
+</script>
+@endsection
+
 @section('content')
     @include('components.header', ['headerClass' => 'p-0', 'navbarClass' => 'navbar-light bg-transparent px-4 px-lg-5 py-3 py-lg-0'])
     @include('components.breadcrumb', ['title' => 'من نحن'])
@@ -12,7 +33,7 @@
             <div class="row g-5">
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="RotateMoveLeft">
-                        <img src="{{ asset('img/about-1.png') }}" class="img-fluid w-100" alt="" loading="lazy">
+                        <img src="{{ asset('img/about-1.png') }}" class="img-fluid w-100" alt="من نحن - شركة التطبيق الذكي" loading="lazy">
                     </div>
                 </div>
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">

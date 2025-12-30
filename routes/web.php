@@ -5,6 +5,7 @@ use App\Http\Controllers\VisitController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\CacheController;
+use App\Http\Controllers\SitemapController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Artisan;
 
@@ -67,6 +68,14 @@ Route::get('/pricing', function () {
 Route::get('/blog', function () {
     return view('pages.blog');
 })->name('blog');
+
+Route::get('/sitemap', function () {
+    return view('pages.sitemap');
+})->name('sitemap-page');
+
+// SEO Routes
+Route::get('/robots.txt', [SitemapController::class, 'robots'])->name('robots');
+Route::get('/sitemap.xml', [SitemapController::class, 'index'])->name('sitemap');
 
 // Authentication Routes
 require __DIR__.'/auth.php';

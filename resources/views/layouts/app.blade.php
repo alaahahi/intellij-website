@@ -58,52 +58,26 @@
     <link rel="preload" as="image" href="{{ asset('img/logo.png') }}">
     <link rel="preload" as="image" href="{{ asset('img/account/1.png') }}"> 
 
-    <!-- Google Web Fonts - Load asynchronously to improve FCP -->
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Tajawal:wght@400;500;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet"></noscript>
+    <!-- Google Web Fonts - Arabic Support with font-display swap -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
 
-    <!-- Icon Font Stylesheet - Load asynchronously -->
-    <link rel="preload" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"></noscript>
-    <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet"></noscript>
+    <!-- Icon Font Stylesheet -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
-    <!-- Critical CSS - Load immediately with preload for faster FCP -->
-    <link rel="preload" href="{{ asset('css/bootstrap.min.css') }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet"></noscript>
-    <link rel="preload" href="{{ asset('css/style.css') }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link href="{{ asset('css/style.css') }}" rel="stylesheet"></noscript>
+    <!-- Critical CSS - Load immediately -->
+    <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
     
     <!-- Non-critical CSS - Will be loaded asynchronously via JavaScript -->
     
-    <!-- Critical CSS Inline - Improves FCP -->
+    <!-- RTL Support & CLS Optimization -->
     <style>
-        /* Critical CSS for above-the-fold content */
         body { 
-            font-family: system-ui, -apple-system, 'Segoe UI', 'Tajawal', 'Cairo', sans-serif;
-            margin: 0;
-            padding: 0;
+            font-family: 'Tajawal', 'Cairo', sans-serif; 
         }
         h1, h2, h3, h4, h5, h6 { 
-            font-family: system-ui, -apple-system, 'Segoe UI', 'Cairo', sans-serif;
-            margin: 0;
-        }
-        .navbar {
-            min-height: 70px;
-        }
-        .navbar-brand img {
-            width: auto;
-            height: 55px;
-            max-width: 150px;
-            display: block;
-        }
-        .hero-header {
-            padding-top: 160px;
-            padding-bottom: 100px;
-        }
-        .hero-header h1 {
-            font-size: 2.5rem;
-            line-height: 1.2;
+            font-family: 'Cairo', sans-serif; 
         }
         
         /* CLS Optimization - Prevent Layout Shift */
@@ -145,6 +119,13 @@
             font-display: swap;
         }
         
+        /* Fix navbar logo */
+        .navbar-brand img {
+            width: auto;
+            height: 55px;
+            max-width: 150px;
+            display: block;
+        }
         
         /* Reserve space for service items */
         .service-item {
@@ -193,18 +174,13 @@
     <!-- Skip to main content link for accessibility -->
     <a href="#main-content" class="visually-hidden-focusable position-absolute top-0 start-0 bg-primary text-white p-2 text-decoration-none" style="z-index: 9999; transform: translateY(-100%); transition: transform 0.3s;" onfocus="this.style.transform='translateY(0)';" onblur="this.style.transform='translateY(-100%)';">انتقل إلى المحتوى الرئيسي</a>
     
-    <!-- Spinner Start - Hidden by default for faster FCP -->
-    <div id="spinner" class="bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center" style="display: none !important;">
+    <!-- Spinner Start -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
         <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
             <span class="sr-only">Loading...</span>
         </div>
     </div>
     <!-- Spinner End -->
-    
-    <!-- Load CSS asynchronously script -->
-    <script>
-        !function(e){"use strict";var t=function(t,n,o){var i,r=e.document,a=r.createElement("link");if(n)i=n;else{var l=(r.body||r.getElementsByTagName("head")[0]).childNodes;i=l[l.length-1]}var d=r.styleSheets;a.rel="stylesheet",a.href=t,a.media="only x",function e(t){if(r.body)return t();setTimeout(function(){e(t)})}(function(){i.parentNode.insertBefore(a,n?i:i.nextSibling)});var f=function(e){for(var t=a.href,n=d.length;n--;)if(d[n].href===t)return e();setTimeout(function(){f(e)})};return a.addEventListener&&a.addEventListener("load",function(){this.media=o||"all"}),a.onloadcssdefined=f,f(function(){}),a};"undefined"!=typeof exports?exports.loadCSS=t:e.loadCSS=t}("undefined"!=typeof global?global:this);
-    </script>
 
     @yield('content')
 

@@ -18,5 +18,9 @@
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule ^ index.php [L]
+    
+    # Protect clear-cache.php from external access (only allow localhost)
+    RewriteCond %{REMOTE_ADDR} !^127\.0\.0\.1$
+    RewriteCond %{REMOTE_ADDR} !^::1$
+    RewriteRule ^clear-cache\.php$ - [F,L]
 </IfModule>
-

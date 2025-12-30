@@ -26,11 +26,7 @@
   },
   "telephone": "+9647511077812",
   "email": "info@intellij-app.com",
-  "sameAs": [
-    "@yield('facebook_url', '#')",
-    "@yield('twitter_url', '#')",
-    "@yield('linkedin_url', '#')"
-  ],
+  "sameAs": [],
   "contactPoint": {
     "@type": "ContactPoint",
     "telephone": "+9647511077812",
@@ -152,7 +148,7 @@
                     <div class="text-center p-4">
                         <div class="d-inline-block rounded bg-light p-4 mb-4"><i class="fas fa-shield-alt fa-5x text-secondary"></i></div>
                         <div class="feature-content">
-                            <a href="#" class="h4">الأمان والحماية <i class="fa fa-long-arrow-alt-left"></i></a>
+                            <h4 class="h4">الأمان والحماية</h4>
                             <p class="mt-4 mb-0">أنظمة أمان متقدمة لحماية بياناتك ومعلوماتك الحساسة
                             </p>
                         </div>
@@ -162,7 +158,7 @@
                     <div class="text-center p-4">
                         <div class="d-inline-block rounded bg-light p-4 mb-4"><i class="fas fa-tachometer-alt fa-5x text-secondary"></i></div>
                         <div class="feature-content">
-                            <a href="#" class="h4">أداء عالي <i class="fa fa-long-arrow-alt-left"></i></a>
+                            <h4 class="h4">أداء عالي</h4>
                             <p class="mt-4 mb-0">أداء فائق السرعة وتجربة مستخدم سلسة وسريعة
                             </p>
                         </div>
@@ -172,7 +168,7 @@
                     <div class="text-center rounded p-4">
                         <div class="d-inline-block rounded bg-light p-4 mb-4"><i class="fas fa-headset fa-5x text-secondary"></i></div>
                         <div class="feature-content">
-                            <a href="#" class="h4">دعم فني مستمر <i class="fa fa-long-arrow-alt-left"></i></a>
+                            <h4 class="h4">دعم فني مستمر</h4>
                             <p class="mt-4 mb-0">فريق دعم فني محترف متاح لمساعدتك في أي وقت
                             </p>
                         </div>
@@ -182,7 +178,7 @@
                     <div class="text-center rounded p-4">
                         <div class="d-inline-block rounded bg-light p-4 mb-4"><i class="fas fa-sync-alt fa-5x text-secondary"></i></div>
                         <div class="feature-content">
-                            <a href="#" class="h4">تحديثات مستمرة <i class="fa fa-long-arrow-alt-left"></i></a>
+                            <h4 class="h4">تحديثات مستمرة</h4>
                             <p class="mt-4 mb-0">تحديثات وتحسينات مستمرة لإضافة المزيد من المميزات
                             </p>
                         </div>

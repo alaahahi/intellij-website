@@ -150,7 +150,7 @@
     @yield('content')
 
     <!-- Back to Top -->
-    <a href="#" class="btn btn-primary btn-lg-square back-to-top"><i class="fa fa-arrow-up"></i></a>   
+    <a href="#top" class="btn btn-primary btn-lg-square back-to-top" aria-label="العودة للأعلى"><i class="fa fa-arrow-up"></i></a>   
 
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>

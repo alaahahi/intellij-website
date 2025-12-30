@@ -1,3 +1,12 @@
+@php
+    $pageTitle = @yield('title', 'التطبيق الذكي - حلول تقنية متطورة');
+    $pageDescription = @yield('description', 'شركة تقنية متخصصة في تطوير الحلول البرمجية والأنظمة الإلكترونية للمعارض والشركات');
+    $ogTitle = @yield('og_title', $pageTitle);
+    $ogDescription = @yield('og_description', $pageDescription);
+    $twitterTitle = @yield('twitter_title', $pageTitle);
+    $twitterDescription = @yield('twitter_description', $pageDescription);
+@endphp
+
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
@@ -5,9 +14,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- Primary Meta Tags -->
-    <title>@yield('title', 'التطبيق الذكي - حلول تقنية متطورة')</title>
-    <meta name="title" content="@yield('title', 'التطبيق الذكي - حلول تقنية متطورة')">
-    <meta name="description" content="@yield('description', 'شركة تقنية متخصصة في تطوير الحلول البرمجية والأنظمة الإلكترونية للمعارض والشركات')">
+    <title>{{ $pageTitle }}</title>
+    <meta name="title" content="{{ $pageTitle }}">
+    <meta name="description" content="{{ $pageDescription }}">
     <meta name="keywords" content="@yield('keywords', 'حلول تقنية, برمجيات, تطوير المواقع, أنظمة إلكترونية, برمجة, تطوير تطبيقات, أنظمة محاسبة, عقود إلكترونية, محاسبة, محاسبة شركات, معارض السيارات, اربيل, بغداد')">
     <meta name="author" content="التطبيق الذكي">
     <meta name="robots" content="@yield('robots', 'index, follow')">
@@ -20,8 +29,8 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="@yield('og_type', 'website')">
     <meta property="og:url" content="@yield('og_url', url()->current())">
-    <meta property="og:title" content="@yield('og_title', @yield('title', 'التطبيق الذكي - حلول تقنية متطورة'))">
-    <meta property="og:description" content="@yield('og_description', @yield('description', 'شركة تقنية متخصصة في تطوير الحلول البرمجية والأنظمة الإلكترونية للمعارض والشركات'))">
+    <meta property="og:title" content="{{ $ogTitle }}">
+    <meta property="og:description" content="{{ $ogDescription }}">
     <meta property="og:image" content="@yield('og_image', asset('img/logo.png'))">
     <meta property="og:locale" content="ar_AR">
     <meta property="og:site_name" content="التطبيق الذكي">
@@ -29,8 +38,8 @@
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="@yield('twitter_url', url()->current())">
-    <meta name="twitter:title" content="@yield('twitter_title', @yield('title', 'التطبيق الذكي - حلول تقنية متطورة'))">
-    <meta name="twitter:description" content="@yield('twitter_description', @yield('description', 'شركة تقنية متخصصة في تطوير الحلول البرمجية والأنظمة الإلكترونية للمعارض والشركات'))">
+    <meta name="twitter:title" content="{{ $twitterTitle }}">
+    <meta name="twitter:description" content="{{ $twitterDescription }}">
     <meta name="twitter:image" content="@yield('twitter_image', asset('img/logo.png'))">
     
     <!-- Additional SEO Meta Tags -->

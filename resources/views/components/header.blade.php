@@ -8,8 +8,8 @@
         <a href="{{ route('home') }}" class="navbar-brand p-0 d-flex align-items-center">
             <img src="{{ asset('img/logo.png') }}" alt="التطبيق الذكي" width="150" height="55" style="height: 55px; width: auto; max-width: 150px;" class="me-2">
         </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-            <span class="fa fa-bars"></span>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-label="فتح/إغلاق القائمة" aria-expanded="false" aria-controls="navbarCollapse">
+            <span class="fa fa-bars" aria-hidden="true"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto py-0">

@@ -124,5 +124,12 @@ Route::prefix('admin')->middleware(['auth', 'verified'])->group(function () {
     Route::get('/cache/info', [CacheController::class, 'info'])->name('admin.cache.info');
     
     // Video Management
-    Route::get('/videos', [VideoController::class, 'index'])->name('admin.videos.index');
+    Route::resource('videos', VideoController::class)->names([
+        'index' => 'admin.videos.index',
+        'create' => 'admin.videos.create',
+        'store' => 'admin.videos.store',
+        'edit' => 'admin.videos.edit',
+        'update' => 'admin.videos.update',
+        'destroy' => 'admin.videos.destroy',
+    ]);
 });

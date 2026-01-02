@@ -1,48 +1,43 @@
 @extends('layouts.app')
 
-@section('title', 'مشروع Dream City Mall - نظام إدارة مول تجاري | IntelliJ App')
+@section('title', 'شركة الهدف المباشر - خدمات التسويق في بغداد | Dream City Mall')
 
-@section('description', 'نظام شامل لإدارة المولات التجارية - إدارة المحلات، الإيجارات، العملاء، والمبيعات. حل متكامل لإدارة المراكز التجارية - IntelliJ App')
+@section('description', 'شركة الهدف المباشر تقدم خدمات التسويق المتطورة في بغداد. متخصصون في التسويق الرقمي والتسويق الإلكتروني للمشاريع التجارية في بغداد')
 
-@section('keywords', 'نظام إدارة مول, إدارة مول تجاري, إدارة مراكز تجارية, إدارة محلات, إدارة إيجارات, نظام إدارة تجاري, اربيل, بغداد')
+@section('keywords', 'شركة الهدف المباشر, خدمات التسويق, التسويق في بغداد, تسويق رقمي بغداد, تسويق إلكتروني بغداد, شركة تسويق بغداد, خدمات تسويق بغداد')
 
 @section('structured_data')
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
-  "name": "نظام إدارة Dream City Mall",
-  "applicationCategory": "BusinessApplication",
-  "operatingSystem": "Web",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
+  "@type": "ProfessionalService",
+  "name": "شركة الهدف المباشر",
+  "description": "شركة متخصصة في تقديم خدمات التسويق المتطورة في بغداد. نقدم خدمات التسويق الرقمي والتسويق الإلكتروني للمشاريع التجارية",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "بغداد",
+    "addressCountry": "IQ"
   },
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "4.9",
-    "ratingCount": "200"
+  "areaServed": {
+    "@type": "City",
+    "name": "بغداد"
   },
-  "description": "نظام شامل ومتكامل لإدارة المولات التجارية والمراكز التجارية. يوفر حلولاً احترافية لإدارة المحلات، الإيجارات، العملاء، والمبيعات. مناسب للمولات التجارية في اربيل وبغداد",
-  "keywords": "إدارة مول, إدارة مراكز تجارية, نظام إدارة تجاري, اربيل, بغداد"
+  "serviceType": "خدمات التسويق, التسويق الرقمي, التسويق الإلكتروني",
+  "keywords": "شركة الهدف المباشر, خدمات التسويق, التسويق في بغداد, تسويق رقمي بغداد"
 }
 </script>
 @endsection
 
 @section('content')
-    @include('components.header', ['headerClass' => 'p-0', 'navbarClass' => 'navbar-light bg-transparent px-4 px-lg-5 py-3 py-lg-0'])
-    @include('components.breadcrumb', ['title' => 'مشروع Dream City Mall'])
-
     <main id="main-content" role="main">
     <!-- Dream City Mall Project Start -->
     <div class="container-fluid py-5">
         <div class="container py-5">
             <!-- Header Section -->
             <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 900px;">
-                <h2 class="mb-1 text-primary h5">مشروع Dream City Mall</h2>
-                <h1 class="display-5 mb-4">نظام شامل يخدم المولات التجارية والمراكز التجارية</h1>
-                <p class="mb-0">نظام متكامل ومتطور لإدارة جميع جوانب المولات التجارية والمراكز التجارية. يوفر حلولاً احترافية لإدارة المحلات، الإيجارات، العملاء، المبيعات، والتقارير المالية. مصمم خصيصاً لتلبية احتياجات المولات التجارية في بغداد.
+                <h2 class="mb-1 text-primary h5">شركة الهدف المباشر</h2>
+                <h1 class="display-5 mb-4">خدمات التسويق المتطورة في بغداد</h1>
+                <p class="mb-0">شركة الهدف المباشر - متخصصون في تقديم خدمات التسويق الرقمي والتسويق الإلكتروني في بغداد. نقدم حلول تسويقية متكاملة تساعدك على تحقيق أهدافك التجارية وتوسيع نشاطك في بغداد.
                 </p>
             </div>
 
@@ -52,7 +47,7 @@
                     <div class="position-relative overflow-hidden rounded shadow-lg dream-city-container" style="border-radius: 20px !important;">
                         <img src="{{ asset('img/dream-city-mall/WhatsApp Image 2026-01-01 at 21.52.35.jpeg') }}" 
                              class="img-fluid w-100 dream-city-image" 
-                             alt="مشروع Dream City Mall - نظام إدارة مول تجاري" 
+                             alt="شركة الهدف المباشر - خدمات التسويق في بغداد" 
                              loading="lazy"
                              style="
                                 transition: transform 0.6s ease, filter 0.6s ease, box-shadow 0.6s ease;
@@ -69,8 +64,9 @@
                                 pointer-events: none;
                              ">
                             <div class="text-center text-white">
-                                <i class="fas fa-store fa-4x mb-3" style="text-shadow: 0 4px 10px rgba(0,0,0,0.5); animation: pulse 2s infinite;"></i>
-                                <h3 class="fw-bold" style="text-shadow: 0 2px 8px rgba(0,0,0,0.5);">Dream City Mall</h3>
+                                <i class="fas fa-bullseye fa-4x mb-3" style="text-shadow: 0 4px 10px rgba(0,0,0,0.5); animation: pulse 2s infinite;"></i>
+                                <h3 class="fw-bold" style="text-shadow: 0 2px 8px rgba(0,0,0,0.5);">شركة الهدف المباشر</h3>
+                                <p class="mb-0" style="text-shadow: 0 2px 8px rgba(0,0,0,0.5);">خدمات التسويق في بغداد</p>
                             </div>
                         </div>
                     </div>
@@ -80,18 +76,14 @@
             <!-- CTA Section -->
             <div class="row">
                 <div class="col-12 text-center wow fadeInUp" data-wow-delay="0.1s">
-                    <h3 class="mb-4">هل أنت مستعد لتحسين إدارة مولك التجاري؟</h3>
-                    <p class="mb-4">تواصل معنا اليوم لمعرفة المزيد عن نظام إدارة Dream City Mall وكيف يمكنه مساعدتك</p>
-                    <a href="{{ route('contact') }}" class="btn btn-primary rounded-pill py-3 px-5 me-3">تواصل معنا</a>
-                    <a href="{{ route('service') }}" class="btn btn-light rounded-pill py-3 px-5">عودة للخدمات</a>
+                    <h3 class="mb-4">هل تبحث عن أفضل خدمات التسويق في بغداد؟</h3>
+                    <p class="mb-4">تواصل مع شركة الهدف المباشر اليوم لمعرفة المزيد عن خدماتنا التسويقية وكيف يمكننا مساعدتك في تطوير عملك في بغداد</p>
                 </div>
             </div>
         </div>
     </div>
     <!-- Dream City Mall Project End -->
     </main>
-
-    @include('components.footer')
 @endsection
 
 @push('styles')

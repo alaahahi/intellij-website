@@ -21,6 +21,8 @@
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">المشاريع</a>
                     <div class="dropdown-menu m-0">
                         <a href="{{ route('contracts-system') }}" class="dropdown-item">نظام عقود بيع السيارات</a>
+                        <a href="{{ route('accounting-system') }}" class="dropdown-item">برنامج المحاسب الذكي</a>
+                        <a href="{{ route('dream-city-mall') }}" class="dropdown-item">شركة الهدف المباشر</a>
                         <a href="{{ route('feature') }}" class="dropdown-item">المميزات</a>
                         <a href="{{ route('testimonial') }}" class="dropdown-item">آراء العملاء</a>
                     </div>

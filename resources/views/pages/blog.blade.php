@@ -57,11 +57,11 @@
                     </div>
                 </div>
                 
-                <!-- مشروع Dream City Mall -->
+                <!-- شركة الهدف المباشر -->
                 <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.5s">
                     <div class="blog-item">
                         <div class="blog-img">
-                            <img src="{{ asset('img/dream-city-mall/WhatsApp Image 2026-01-01 at 21.52.35.jpeg') }}" class="img-fluid w-100" alt="مشروع Dream City Mall - نظام إدارة مول تجاري" loading="lazy" style="object-fit: cover; height: 250px;">
+                            <img src="{{ asset('img/dream-city-mall/WhatsApp Image 2026-01-01 at 21.52.35.jpeg') }}" class="img-fluid w-100" alt="شركة الهدف المباشر - خدمات التسويق في بغداد" loading="lazy" style="object-fit: cover; height: 250px;">
                             <div class="blog-info">
                                 <span><i class="fa fa-clock"></i> 2024</span>
                                 <div class="d-flex">
@@ -70,8 +70,8 @@
                             </div>
                         </div>
                         <div class="blog-content text-dark border p-4">
-                            <h5 class="mb-4">مشروع Dream City Mall</h5>
-                            <p class="mb-4">نظام شامل لإدارة المولات التجارية والمراكز التجارية. <a href="{{ route('dream-city-mall') }}" class="text-primary text-decoration-none">للمزيد عن مشروع Dream City Mall اضغط هنا</a></p>
+                            <h5 class="mb-4">شركة الهدف المباشر</h5>
+                            <p class="mb-4">خدمات التسويق المتطورة في بغداد. <a href="{{ route('dream-city-mall') }}" class="text-primary text-decoration-none">للمزيد عن شركة الهدف المباشر اضغط هنا</a></p>
                             <a class="btn btn-light rounded-pill py-2 px-4" href="{{ route('dream-city-mall') }}">المزيد</a>
                         </div>
                     </div>

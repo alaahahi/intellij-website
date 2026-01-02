@@ -27,6 +27,7 @@ Allow: /service
 Allow: /contact
 Allow: /contracts-system
 Allow: /accounting-system
+Allow: /dream-city-mall
 Allow: /feature
 Allow: /testimonial
 Allow: /pricing
@@ -76,6 +77,12 @@ Sitemap: {$sitemapUrl}
             ],
             [
                 'loc' => $baseUrl . '/accounting-system',
+                'lastmod' => now()->format('Y-m-d'),
+                'changefreq' => 'weekly',
+                'priority' => '0.9'
+            ],
+            [
+                'loc' => $baseUrl . '/dream-city-mall',
                 'lastmod' => now()->format('Y-m-d'),
                 'changefreq' => 'weekly',
                 'priority' => '0.9'

@@ -53,6 +53,10 @@ Route::get('/accounting-system', function () {
     return view('pages.accounting-system');
 })->name('accounting-system');
 
+Route::get('/dream-city-mall', function () {
+    return view('pages.dream-city-mall');
+})->name('dream-city-mall');
+
 Route::get('/feature', function () {
     return view('pages.feature');
 })->name('feature');

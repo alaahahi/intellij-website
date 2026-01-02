@@ -138,6 +138,55 @@
             </div>
         </div>
 
+        <!-- إحصائيات QR Code -->
+        <div class="row g-4 mb-5">
+            <div class="col-12">
+                <h3 class="mb-4">
+                    <i class="fas fa-qrcode text-primary"></i> إحصائيات زيارات QR Code
+                </h3>
+            </div>
+            <div class="col-md-3">
+                <div class="card bg-primary text-white">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            <i class="fas fa-qrcode"></i> إجمالي زيارات QR
+                        </h5>
+                        <h2 class="mb-0">{{ number_format($stats['qr_total'] ?? 0) }}</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card bg-success text-white">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            <i class="fas fa-calendar-day"></i> زيارات QR اليوم
+                        </h5>
+                        <h2 class="mb-0">{{ number_format($stats['qr_today'] ?? 0) }}</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card bg-info text-white">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            <i class="fas fa-calendar-week"></i> زيارات QR هذا الأسبوع
+                        </h5>
+                        <h2 class="mb-0">{{ number_format($stats['qr_this_week'] ?? 0) }}</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card bg-warning text-white">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            <i class="fas fa-calendar-alt"></i> زيارات QR هذا الشهر
+                        </h5>
+                        <h2 class="mb-0">{{ number_format($stats['qr_this_month'] ?? 0) }}</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <!-- إحصائيات حسب المصدر -->
         <div class="row g-4 mb-5">
             <div class="col-md-6">
@@ -164,6 +213,8 @@
                                             <i class="fab fa-facebook text-primary"></i> Facebook
                                         @elseif($sourceItem->source == 'direct')
                                             <i class="fas fa-link"></i> مباشر
+                                        @elseif($sourceItem->source == 'qr')
+                                            <i class="fas fa-qrcode text-dark"></i> QR Code
                                         @else
                                             {{ ucfirst($sourceItem->source) }}
                                         @endif

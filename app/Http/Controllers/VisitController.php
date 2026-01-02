@@ -45,6 +45,10 @@ class VisitController extends Controller
             'today' => Visit::whereDate('visited_at', today())->count(),
             'this_week' => Visit::whereBetween('visited_at', [now()->startOfWeek(), now()->endOfWeek()])->count(),
             'this_month' => Visit::whereMonth('visited_at', now()->month)->count(),
+            'qr_total' => Visit::where('source', 'qr')->count(),
+            'qr_today' => Visit::where('source', 'qr')->whereDate('visited_at', today())->count(),
+            'qr_this_week' => Visit::where('source', 'qr')->whereBetween('visited_at', [now()->startOfWeek(), now()->endOfWeek()])->count(),
+            'qr_this_month' => Visit::where('source', 'qr')->whereMonth('visited_at', now()->month)->count(),
         ];
 
         // إحصائيات حسب المصدر
@@ -89,6 +93,10 @@ class VisitController extends Controller
                 ->groupBy('source')
                 ->orderBy('total', 'desc')
                 ->get(),
+            'qr_total' => Visit::where('source', 'qr')->count(),
+            'qr_today' => Visit::where('source', 'qr')->whereDate('visited_at', today())->count(),
+            'qr_this_week' => Visit::where('source', 'qr')->whereBetween('visited_at', [now()->startOfWeek(), now()->endOfWeek()])->count(),
+            'qr_this_month' => Visit::where('source', 'qr')->whereMonth('visited_at', now()->month)->count(),
             'pages' => Visit::select('page', DB::raw('count(*) as total'))
                 ->groupBy('page')
                 ->orderBy('total', 'desc')

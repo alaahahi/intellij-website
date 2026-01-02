@@ -37,8 +37,16 @@ class TrackVisit
     protected function recordVisit(Request $request)
     {
         $referer = $request->header('referer') ?? $request->server('HTTP_REFERER');
-        $source = Visit::detectSource($referer);
         $userAgent = $request->userAgent();
+        
+        // التحقق من معامل source في URL (مثل ?source=qr)
+        $source = $request->query('source');
+        if (empty($source)) {
+            $source = Visit::detectSource($referer);
+        } else {
+            // استخدام المعامل مباشرة (qr, facebook, etc.)
+            $source = strtolower($source);
+        }
         
         Visit::create([
             'ip_address' => $request->ip(),

@@ -409,6 +409,104 @@
             </div>
 
             <!-- Educational Videos Section -->
+            @php
+                // قائمة الفيديوهات التعليمية - يمكن إضافة أو تعديل الفيديوهات هنا
+                $videos = [
+                    [
+                        'title' => 'مقدمة عن البرنامج',
+                        'description' => 'تعرف على برنامج المحاسب الذكي والمميزات الأساسية',
+                        'video_url' => null, // مثال: 'https://www.youtube.com/watch?v=VIDEO_ID' أو 'https://youtu.be/VIDEO_ID'
+                        'thumbnail' => null, // اختياري: رابط صورة مصغرة مخصصة
+                        'duration' => null, // اختياري: مدة الفيديو (مثال: '10:30')
+                    ],
+                    [
+                        'title' => 'إدارة الفواتير',
+                        'description' => 'تعلم كيفية إنشاء وإدارة الفواتير بسهولة',
+                        'video_url' => null,
+                        'thumbnail' => null,
+                        'duration' => null,
+                    ],
+                    [
+                        'title' => 'إدارة المستودعات',
+                        'description' => 'كيفية إدارة المخزون والمستودعات بشكل فعال',
+                        'video_url' => null,
+                        'thumbnail' => null,
+                        'duration' => null,
+                    ],
+                    [
+                        'title' => 'إدارة المشتريات',
+                        'description' => 'تعلم كيفية إدارة عمليات الشراء من الموردين',
+                        'video_url' => null,
+                        'thumbnail' => null,
+                        'duration' => null,
+                    ],
+                    [
+                        'title' => 'التقارير والإحصائيات',
+                        'description' => 'كيفية استخدام التقارير المالية والإحصائيات',
+                        'video_url' => null,
+                        'thumbnail' => null,
+                        'duration' => null,
+                    ],
+                    [
+                        'title' => 'إدارة الصلاحيات',
+                        'description' => 'تعلم كيفية إدارة المستخدمين والأدوار والصلاحيات',
+                        'video_url' => null,
+                        'thumbnail' => null,
+                        'duration' => null,
+                    ],
+                ];
+                
+                // Helper function لاستخراج video ID من YouTube URL
+                function getYouTubeVideoId($url) {
+                    if (empty($url)) return null;
+                    
+                    // YouTube URL patterns
+                    $patterns = [
+                        '/youtube\.com\/watch\?v=([a-zA-Z0-9_-]+)/',
+                        '/youtu\.be\/([a-zA-Z0-9_-]+)/',
+                        '/youtube\.com\/embed\/([a-zA-Z0-9_-]+)/',
+                    ];
+                    
+                    foreach ($patterns as $pattern) {
+                        if (preg_match($pattern, $url, $matches)) {
+                            return $matches[1];
+                        }
+                    }
+                    
+                    return null;
+                }
+                
+                // Helper function لاستخراج video ID من Vimeo URL
+                function getVimeoVideoId($url) {
+                    if (empty($url)) return null;
+                    
+                    if (preg_match('/vimeo\.com\/(\d+)/', $url, $matches)) {
+                        return $matches[1];
+                    }
+                    
+                    return null;
+                }
+                
+                // Helper function لتحديد نوع الفيديو
+                function getVideoType($url) {
+                    if (empty($url)) return null;
+                    
+                    if (strpos($url, 'youtube.com') !== false || strpos($url, 'youtu.be') !== false) {
+                        return 'youtube';
+                    } elseif (strpos($url, 'vimeo.com') !== false) {
+                        return 'vimeo';
+                    }
+                    
+                    return null;
+                }
+                
+                // Helper function للحصول على thumbnail من YouTube
+                function getYouTubeThumbnail($videoId) {
+                    if (empty($videoId)) return null;
+                    return "https://img.youtube.com/vi/{$videoId}/maxresdefault.jpg";
+                }
+            @endphp
+            
             <div class="row g-5 mb-5">
                 <div class="col-12">
                     <div class="text-center mb-5 wow fadeInUp" data-wow-delay="0.1s">
@@ -417,111 +515,114 @@
                     </div>
                     
                     <div class="row g-4">
-                        <!-- Video Placeholder 1 -->
-                        <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
-                            <div class="card border-0 shadow-sm h-100 video-card">
-                                <div class="position-relative" style="padding-top: 56.25%; background: linear-gradient(135deg, rgba(102, 16, 242, 0.1) 0%, rgba(247, 71, 128, 0.1) 100%);">
-                                    <div class="position-absolute top-50 start-50 translate-middle text-center">
-                                        <i class="fas fa-play-circle text-primary" style="font-size: 4rem; opacity: 0.8;"></i>
+                        @foreach($videos as $index => $video)
+                            @php
+                                $videoId = null;
+                                $videoType = null;
+                                $embedUrl = null;
+                                $thumbnailUrl = $video['thumbnail'];
+                                
+                                if (!empty($video['video_url'])) {
+                                    $videoType = getVideoType($video['video_url']);
+                                    
+                                    if ($videoType === 'youtube') {
+                                        $videoId = getYouTubeVideoId($video['video_url']);
+                                        if ($videoId) {
+                                            $embedUrl = "https://www.youtube.com/embed/{$videoId}";
+                                            if (empty($thumbnailUrl)) {
+                                                $thumbnailUrl = getYouTubeThumbnail($videoId);
+                                            }
+                                        }
+                                    } elseif ($videoType === 'vimeo') {
+                                        $videoId = getVimeoVideoId($video['video_url']);
+                                        if ($videoId) {
+                                            $embedUrl = "https://player.vimeo.com/video/{$videoId}";
+                                        }
+                                    }
+                                }
+                                
+                                $hasVideo = !empty($embedUrl);
+                                $delay = 0.1 + ($index * 0.2);
+                            @endphp
+                            
+                            <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="{{ $delay }}s">
+                                <div class="card border-0 shadow-sm h-100 video-card">
+                                    <div class="position-relative" style="padding-top: 56.25%; overflow: hidden; background: linear-gradient(135deg, rgba(102, 16, 242, 0.1) 0%, rgba(247, 71, 128, 0.1) 100%);">
+                                        @if($hasVideo && $thumbnailUrl)
+                                            <img src="{{ $thumbnailUrl }}" alt="{{ $video['title'] }}" class="position-absolute top-0 start-0 w-100 h-100" style="object-fit: cover;">
+                                        @endif
+                                        <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center" style="background: rgba(0,0,0,0.3); cursor: pointer;" 
+                                             @if($hasVideo) data-bs-toggle="modal" data-bs-target="#videoModal" onclick="loadVideo('{{ $embedUrl }}', '{{ $videoType }}')" @endif>
+                                            <div class="text-center">
+                                                <i class="fas fa-play-circle text-white" style="font-size: 4rem; opacity: 0.9; text-shadow: 0 2px 10px rgba(0,0,0,0.5);"></i>
+                                                @if($video['duration'])
+                                                    <div class="mt-2">
+                                                        <span class="badge bg-dark bg-opacity-75">{{ $video['duration'] }}</span>
+                                                    </div>
+                                                @endif
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="card-title">{{ $video['title'] }}</h5>
+                                        <p class="card-text text-muted small">{{ $video['description'] }}</p>
+                                        @if(!$hasVideo)
+                                            <span class="badge bg-secondary">قريباً</span>
+                                        @else
+                                            <span class="badge bg-success">
+                                                <i class="fas fa-check-circle me-1"></i>متاح
+                                            </span>
+                                        @endif
                                     </div>
                                 </div>
-                                <div class="card-body">
-                                    <h5 class="card-title">مقدمة عن البرنامج</h5>
-                                    <p class="card-text text-muted small">تعرف على برنامج المحاسب الذكي والمميزات الأساسية</p>
-                                    <span class="badge bg-secondary">قريباً</span>
-                                </div>
                             </div>
-                        </div>
-
-                        <!-- Video Placeholder 2 -->
-                        <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
-                            <div class="card border-0 shadow-sm h-100 video-card">
-                                <div class="position-relative" style="padding-top: 56.25%; background: linear-gradient(135deg, rgba(102, 16, 242, 0.1) 0%, rgba(247, 71, 128, 0.1) 100%);">
-                                    <div class="position-absolute top-50 start-50 translate-middle text-center">
-                                        <i class="fas fa-play-circle text-primary" style="font-size: 4rem; opacity: 0.8;"></i>
-                                    </div>
-                                </div>
-                                <div class="card-body">
-                                    <h5 class="card-title">إدارة الفواتير</h5>
-                                    <p class="card-text text-muted small">تعلم كيفية إنشاء وإدارة الفواتير بسهولة</p>
-                                    <span class="badge bg-secondary">قريباً</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Video Placeholder 3 -->
-                        <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.5s">
-                            <div class="card border-0 shadow-sm h-100 video-card">
-                                <div class="position-relative" style="padding-top: 56.25%; background: linear-gradient(135deg, rgba(102, 16, 242, 0.1) 0%, rgba(247, 71, 128, 0.1) 100%);">
-                                    <div class="position-absolute top-50 start-50 translate-middle text-center">
-                                        <i class="fas fa-play-circle text-primary" style="font-size: 4rem; opacity: 0.8;"></i>
-                                    </div>
-                                </div>
-                                <div class="card-body">
-                                    <h5 class="card-title">إدارة المستودعات</h5>
-                                    <p class="card-text text-muted small">كيفية إدارة المخزون والمستودعات بشكل فعال</p>
-                                    <span class="badge bg-secondary">قريباً</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Video Placeholder 4 -->
-                        <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.7s">
-                            <div class="card border-0 shadow-sm h-100 video-card">
-                                <div class="position-relative" style="padding-top: 56.25%; background: linear-gradient(135deg, rgba(102, 16, 242, 0.1) 0%, rgba(247, 71, 128, 0.1) 100%);">
-                                    <div class="position-absolute top-50 start-50 translate-middle text-center">
-                                        <i class="fas fa-play-circle text-primary" style="font-size: 4rem; opacity: 0.8;"></i>
-                                    </div>
-                                </div>
-                                <div class="card-body">
-                                    <h5 class="card-title">إدارة المشتريات</h5>
-                                    <p class="card-text text-muted small">تعلم كيفية إدارة عمليات الشراء من الموردين</p>
-                                    <span class="badge bg-secondary">قريباً</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Video Placeholder 5 -->
-                        <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.9s">
-                            <div class="card border-0 shadow-sm h-100 video-card">
-                                <div class="position-relative" style="padding-top: 56.25%; background: linear-gradient(135deg, rgba(102, 16, 242, 0.1) 0%, rgba(247, 71, 128, 0.1) 100%);">
-                                    <div class="position-absolute top-50 start-50 translate-middle text-center">
-                                        <i class="fas fa-play-circle text-primary" style="font-size: 4rem; opacity: 0.8;"></i>
-                                    </div>
-                                </div>
-                                <div class="card-body">
-                                    <h5 class="card-title">التقارير والإحصائيات</h5>
-                                    <p class="card-text text-muted small">كيفية استخدام التقارير المالية والإحصائيات</p>
-                                    <span class="badge bg-secondary">قريباً</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Video Placeholder 6 -->
-                        <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="1.1s">
-                            <div class="card border-0 shadow-sm h-100 video-card">
-                                <div class="position-relative" style="padding-top: 56.25%; background: linear-gradient(135deg, rgba(102, 16, 242, 0.1) 0%, rgba(247, 71, 128, 0.1) 100%);">
-                                    <div class="position-absolute top-50 start-50 translate-middle text-center">
-                                        <i class="fas fa-play-circle text-primary" style="font-size: 4rem; opacity: 0.8;"></i>
-                                    </div>
-                                </div>
-                                <div class="card-body">
-                                    <h5 class="card-title">إدارة الصلاحيات</h5>
-                                    <p class="card-text text-muted small">تعلم كيفية إدارة المستخدمين والأدوار والصلاحيات</p>
-                                    <span class="badge bg-secondary">قريباً</span>
-                                </div>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
 
-                    <div class="text-center mt-4 wow fadeInUp" data-wow-delay="1.3s">
-                        <p class="text-muted mb-3">سيتم إضافة الفيديوهات التعليمية قريباً</p>
-                        <a href="{{ route('contact') }}" class="btn btn-outline-primary rounded-pill py-2 px-4">
-                            <i class="fas fa-bell me-2"></i>إشعارني عند إضافة الفيديوهات
-                        </a>
+                    @if(collect($videos)->where('video_url', '!=', null)->isEmpty())
+                        <div class="text-center mt-4 wow fadeInUp" data-wow-delay="1.3s">
+                            <p class="text-muted mb-3">سيتم إضافة الفيديوهات التعليمية قريباً</p>
+                            <a href="{{ route('contact') }}" class="btn btn-outline-primary rounded-pill py-2 px-4">
+                                <i class="fas fa-bell me-2"></i>إشعارني عند إضافة الفيديوهات
+                            </a>
+                        </div>
+                    @endif
+                </div>
+            </div>
+            
+            <!-- Video Modal -->
+            <div class="modal fade" id="videoModal" tabindex="-1" aria-labelledby="videoModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header border-0">
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body p-0">
+                            <div class="ratio ratio-16x9">
+                                <iframe id="videoFrame" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
+            
+            <script>
+                function loadVideo(embedUrl, videoType) {
+                    const iframe = document.getElementById('videoFrame');
+                    if (videoType === 'youtube') {
+                        iframe.src = embedUrl + '?autoplay=1&rel=0&modestbranding=1&showinfo=0';
+                    } else if (videoType === 'vimeo') {
+                        iframe.src = embedUrl + '?autoplay=1';
+                    } else {
+                        iframe.src = embedUrl;
+                    }
+                }
+                
+                // إيقاف الفيديو عند إغلاق الـ modal
+                document.getElementById('videoModal').addEventListener('hidden.bs.modal', function () {
+                    document.getElementById('videoFrame').src = '';
+                });
+            </script>
 
             <!-- CTA Section -->
             <div class="row">

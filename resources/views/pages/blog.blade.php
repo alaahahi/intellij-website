@@ -17,15 +17,42 @@
                 </p>
             </div>
             <div class="row g-4 justify-content-center">
+                <!-- نظام عقود بيع السيارات -->
                 <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="blog-item">
                         <div class="blog-img">
-                            <img src="{{ asset('img/blog-1.png') }}" class="img-fluid w-100" alt="" loading="lazy">
+                            <img src="{{ asset('img/contracts-system/1.png') }}" class="img-fluid w-100" alt="نظام عقود بيع السيارات لمعارض السيارات" loading="lazy">
+                            <div class="blog-info">
+                                <span><i class="fa fa-clock"></i> 2024</span>
+                                <div class="d-flex">
+                                    <span class="me-3"><i class="fa fa-heart"></i> مشروع</span>
+                                </div>
+                            </div>
                         </div>
                         <div class="blog-content text-dark border p-4">
-                            <h5 class="mb-4">نظام العقود الإلكترونية</h5>
-                            <p class="mb-4">نظام متخصص لإدارة العقود الإلكترونية للمعارض السيارات.</p>
+                            <h5 class="mb-4">نظام عقود بيع السيارات</h5>
+                            <p class="mb-4">نظام شامل لإدارة عقود بيع السيارات للمعارض مع توقيع إلكتروني آمن. <a href="{{ route('contracts-system') }}" class="text-primary text-decoration-none">للمزيد عن نظام عقود بيع السيارات اضغط هنا</a></p>
                             <a class="btn btn-light rounded-pill py-2 px-4" href="{{ route('contracts-system') }}">المزيد</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- برنامج المحاسب الذكي -->
+                <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="blog-item">
+                        <div class="blog-img">
+                            <img src="{{ asset('img/account/1.png') }}" class="img-fluid w-100" alt="برنامج محاسب ذكي مع مخزن - نظام محاسبة متكامل" loading="lazy">
+                            <div class="blog-info">
+                                <span><i class="fa fa-clock"></i> 2024</span>
+                                <div class="d-flex">
+                                    <span class="me-3"><i class="fa fa-heart"></i> مشروع</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="blog-content text-dark border p-4">
+                            <h5 class="mb-4">برنامج المحاسب الذكي</h5>
+                            <p class="mb-4">نظام متكامل للمحاسبة وإدارة المستودعات والمشتريات. <a href="{{ route('accounting-system') }}" class="text-primary text-decoration-none">للمزيد عن برنامج المحاسب الذكي اضغط هنا</a></p>
+                            <a class="btn btn-light rounded-pill py-2 px-4" href="{{ route('accounting-system') }}">المزيد</a>
                         </div>
                     </div>
                 </div>

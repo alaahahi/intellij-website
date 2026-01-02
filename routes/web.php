@@ -6,6 +6,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\CacheController;
 use App\Http\Controllers\SitemapController;
+use App\Http\Controllers\VideoController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Artisan;
 
@@ -121,4 +122,7 @@ Route::prefix('admin')->middleware(['auth', 'verified'])->group(function () {
     Route::get('/cache', [CacheController::class, 'index'])->name('admin.cache.index');
     Route::post('/cache/clear', [CacheController::class, 'clear'])->name('admin.cache.clear');
     Route::get('/cache/info', [CacheController::class, 'info'])->name('admin.cache.info');
+    
+    // Video Management
+    Route::get('/videos', [VideoController::class, 'index'])->name('admin.videos.index');
 });

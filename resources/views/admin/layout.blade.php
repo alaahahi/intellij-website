@@ -154,6 +154,11 @@
                 </a>
             </li>
             <li>
+                <a href="{{ route('admin.videos.index') }}" class="{{ request()->routeIs('admin.videos.*') ? 'active' : '' }}">
+                    <i class="fas fa-video"></i> إدارة الفيديوهات
+                </a>
+            </li>
+            <li>
                 <a href="{{ route('profile.edit') }}" class="{{ request()->routeIs('profile.*') ? 'active' : '' }}">
                     <i class="fas fa-user"></i> الملف الشخصي
                 </a>

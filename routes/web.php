@@ -58,6 +58,10 @@ Route::get('/dream-city-mall', function () {
     return view('pages.dream-city-mall');
 })->name('dream-city-mall');
 
+Route::get('/shipping-system', function () {
+    return view('pages.shipping-system');
+})->name('shipping-system');
+
 Route::get('/feature', function () {
     return view('pages.feature');
 })->name('feature');

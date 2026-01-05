@@ -34,6 +34,7 @@ class VideoController extends Controller
         $projects = [
             'accounting-system' => 'برنامج المحاسب الذكي',
             'contracts-system' => 'نظام عقود بيع السيارات',
+            'shipping-system' => 'نظام إدارة سفينة الشحن',
             'dream-city-mall' => 'شركة الهدف المباشر',
         ];
 
@@ -48,6 +49,7 @@ class VideoController extends Controller
         $projects = [
             'accounting-system' => 'برنامج المحاسب الذكي',
             'contracts-system' => 'نظام عقود بيع السيارات',
+            'shipping-system' => 'نظام إدارة سفينة الشحن',
             'dream-city-mall' => 'شركة الهدف المباشر',
         ];
 
@@ -60,7 +62,7 @@ class VideoController extends Controller
     public function store(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'project_route' => 'required|string|in:accounting-system,contracts-system,dream-city-mall',
+            'project_route' => 'required|string|in:accounting-system,contracts-system,shipping-system,dream-city-mall',
             'title' => 'required|string|max:255',
             'description' => 'nullable|string',
             'video_url' => 'required|url',
@@ -97,6 +99,7 @@ class VideoController extends Controller
         $projects = [
             'accounting-system' => 'برنامج المحاسب الذكي',
             'contracts-system' => 'نظام عقود بيع السيارات',
+            'shipping-system' => 'نظام إدارة سفينة الشحن',
             'dream-city-mall' => 'شركة الهدف المباشر',
         ];
 
@@ -109,7 +112,7 @@ class VideoController extends Controller
     public function update(Request $request, Video $video)
     {
         $validator = Validator::make($request->all(), [
-            'project_route' => 'required|string|in:accounting-system,contracts-system,dream-city-mall',
+            'project_route' => 'required|string|in:accounting-system,contracts-system,shipping-system,dream-city-mall',
             'title' => 'required|string|max:255',
             'description' => 'nullable|string',
             'video_url' => 'required|url',

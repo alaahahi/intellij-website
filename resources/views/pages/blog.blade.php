@@ -57,8 +57,28 @@
                     </div>
                 </div>
                 
-                <!-- شركة الهدف المباشر -->
+                <!-- نظام إدارة سفينة الشحن -->
                 <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="blog-item">
+                        <div class="blog-img">
+                            <img src="{{ asset('img/shipping/1.png') }}" class="img-fluid w-100" alt="نظام إدارة سفينة الشحن - إدارة نقل السيارات" loading="lazy" style="object-fit: cover; height: 250px;">
+                            <div class="blog-info">
+                                <span><i class="fa fa-clock"></i> 2024</span>
+                                <div class="d-flex">
+                                    <span class="me-3"><i class="fa fa-heart"></i> مشروع</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="blog-content text-dark border p-4">
+                            <h5 class="mb-4">نظام إدارة سفينة الشحن</h5>
+                            <p class="mb-4">نظام شامل لإدارة سفينة شحن واحدة لنقل السيارات. <a href="{{ route('shipping-system') }}" class="text-primary text-decoration-none">للمزيد عن نظام إدارة سفينة الشحن اضغط هنا</a></p>
+                            <a class="btn btn-light rounded-pill py-2 px-4" href="{{ route('shipping-system') }}">المزيد</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- شركة الهدف المباشر -->
+                <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.7s">
                     <div class="blog-item">
                         <div class="blog-img">
                             <img src="{{ asset('img/dream-city-mall/WhatsApp Image 2026-01-01 at 21.52.35.jpeg') }}" class="img-fluid w-100" alt="شركة الهدف المباشر - خدمات التسويق في بغداد" loading="lazy" style="object-fit: cover; height: 250px;">

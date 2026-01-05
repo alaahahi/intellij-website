@@ -33,6 +33,7 @@ class Video extends Model
         $projects = [
             'accounting-system' => 'برنامج المحاسب الذكي',
             'contracts-system' => 'نظام عقود بيع السيارات',
+            'shipping-system' => 'نظام إدارة سفينة الشحن',
             'dream-city-mall' => 'شركة الهدف المباشر',
         ];
 

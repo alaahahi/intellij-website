@@ -48,7 +48,7 @@ Sitemap: {$sitemapUrl}
 
     public function index()
     {
-        $baseUrl = config('app.url');
+        $baseUrl = rtrim(config('app.url'), '/');
         $routes = [
             [
                 'loc' => $baseUrl,

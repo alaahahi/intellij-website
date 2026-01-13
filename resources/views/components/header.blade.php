@@ -1,5 +1,5 @@
 @php
-    $currentRoute = request()->route()->getName() ?? 'home';
+    $currentRoute = request()->route() ? request()->route()->getName() : 'home';
 @endphp
 
 <!-- Navbar & Hero Start -->

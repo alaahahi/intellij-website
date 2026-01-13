@@ -20,6 +20,10 @@ Disallow: /dashboard/
 Disallow: /profile/
 Disallow: /api/
 
+# Disallow error pages
+Disallow: /404
+Disallow: /*?*404*
+
 # Allow important pages
 Allow: /
 Allow: /about

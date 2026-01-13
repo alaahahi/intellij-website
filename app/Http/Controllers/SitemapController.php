@@ -49,6 +49,8 @@ Sitemap: {$sitemapUrl}
     public function index()
     {
         $baseUrl = rtrim(config('app.url'), '/');
+        // Remove www from base URL to ensure consistency
+        $baseUrl = preg_replace('/^https?:\/\/(www\.)?/', 'https://', $baseUrl);
         $routes = [
             [
                 'loc' => $baseUrl,

@@ -20,11 +20,16 @@
     <meta name="revisit-after" content="7 days">
     
     <!-- Canonical URL -->
-    <link rel="canonical" href="@yield('canonical', url()->current())">
+    @php
+        $baseUrl = rtrim(config('app.url'), '/');
+        $baseUrl = preg_replace('/^https?:\/\/(www\.)?/', 'https://', $baseUrl);
+        $canonicalUrl = $baseUrl . request()->getRequestUri();
+    @endphp
+    <link rel="canonical" href="@yield('canonical', $canonicalUrl)">
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="@yield('og_type', 'website')">
-    <meta property="og:url" content="@yield('og_url', url()->current())">
+    <meta property="og:url" content="@yield('og_url', $canonicalUrl)">
     <meta property="og:title" content="@hasSection('og_title') @yield('og_title') @else @yield('title', $defaultTitle) @endif">
     <meta property="og:description" content="@hasSection('og_description') @yield('og_description') @else @yield('description', $defaultDescription) @endif">
     <meta property="og:image" content="@yield('og_image', asset('img/logo.png'))">

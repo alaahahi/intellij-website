@@ -58,6 +58,11 @@ Route::get('/dream-city-mall', function () {
     return view('pages.dream-city-mall');
 })->name('dream-city-mall');
 
+// CSS Card landing page (empty for now). Visits tracked via TrackVisit middleware (supports ?source=qr)
+Route::get('/css-card', function () {
+    return view('pages.css-card');
+})->name('css-card');
+
 Route::get('/shipping-system', function () {
     return view('pages.shipping-system');
 })->name('shipping-system');

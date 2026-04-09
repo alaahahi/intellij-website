@@ -45,17 +45,7 @@
                 <!-- Main Featured Image -->
                 <div class="col-12 wow fadeInUp" data-wow-delay="0.3s">
                     <div class="position-relative overflow-hidden rounded shadow-lg dream-city-container" style="border-radius: 20px !important;">
-                        <img src="{{ asset('img/dream-city-mall/WhatsApp Image 2026-01-01 at 21.52.35.jpeg') }}" 
-                             class="img-fluid w-100 dream-city-image" 
-                             alt="شركة الهدف المباشر - خدمات التسويق في بغداد" 
-                             loading="lazy"
-                             style="
-                                transition: transform 0.6s ease, filter 0.6s ease, box-shadow 0.6s ease;
-                                transform: scale(1);
-                                filter: brightness(1);
-                                display: block;
-                                box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-                             ">
+                    
                         <div class="dream-city-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center" 
                              style="
                                 background: linear-gradient(135deg, rgba(102, 16, 242, 0.2) 0%, rgba(247, 71, 128, 0.2) 100%);
@@ -76,7 +66,7 @@
                 @foreach([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30] as $index)
                 <div class="col-12 wow fadeInUp" data-wow-delay="{{ 0.2 + ($index * 0.05) }}s">
                     <div class="position-relative overflow-hidden rounded shadow-lg dream-city-container" style="border-radius: 20px !important;">
-                        <img src="{{ asset('img/css-card/magazine - print-' . $index . '.png') }}" 
+                        <img src="{{ asset('img/css-card/magazine - print-' . $index . '.webp') }}" 
                              class="img-fluid w-100 dream-city-image" 
                              alt="صورة شركة الهدف المباشر - {{ $index }}" 
                              loading="lazy"

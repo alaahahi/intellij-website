@@ -34,7 +34,7 @@ class Kernel extends HttpKernel
             \Illuminate\View\Middleware\ShareErrorsFromSession::class,
             \App\Http\Middleware\VerifyCsrfToken::class,
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
-            \App\Http\Middleware\TrackVisit::class,
+            // \App\Http\Middleware\TrackVisit::class, // Temporarily disabled to stop custom visit logging
         ],
 
         'api' => [

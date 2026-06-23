@@ -5,6 +5,9 @@
 
     RewriteEngine On
 
+    # Force Laravel routing even if a physical velora/ folder exists on disk
+    RewriteRule ^velora/?$ index.php [L]
+
     # Handle Authorization Header
     RewriteCond %{HTTP:Authorization} .
     RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]

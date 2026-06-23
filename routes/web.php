@@ -67,6 +67,9 @@ Route::get('/css-card', function () {
 Route::get('/velora', function () {
     return view('pages.velora');
 })->name('velora');
+Route::get('/velora/', function () {
+    return view('pages.velora');
+});
 
 Route::get('/shipping-system', function () {
     return view('pages.shipping-system');

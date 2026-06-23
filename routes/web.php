@@ -63,6 +63,11 @@ Route::get('/css-card', function () {
     return view('pages.css-card');
 })->name('css-card');
 
+// Velora QR → Instagram redirect (supports ?source=qr&from=bag&to=Instagram)
+Route::get('/velora', function () {
+    return view('pages.velora');
+})->name('velora');
+
 Route::get('/shipping-system', function () {
     return view('pages.shipping-system');
 })->name('shipping-system');

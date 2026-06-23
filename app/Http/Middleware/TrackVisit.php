@@ -18,8 +18,8 @@ class TrackVisit
     {
         $response = $next($request);
 
-        // تسجيل الزيارة فقط للصفحات الرئيسية (GET requests)
-        if ($request->isMethod('GET') && !$request->ajax()) {
+        // تسجيل الزيارة فقط للصفحات الرئيسية (GET requests)، مع استثناء robots.txt
+        if ($request->isMethod('GET') && !$request->ajax() && !$this->shouldSkip($request)) {
             try {
                 $this->recordVisit($request);
             } catch (\Exception $e) {
@@ -29,6 +29,14 @@ class TrackVisit
         }
 
         return $response;
+    }
+
+    /**
+     * صفحات لا تُسجَّل زياراتها
+     */
+    protected function shouldSkip(Request $request): bool
+    {
+        return $request->is('robots.txt');
     }
 
     /**

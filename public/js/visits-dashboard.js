@@ -13,6 +13,36 @@ const VisitsDashboard = {
                         </button>
                     </div>
 
+                    <!-- QR Landing Pages -->
+                    <div class="card mb-4 border-0 shadow-sm">
+                        <div class="card-header text-white" style="background: linear-gradient(45deg, #833ab4, #fd1d1d, #fcb045);">
+                            <h5 class="mb-0"><i class="fas fa-qrcode"></i> صفحات التحويل (QR)</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="d-flex flex-wrap align-items-center justify-content-between gap-3">
+                                <div>
+                                    <h6 class="mb-1">
+                                        <i class="fab fa-instagram text-danger"></i>
+                                        Velora → Instagram
+                                    </h6>
+                                    <small class="text-muted">من الحقيبة (bag) — يحوّل تلقائياً لحساب Velora</small>
+                                    <div v-if="veloraVisits !== null" class="mt-1">
+                                        <span class="badge bg-secondary">{{ formatNumber(veloraVisits) }} زيارة</span>
+                                    </div>
+                                </div>
+                                <div class="d-flex gap-2">
+                                    <a :href="veloraUrl" target="_blank" class="btn btn-sm btn-outline-danger">
+                                        <i class="fas fa-external-link-alt"></i> فتح
+                                    </a>
+                                    <button @click="copyVeloraLink" class="btn btn-sm btn-danger">
+                                        <i class="fas fa-copy"></i> نسخ الرابط
+                                    </button>
+                                </div>
+                            </div>
+                            <code class="d-block mt-3 p-2 bg-light rounded small text-break">{{ veloraUrl }}</code>
+                        </div>
+                    </div>
+
                     <!-- Loading State -->
                     <div v-if="loading && !stats" class="text-center py-5">
                         <div class="spinner-border text-primary" role="status">
@@ -132,6 +162,7 @@ const VisitsDashboard = {
                                         <option value="">جميع المصادر</option>
                                         <option value="google">Google</option>
                                         <option value="facebook">Facebook</option>
+                                        <option value="qr">QR</option>
                                         <option value="direct">مباشر</option>
                                         <option value="other">أخرى</option>
                                     </select>
@@ -242,8 +273,16 @@ const VisitsDashboard = {
                 source: '',
                 date_from: '',
                 date_to: ''
-            }
+            },
+            veloraUrl: window.location.origin + '/velora?source=qr&from=bag&to=Instagram'
         };
+    },
+    computed: {
+        veloraVisits() {
+            if (!this.stats || !this.stats.pages) return null;
+            const page = this.stats.pages.find(p => p.page === 'velora');
+            return page ? page.total : 0;
+        }
     },
     mounted() {
         this.loadData();
@@ -305,6 +344,14 @@ const VisitsDashboard = {
         refreshData() {
             this.loadData();
         },
+        async copyVeloraLink() {
+            try {
+                await navigator.clipboard.writeText(this.veloraUrl);
+                alert('تم نسخ رابط Velora');
+            } catch (e) {
+                prompt('انسخ الرابط:', this.veloraUrl);
+            }
+        },
         formatNumber(num) {
             return new Intl.NumberFormat('ar-SA').format(num);
         },
@@ -322,6 +369,8 @@ const VisitsDashboard = {
             const names = {
                 'google': 'Google',
                 'facebook': 'Facebook',
+                'qr': 'QR',
+                'instagram': 'Instagram',
                 'direct': 'مباشر',
                 'other': 'أخرى'
             };
@@ -331,6 +380,8 @@ const VisitsDashboard = {
             const icons = {
                 'google': 'fab fa-google',
                 'facebook': 'fab fa-facebook',
+                'qr': 'fas fa-qrcode',
+                'instagram': 'fab fa-instagram',
                 'direct': 'fas fa-link'
             };
             return icons[source] || 'fas fa-globe';
@@ -339,6 +390,8 @@ const VisitsDashboard = {
             const classes = {
                 'google': 'badge bg-danger',
                 'facebook': 'badge bg-primary',
+                'qr': 'badge bg-dark',
+                'instagram': 'badge bg-danger',
                 'direct': 'badge bg-secondary'
             };
             return classes[source] || 'badge bg-info';

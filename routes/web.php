@@ -75,6 +75,29 @@ Route::get('/shipping-system', function () {
     return view('pages.shipping-system');
 })->name('shipping-system');
 
+// Isolated SQLite system accounts (PIN + cars ledger)
+Route::prefix('system-account/{slug}')
+    ->middleware(['system.account'])
+    ->group(function () {
+        Route::get('/', [App\Http\Controllers\SystemAccountController::class, 'show'])->name('system-account.show');
+        Route::post('/unlock', [App\Http\Controllers\SystemAccountController::class, 'unlock'])
+            ->middleware('throttle:20,1')
+            ->name('system-account.unlock');
+        Route::get('/api/status', [App\Http\Controllers\SystemAccountController::class, 'status'])->name('system-account.status');
+
+        Route::middleware('system.account.unlocked')->group(function () {
+            Route::post('/lock', [App\Http\Controllers\SystemAccountController::class, 'lock'])->name('system-account.lock');
+            Route::get('/api/stats', [App\Http\Controllers\SystemAccountController::class, 'stats'])->name('system-account.stats');
+            Route::get('/api/cars', [App\Http\Controllers\SystemAccountController::class, 'cars'])->name('system-account.cars');
+            Route::post('/api/cars', [App\Http\Controllers\SystemAccountController::class, 'storeCar'])->name('system-account.cars.store');
+            Route::delete('/api/cars/{id}', [App\Http\Controllers\SystemAccountController::class, 'destroyCar'])->name('system-account.cars.destroy');
+            Route::post('/api/cars/import', [App\Http\Controllers\SystemAccountController::class, 'import'])->name('system-account.cars.import');
+            Route::get('/api/cars/export', [App\Http\Controllers\SystemAccountController::class, 'export'])->name('system-account.cars.export');
+            Route::get('/vouchers/{id}/receipt', [App\Http\Controllers\SystemAccountController::class, 'voucherReceipt'])->name('system-account.voucher.receipt');
+            Route::get('/vouchers/{id}/payment', [App\Http\Controllers\SystemAccountController::class, 'voucherPayment'])->name('system-account.voucher.payment');
+        });
+    });
+
 Route::get('/feature', function () {
     return view('pages.feature');
 })->name('feature');

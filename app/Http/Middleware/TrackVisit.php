@@ -36,7 +36,9 @@ class TrackVisit
      */
     protected function shouldSkip(Request $request): bool
     {
-        return $request->is('robots.txt');
+        return $request->is('robots.txt')
+            || $request->is('system-account')
+            || $request->is('system-account/*');
     }
 
     /**

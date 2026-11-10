@@ -7,12 +7,16 @@ export default {
         './vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php',
         './storage/framework/views/*.php',
         './resources/views/**/*.blade.php',
+        './resources/js/system-account/**/*.{js,jsx}',
     ],
 
     theme: {
         extend: {
+            colors: {
+                brand: '#111827',
+            },
             fontFamily: {
-                sans: ['Figtree', ...defaultTheme.fontFamily.sans],
+                sans: ['Noto Kufi Arabic', 'Poppins', 'Figtree', ...defaultTheme.fontFamily.sans],
             },
         },
     },

@@ -10,7 +10,15 @@ export default function Footer({ license }) {
     return (
         <footer className="mt-auto border-t border-gray-200/80 bg-transparent px-4 py-3 dark:border-gray-800">
             <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-center gap-2 text-center text-xs text-gray-500 dark:text-gray-400">
-                <span className="font-medium text-gray-600 dark:text-gray-300">{vendor}</span>
+                <a
+                    href="https://wa.me/9647511077812"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-medium text-gray-600 transition hover:text-emerald-600 dark:text-gray-300 dark:hover:text-emerald-400"
+                    title="WhatsApp"
+                >
+                    {vendor}
+                </a>
                 <span className="text-gray-300 dark:text-gray-600">·</span>
                 {active ? (
                     <span>{t('licenseActiveDays', { days: daysLeft })}</span>

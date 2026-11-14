@@ -109,6 +109,9 @@ const dict = {
         vinSearchPlaceholder: 'ابحث برقم VIN / الشاصي (كل الشركات)...',
         searching: 'جاري البحث...',
         noVinResults: 'لا نتائج',
+        licenseActiveDays: 'فعال {days} يوم',
+        licenseExpired: 'التفعيل منتهي',
+        licenseExpiredBanner: 'انتهى التفعيل — يمكنك العرض فقط. جدّد الترخيص للمتابعة.',
 
         toastLoadedFail: 'تعذر تحميل البيانات',
         toastLoginOk: 'تم الدخول بنجاح',
@@ -241,6 +244,9 @@ const dict = {
         vinSearchPlaceholder: 'Search VIN / chassis (all companies)...',
         searching: 'Searching...',
         noVinResults: 'No results',
+        licenseActiveDays: 'Active {days} days',
+        licenseExpired: 'License expired',
+        licenseExpiredBanner: 'License expired — view only. Renew to continue editing.',
 
         toastLoadedFail: 'Failed to load data',
         toastLoginOk: 'Logged in successfully',
@@ -373,6 +379,9 @@ const dict = {
         vinSearchPlaceholder: 'گەڕان بە VIN / شاسی (هەموو کۆمپانیاکان)...',
         searching: 'دەگەڕێت...',
         noVinResults: 'ئەنجام نییە',
+        licenseActiveDays: 'چالاکە بۆ {days} ڕۆژ',
+        licenseExpired: 'چالاککردن بەسەرچووە',
+        licenseExpiredBanner: 'چالاککردن بەسەرچووە — تەنها بینین. بۆ دەستکاری نوێی بکەرەوە.',
 
         toastLoadedFail: 'نەتوانرا داتا باربکرێت',
         toastLoginOk: 'بەسەرکەوتوویی چوویتەژوورەوە',

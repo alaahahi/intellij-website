@@ -2,6 +2,7 @@ import React, { useCallback, useEffect, useState } from 'react';
 import axios from 'axios';
 import CompanyBar from './CompanyBar';
 import Dashboard from './Dashboard';
+import Footer from './Footer';
 import PinScreen from './PinScreen';
 import TopNav, { consumeFocusTarget } from './TopNav';
 import { useI18n } from './i18n/I18nProvider';
@@ -59,12 +60,22 @@ export default function App() {
     const [deletingCompany, setDeletingCompany] = useState(false);
     const [pinError, setPinError] = useState('');
     const [toast, setToast] = useState('');
+    const [license, setLicense] = useState(null);
     const [focusOnce] = useState(() => consumeFocusTarget());
 
     const showToast = (msg) => {
         setToast(msg);
         setTimeout(() => setToast(''), 2500);
     };
+
+    const loadLicense = useCallback(async () => {
+        try {
+            const { data } = await axios.get('/system-account/api/license');
+            setLicense(data);
+        } catch {
+            setLicense({ vendor_name: 'التطبيق الذكي', active: false, days_left: 0 });
+        }
+    }, []);
 
     const refreshCompanies = useCallback(async () => {
         try {
@@ -97,7 +108,8 @@ export default function App() {
 
     useEffect(() => {
         refreshCompanies();
-    }, [refreshCompanies]);
+        loadLicense();
+    }, [refreshCompanies, loadLicense]);
 
     useEffect(() => {
         if (unlocked && config.slug) loadData();
@@ -269,8 +281,10 @@ export default function App() {
         },
     };
 
+    const licenseExpired = license && !license.active;
+
     const shell = (content) => (
-        <div className="min-h-screen bg-gray-100 dark:bg-gray-950">
+        <div className="flex min-h-screen flex-col bg-gray-100 dark:bg-gray-950">
             <TopNav currentSlug={config.slug} companiesUrl={config.companiesUrl} />
             <CompanyBar
                 companies={companies}
@@ -280,7 +294,13 @@ export default function App() {
                 creating={creatingCompany}
                 deleting={deletingCompany}
             />
-            {content}
+            {licenseExpired && (
+                <div className="border-b border-amber-300 bg-amber-50 px-4 py-2 text-center text-xs text-amber-900 dark:border-amber-800 dark:bg-amber-950/40 dark:text-amber-200">
+                    {t('licenseExpiredBanner')}
+                </div>
+            )}
+            <div className="flex-1">{content}</div>
+            <Footer license={license} />
             {toast && <Toast message={toast} />}
         </div>
     );

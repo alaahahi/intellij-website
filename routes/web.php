@@ -77,16 +77,22 @@ Route::get('/shipping-system', function () {
 
 // Isolated SQLite system accounts (PIN + per-company ledger)
 Route::get('/system-account', [App\Http\Controllers\SystemAccountController::class, 'hub'])->name('system-account.hub');
+Route::get('/system-account/api/license', [App\Http\Controllers\SystemAccountController::class, 'license'])
+    ->name('system-account.license');
+Route::match(['get', 'post'], '/system-account/activate/{days?}', [App\Http\Controllers\SystemAccountController::class, 'activate'])
+    ->whereNumber('days')
+    ->middleware('throttle:10,1')
+    ->name('system-account.activate');
 Route::get('/system-account/api/companies', [App\Http\Controllers\SystemAccountController::class, 'companies'])
     ->name('system-account.companies');
 Route::get('/system-account/api/search-vin', [App\Http\Controllers\SystemAccountController::class, 'searchVin'])
     ->middleware('throttle:60,1')
     ->name('system-account.search-vin');
 Route::post('/system-account/api/companies', [App\Http\Controllers\SystemAccountController::class, 'storeCompany'])
-    ->middleware('throttle:10,1')
+    ->middleware(['throttle:10,1', 'system.account.license'])
     ->name('system-account.companies.store');
 Route::delete('/system-account/api/companies/{companySlug}', [App\Http\Controllers\SystemAccountController::class, 'destroyCompany'])
-    ->middleware('throttle:10,1')
+    ->middleware(['throttle:10,1', 'system.account.license'])
     ->name('system-account.companies.destroy');
 
 Route::prefix('system-account/{slug}')
@@ -104,22 +110,24 @@ Route::prefix('system-account/{slug}')
             Route::get('/api/stats', [App\Http\Controllers\SystemAccountController::class, 'stats'])->name('system-account.stats');
             Route::get('/api/dashboard', [App\Http\Controllers\SystemAccountController::class, 'dashboardData'])->name('system-account.dashboard');
 
-            Route::post('/api/batches', [App\Http\Controllers\SystemAccountController::class, 'storeBatch'])->name('system-account.batches.store');
-            Route::put('/api/batches/{id}', [App\Http\Controllers\SystemAccountController::class, 'updateBatch'])->name('system-account.batches.update');
-            Route::delete('/api/batches/{id}', [App\Http\Controllers\SystemAccountController::class, 'destroyBatch'])->name('system-account.batches.destroy');
+            Route::middleware('system.account.license')->group(function () {
+                Route::post('/api/batches', [App\Http\Controllers\SystemAccountController::class, 'storeBatch'])->name('system-account.batches.store');
+                Route::put('/api/batches/{id}', [App\Http\Controllers\SystemAccountController::class, 'updateBatch'])->name('system-account.batches.update');
+                Route::delete('/api/batches/{id}', [App\Http\Controllers\SystemAccountController::class, 'destroyBatch'])->name('system-account.batches.destroy');
+
+                Route::post('/api/batches/{batchId}/vehicles', [App\Http\Controllers\SystemAccountController::class, 'storeVehicle'])->name('system-account.vehicles.store');
+                Route::put('/api/batches/{batchId}/vehicles/{id}', [App\Http\Controllers\SystemAccountController::class, 'updateVehicle'])->name('system-account.vehicles.update');
+                Route::delete('/api/batches/{batchId}/vehicles/{id}', [App\Http\Controllers\SystemAccountController::class, 'destroyVehicle'])->name('system-account.vehicles.destroy');
+                Route::post('/api/batches/{batchId}/vehicles/import', [App\Http\Controllers\SystemAccountController::class, 'importVehicles'])->name('system-account.vehicles.import');
+                Route::post('/api/batches/{batchId}/vehicles/import-text', [App\Http\Controllers\SystemAccountController::class, 'importVehiclesText'])->name('system-account.vehicles.import-text');
+
+                Route::post('/api/remittances', [App\Http\Controllers\SystemAccountController::class, 'storeRemittance'])->name('system-account.remittances.store');
+                Route::put('/api/remittances/{id}', [App\Http\Controllers\SystemAccountController::class, 'updateRemittance'])->name('system-account.remittances.update');
+                Route::delete('/api/remittances/{id}', [App\Http\Controllers\SystemAccountController::class, 'destroyRemittance'])->name('system-account.remittances.destroy');
+            });
 
             Route::get('/api/batches/{batchId}/vehicles', [App\Http\Controllers\SystemAccountController::class, 'vehicles'])->name('system-account.vehicles');
-            Route::post('/api/batches/{batchId}/vehicles', [App\Http\Controllers\SystemAccountController::class, 'storeVehicle'])->name('system-account.vehicles.store');
-            Route::put('/api/batches/{batchId}/vehicles/{id}', [App\Http\Controllers\SystemAccountController::class, 'updateVehicle'])->name('system-account.vehicles.update');
-            Route::delete('/api/batches/{batchId}/vehicles/{id}', [App\Http\Controllers\SystemAccountController::class, 'destroyVehicle'])->name('system-account.vehicles.destroy');
-            Route::post('/api/batches/{batchId}/vehicles/import', [App\Http\Controllers\SystemAccountController::class, 'importVehicles'])->name('system-account.vehicles.import');
-            Route::post('/api/batches/{batchId}/vehicles/import-text', [App\Http\Controllers\SystemAccountController::class, 'importVehiclesText'])->name('system-account.vehicles.import-text');
-
             Route::get('/api/remittances', [App\Http\Controllers\SystemAccountController::class, 'remittances'])->name('system-account.remittances');
-            Route::post('/api/remittances', [App\Http\Controllers\SystemAccountController::class, 'storeRemittance'])->name('system-account.remittances.store');
-            Route::put('/api/remittances/{id}', [App\Http\Controllers\SystemAccountController::class, 'updateRemittance'])->name('system-account.remittances.update');
-            Route::delete('/api/remittances/{id}', [App\Http\Controllers\SystemAccountController::class, 'destroyRemittance'])->name('system-account.remittances.destroy');
-
             Route::get('/api/export', [App\Http\Controllers\SystemAccountController::class, 'export'])->name('system-account.export');
             Route::get('/vouchers/{id}/receipt', [App\Http\Controllers\SystemAccountController::class, 'voucherReceipt'])->name('system-account.voucher.receipt');
             Route::get('/vouchers/{id}/payment', [App\Http\Controllers\SystemAccountController::class, 'voucherPayment'])->name('system-account.voucher.payment');

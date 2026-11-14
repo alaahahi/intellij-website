@@ -62,6 +62,7 @@ class Kernel extends HttpKernel
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
         'system.account' => \App\Http\Middleware\SystemAccountAccess::class,
         'system.account.unlocked' => \App\Http\Middleware\EnsureSystemAccountUnlocked::class,
+        'system.account.license' => \App\Http\Middleware\EnsureSystemAccountLicense::class,
     ];
 }
 

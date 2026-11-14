@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Services\SystemAccountExcelService;
+use App\Services\SystemAccountLicenseService;
 use App\Services\SystemAccountService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
@@ -13,7 +14,56 @@ class SystemAccountController extends Controller
     public function __construct(
         private SystemAccountService $accounts,
         private SystemAccountExcelService $excel,
+        private SystemAccountLicenseService $license,
     ) {
+    }
+
+    public function license()
+    {
+        return response()->json($this->license->status());
+    }
+
+    public function activate(Request $request, ?int $days = null)
+    {
+        $data = $request->validate([
+            'password' => ['required', 'string', 'max:100'],
+            'days' => ['nullable', 'integer', 'min:1', 'max:3650'],
+        ]);
+
+        $expected = (string) config('services.system_account.delete_password');
+        if ($expected === '' || ! hash_equals($expected, $data['password'])) {
+            return response()->json(['message' => 'كلمة المرور غير صحيحة.'], 422);
+        }
+
+        $grant = $days ?? (int) ($data['days'] ?? 30);
+
+        try {
+            $status = $this->license->activate($grant);
+        } catch (\InvalidArgumentException $e) {
+            return response()->json(['message' => $e->getMessage()], 422);
+        }
+
+        Log::info('system_account_license_activated', [
+            'days' => $grant,
+            'expires_at' => $status['expires_at'],
+            'ip' => $request->ip(),
+        ]);
+
+        if ($request->expectsJson() || $request->ajax()) {
+            return response()->json([
+                'message' => 'تم التفعيل بنجاح',
+                'license' => $status,
+            ]);
+        }
+
+        return response(
+            '<!DOCTYPE html><html lang="ar" dir="rtl"><body style="font-family:sans-serif;padding:40px;text-align:center">'
+            .'<h2>تم التفعيل</h2>'
+            .'<p>'.e($status['vendor_name']).' — فعال '.$status['days_left'].' يوم</p>'
+            .'<p>ينتهي: '.e((string) $status['expires_at']).'</p>'
+            .'<p><a href="'.e(url('/system-account')).'">العودة للنظام</a></p>'
+            .'</body></html>'
+        );
     }
 
     public function hub()

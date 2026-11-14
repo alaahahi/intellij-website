@@ -20,6 +20,7 @@
         data-hub-mode="{{ !empty($hubMode) ? '1' : '0' }}"
         data-base-url="{{ $slug ? url('/system-account/'.$slug) : url('/system-account') }}"
         data-companies-url="{{ url('/system-account/api/companies') }}"
+        data-license-url="{{ url('/system-account/api/license') }}"
         data-companies="{{ e(json_encode($companies ?? [], JSON_UNESCAPED_UNICODE)) }}"
     ></div>
 </body>

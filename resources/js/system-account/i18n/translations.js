@@ -38,7 +38,7 @@ const dict = {
 
         carsTab: 'السيارات',
         remittancesTab: 'الحوالات',
-        batchLines: 'أسطر السيارات',
+        batchLines: 'السيارات',
         addBatch: 'إضافة سطر',
         editBatch: 'تعديل سطر سيارات',
         addBatchTitle: 'إضافة سطر سيارات',

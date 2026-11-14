@@ -75,7 +75,7 @@ export default function PinScreen({ companyName, onUnlock, unlocking, error }) {
             <Card className="w-full max-w-md p-6">
                 <div className="mb-6 text-center">
                     <div className="brand-bg mx-auto mb-3 flex size-11 items-center justify-center rounded text-lg font-bold">B</div>
-                    <h1 className="text-xl font-semibold text-gray-900 dark:text-gray-100">{companyName}</h1>
+                    <h1 className="text-xl font-semibold text-green-700 dark:text-green-400">{companyName}</h1>
                     <p className="mt-1 text-sm text-gray-500 dark:text-gray-400">{t('pinHint')}</p>
                 </div>
 

@@ -94,7 +94,7 @@ export default function TopNav({ currentSlug, companiesUrl }) {
     return (
         <div className="border-b border-gray-300 bg-white dark:border-gray-700 dark:bg-gray-900">
             <div className="mx-auto flex max-w-7xl flex-wrap items-center gap-3 px-4 py-2.5">
-                <div className="text-sm font-semibold text-gray-900 dark:text-gray-100">
+                <div className="text-sm font-semibold text-green-700 dark:text-green-400">
                     {t('vinSearchTitle')}
                 </div>
                 <div className="relative min-w-[220px] flex-1" ref={boxRef}>

@@ -4,7 +4,7 @@ export function PageHeader({ title, subtitle, actions }) {
     return (
         <div className="mb-4 flex flex-wrap items-start justify-between gap-3">
             <div>
-                <h1 className="text-xl font-semibold tracking-tight text-gray-900 dark:text-gray-100">{title}</h1>
+                <h1 className="text-xl font-semibold tracking-tight text-green-700 dark:text-green-400">{title}</h1>
                 {subtitle && <p className="text-sm text-gray-500 dark:text-gray-400">{subtitle}</p>}
             </div>
             {actions && <div className="flex flex-wrap items-center gap-2">{actions}</div>}
@@ -39,7 +39,7 @@ export function CardHeader({ title, subtitle, actions }) {
     return (
         <div className="flex items-start justify-between gap-3 border-b border-gray-300 bg-gray-50 px-4 py-3 dark:border-gray-700 dark:bg-gray-800/60">
             <div>
-                <h3 className="font-semibold text-gray-900 dark:text-gray-100">{title}</h3>
+                <h3 className="font-semibold text-green-700 dark:text-green-400">{title}</h3>
                 {subtitle && <p className="text-xs text-gray-500 dark:text-gray-400">{subtitle}</p>}
             </div>
             {actions}
@@ -93,7 +93,7 @@ export function Modal({ open, onClose, title, subtitle, wide, children, footer }
             >
                 <div className="flex items-start justify-between gap-3 border-b border-gray-300 bg-gray-50 px-5 py-4 dark:border-gray-700 dark:bg-gray-800/70">
                     <div>
-                        <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100">{title}</h3>
+                        <h3 className="text-lg font-semibold text-green-700 dark:text-green-400">{title}</h3>
                         {subtitle && <p className="text-xs text-gray-500 dark:text-gray-400">{subtitle}</p>}
                     </div>
                     <button type="button" onClick={onClose} className="rounded px-2 py-1 text-gray-500 hover:bg-gray-100 dark:hover:bg-gray-800">

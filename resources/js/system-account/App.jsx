@@ -318,7 +318,7 @@ export default function App() {
     if (config.hubMode || !config.slug) {
         return shell(
             <div className="mx-auto max-w-lg px-4 py-16 text-center">
-                <h1 className="mb-2 text-xl font-semibold text-gray-900 dark:text-gray-100">{t('hubTitle')}</h1>
+                <h1 className="mb-2 text-xl font-semibold text-green-700 dark:text-green-400">{t('hubTitle')}</h1>
                 <p className="mb-6 text-sm text-gray-600 dark:text-gray-400">{t('hubEmpty')}</p>
             </div>,
         );

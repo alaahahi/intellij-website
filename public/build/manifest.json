@@ -3,12 +3,12 @@
     "file": "assets/axios-78d57de0.js"
   },
   "resources/css/app.css": {
-    "file": "assets/app-393d4e6f.css",
+    "file": "assets/app-0c05d33c.css",
     "isEntry": true,
     "src": "resources/css/app.css"
   },
   "resources/css/system-account.css": {
-    "file": "assets/system-account-6d22d3f4.css",
+    "file": "assets/system-account-ad8cc053.css",
     "isEntry": true,
     "src": "resources/css/system-account.css"
   },
@@ -21,7 +21,7 @@
     "src": "resources/js/app.js"
   },
   "resources/js/system-account/main.jsx": {
-    "file": "assets/main-140e94d2.js",
+    "file": "assets/main-79529174.js",
     "imports": [
       "_axios-78d57de0.js"
     ],

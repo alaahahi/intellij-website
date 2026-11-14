@@ -6,24 +6,57 @@
     --brand: #111827;
     --background: #ffffff;
     --foreground: #0a0a0a;
+    --page: #fafafa;
     --card: #ffffff;
     --muted: #f4f4f5;
     --muted-foreground: #71717a;
     --border: #e4e4e7;
 }
 
+html.dark {
+    --brand: #e5e7eb;
+    --background: #111827;
+    --foreground: #f3f4f6;
+    --page: #030712;
+    --card: #111827;
+    --muted: #1f2937;
+    --muted-foreground: #9ca3af;
+    --border: #374151;
+    color-scheme: dark;
+}
+
 .sa-body {
     margin: 0;
     min-height: 100vh;
-    background: #fafafa;
+    background: var(--page);
     color: var(--foreground);
     font-family: 'Noto Kufi Arabic', 'Poppins', ui-sans-serif, system-ui, sans-serif;
 }
 
 .brand-bg {
-    background-color: var(--brand);
+    background-color: #111827;
+    color: #fff;
+}
+
+html.dark .brand-bg {
+    background-color: #e5e7eb;
+    color: #111827;
 }
 
 .brand-text {
     color: var(--brand);
+}
+
+.sa-highlight {
+    animation: sa-pulse 1.4s ease-in-out 2;
+    background: #fef3c7 !important;
+}
+
+html.dark .sa-highlight {
+    background: #78350f !important;
+}
+
+@keyframes sa-pulse {
+    0%, 100% { box-shadow: inset 0 0 0 0 transparent; }
+    50% { box-shadow: inset 0 0 0 2px #f59e0b; }
 }

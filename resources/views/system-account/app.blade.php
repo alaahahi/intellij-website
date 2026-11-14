@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="ar" dir="rtl" data-default-lang="ar">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -16,8 +16,11 @@
         id="system-account-root"
         data-slug="{{ $slug }}"
         data-company-name="{{ $companyName }}"
-        data-unlocked="{{ $unlocked ? '1' : '0' }}"
-        data-base-url="{{ url('/system-account/'.$slug) }}"
+        data-unlocked="{{ !empty($unlocked) ? '1' : '0' }}"
+        data-hub-mode="{{ !empty($hubMode) ? '1' : '0' }}"
+        data-base-url="{{ $slug ? url('/system-account/'.$slug) : url('/system-account') }}"
+        data-companies-url="{{ url('/system-account/api/companies') }}"
+        data-companies="{{ e(json_encode($companies ?? [], JSON_UNESCAPED_UNICODE)) }}"
     ></div>
 </body>
 </html>

@@ -19,5 +19,9 @@ return [
     ],
 
     'google_analytics_id' => env('GOOGLE_ANALYTICS_ID', null),
+
+    'system_account' => [
+        'delete_password' => env('SYSTEM_ACCOUNT_DELETE_PASSWORD', 'Alaa.hahe@1'),
+    ],
 ];
 

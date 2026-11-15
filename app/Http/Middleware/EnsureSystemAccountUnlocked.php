@@ -19,7 +19,16 @@ class EnsureSystemAccountUnlocked
         $key = $this->accounts->sessionKey($slug);
 
         if (! $request->session()->get($key)) {
-            if ($request->expectsJson() || $request->is('*/api/*')) {
+            // Browser tabs (PDF / Excel / vouchers) should return to the PIN screen.
+            $isBrowserDocument = $request->is(
+                '*/export',
+                '*/export-pdf',
+                '*/api/export',
+                '*/api/export-pdf',
+                '*/vouchers/*',
+            );
+
+            if (! $isBrowserDocument && ($request->expectsJson() || $request->is('*/api/*'))) {
                 return response()->json(['message' => 'PIN required.', 'unlocked' => false], 401);
             }
 

@@ -277,10 +277,10 @@ export default function App() {
             showToast(t('toastRemDeleted'));
         },
         exportExcel: () => {
-            window.location.href = `${config.baseUrl}/api/export`;
+            window.location.href = `${config.baseUrl}/export`;
         },
         exportPdf: () => {
-            window.open(`${config.baseUrl}/api/export-pdf`, '_blank', 'noopener,noreferrer');
+            window.open(`${config.baseUrl}/export-pdf`, '_blank', 'noopener');
         },
     };
 

@@ -279,6 +279,9 @@ export default function App() {
         exportExcel: () => {
             window.location.href = `${config.baseUrl}/api/export`;
         },
+        exportPdf: () => {
+            window.open(`${config.baseUrl}/api/export-pdf`, '_blank', 'noopener,noreferrer');
+        },
     };
 
     const licenseExpired = license && !license.active;

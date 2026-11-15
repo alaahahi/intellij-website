@@ -458,6 +458,19 @@ class SystemAccountController extends Controller
         return $this->excel->export($this->accounts->settings()->company_name);
     }
 
+    public function exportPdf(string $slug)
+    {
+        $settings = $this->accounts->settings();
+
+        return view('system-account.statement', [
+            'companyName' => $settings->company_name,
+            'slug' => $slug,
+            'batches' => $this->accounts->batches(),
+            'remittances' => $this->accounts->remittances(),
+            'stats' => $this->accounts->stats(),
+        ]);
+    }
+
     public function voucherReceipt(string $slug, int $id)
     {
         return $this->voucher($slug, $id, 'receipt');

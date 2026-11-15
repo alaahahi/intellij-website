@@ -129,6 +129,7 @@ Route::prefix('system-account/{slug}')
             Route::get('/api/batches/{batchId}/vehicles', [App\Http\Controllers\SystemAccountController::class, 'vehicles'])->name('system-account.vehicles');
             Route::get('/api/remittances', [App\Http\Controllers\SystemAccountController::class, 'remittances'])->name('system-account.remittances');
             Route::get('/api/export', [App\Http\Controllers\SystemAccountController::class, 'export'])->name('system-account.export');
+            Route::get('/api/export-pdf', [App\Http\Controllers\SystemAccountController::class, 'exportPdf'])->name('system-account.export-pdf');
             Route::get('/vouchers/{id}/receipt', [App\Http\Controllers\SystemAccountController::class, 'voucherReceipt'])->name('system-account.voucher.receipt');
             Route::get('/vouchers/{id}/payment', [App\Http\Controllers\SystemAccountController::class, 'voucherPayment'])->name('system-account.voucher.payment');
         });

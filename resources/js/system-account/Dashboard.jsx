@@ -407,6 +407,7 @@ export default function Dashboard({
                     <>
                         <ToolbarButton onClick={onRefresh} disabled={loading}>{t('refresh')}</ToolbarButton>
                         <ToolbarButton onClick={api.exportExcel}>{t('exportExcel')}</ToolbarButton>
+                        <ToolbarButton primary onClick={api.exportPdf}>{t('exportPdf')}</ToolbarButton>
                         <ToolbarButton danger onClick={onLock}>{t('lock')}</ToolbarButton>
                     </>
                 }

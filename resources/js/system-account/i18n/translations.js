@@ -27,6 +27,7 @@ const dict = {
 
         refresh: 'تحديث',
         exportExcel: 'تصدير Excel',
+        exportPdf: 'تصدير PDF',
         lock: 'قفل',
         search: 'بحث...',
         edit: 'تعديل',
@@ -162,6 +163,7 @@ const dict = {
 
         refresh: 'Refresh',
         exportExcel: 'Export Excel',
+        exportPdf: 'Export PDF',
         lock: 'Lock',
         search: 'Search...',
         edit: 'Edit',
@@ -297,6 +299,7 @@ const dict = {
 
         refresh: 'نوێکردنەوە',
         exportExcel: 'هەناردەی Excel',
+        exportPdf: 'هەناردەی PDF',
         lock: 'قفل',
         search: 'گەڕان...',
         edit: 'دەستکاری',

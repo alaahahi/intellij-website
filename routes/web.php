@@ -133,7 +133,13 @@ Route::prefix('system-account/{slug}')
             Route::get('/export', [App\Http\Controllers\SystemAccountController::class, 'export'])->name('system-account.export');
             Route::get('/export-pdf', [App\Http\Controllers\SystemAccountController::class, 'exportPdf'])->name('system-account.export-pdf');
             Route::get('/api/export', fn (string $slug) => redirect()->route('system-account.export', $slug));
-            Route::get('/api/export-pdf', fn (string $slug) => redirect()->route('system-account.export-pdf', $slug));
+            Route::get('/api/export-pdf', function (string $slug) {
+                return redirect()->route('system-account.export-pdf', array_filter([
+                    'slug' => $slug,
+                    'lang' => request()->query('lang'),
+                    'autoprint' => request()->query('autoprint'),
+                ], fn ($v) => $v !== null && $v !== ''));
+            });
 
             Route::get('/vouchers/{id}/receipt', [App\Http\Controllers\SystemAccountController::class, 'voucherReceipt'])->name('system-account.voucher.receipt');
             Route::get('/vouchers/{id}/payment', [App\Http\Controllers\SystemAccountController::class, 'voucherPayment'])->name('system-account.voucher.payment');

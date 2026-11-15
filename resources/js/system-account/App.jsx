@@ -280,7 +280,17 @@ export default function App() {
             window.location.href = `${config.baseUrl}/export`;
         },
         exportPdf: () => {
-            window.open(`${config.baseUrl}/export-pdf`, '_blank', 'noopener');
+            let lang = 'ar';
+            try {
+                lang = localStorage.getItem('system_account_lang') || 'ar';
+            } catch {
+                // ignore
+            }
+            window.open(
+                `${config.baseUrl}/export-pdf?lang=${encodeURIComponent(lang)}`,
+                '_blank',
+                'noopener,noreferrer',
+            );
         },
     };
 

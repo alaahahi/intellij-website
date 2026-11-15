@@ -458,9 +458,12 @@ class SystemAccountController extends Controller
         return $this->excel->export($this->accounts->settings()->company_name);
     }
 
-    public function exportPdf(string $slug)
+    public function exportPdf(string $slug, Request $request)
     {
         $settings = $this->accounts->settings();
+        $locale = \App\Support\SystemAccountPdfLang::resolve($request->query('lang'));
+        $t = fn (string $key, array $replace = []) => \App\Support\SystemAccountPdfLang::get($locale, $key, $replace);
+        $meta = \App\Support\SystemAccountPdfLang::all($locale);
 
         return view('system-account.statement', [
             'companyName' => $settings->company_name,
@@ -468,6 +471,10 @@ class SystemAccountController extends Controller
             'batches' => $this->accounts->batches(),
             'remittances' => $this->accounts->remittances(),
             'stats' => $this->accounts->stats(),
+            'locale' => $locale,
+            'dir' => $meta['dir'],
+            'htmlLang' => $meta['html_lang'],
+            't' => $t,
         ]);
     }
 
